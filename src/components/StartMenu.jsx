@@ -72,7 +72,7 @@ const StartMenu = ({ isOpen, onClose }) => {
                     ? 'w-full h-full inset-0 bottom-0'
                     : 'w-[600px]'
                     }`}
-                style={!isMobile ? { height: '90vh' } : {}}
+                style={!isMobile ? { height: '83vh' } : {}}
             >
 
                 {/* Desktop Layout */}
@@ -117,7 +117,7 @@ const StartMenu = ({ isOpen, onClose }) => {
                                     className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer"
                                     onClick={() => toggleFolder('UI/UX')}
                                 >
-                                    <FaFolder className="text-yellow-500 text-base mr-3" />
+                                    <FaFolder className="text-yellow-500 text-base mr-3" size={23}/>
                                     <span className="text-white text-sm flex-1">UI/UX</span>
                                     {expandedFolders['UI/UX'] ? (
                                         <FaChevronDown className="text-gray-400 text-xs" />
@@ -130,7 +130,7 @@ const StartMenu = ({ isOpen, onClose }) => {
                                 {expandedFolders['UI/UX'] && (
                                     <div className="ml-6">
                                         <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaFigma className="text-purple-500 text-base mr-3" />
+                                            <FaFigma className="text-purple-500 text-base mr-3" size={22}/>
                                             <span className="text-white text-sm">Figma</span>
                                         </div>
                                     </div>
@@ -141,7 +141,7 @@ const StartMenu = ({ isOpen, onClose }) => {
                                     className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer"
                                     onClick={() => toggleFolder('Frontend Development')}
                                 >
-                                    <FaFolder className="text-yellow-500 text-base mr-3" />
+                                    <FaFolder className="text-yellow-500 text-base mr-3" size={23}/>
                                     <span className="text-white text-sm flex-1">Frontend Development</span>
                                     {expandedFolders['Frontend Development'] ? (
                                         <FaChevronDown className="text-gray-400 text-xs" />
@@ -154,31 +154,31 @@ const StartMenu = ({ isOpen, onClose }) => {
                                 {expandedFolders['Frontend Development'] && (
                                     <div className="ml-6">
                                         <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaHtml5 className="text-orange-500 text-base mr-3" />
+                                            <FaHtml5 className="text-orange-500 text-base mr-3" size={22}/>
                                             <span className="text-white text-sm">HTML</span>
                                         </div>
                                         <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaCss3Alt className="text-blue-500 text-base mr-3" />
+                                            <FaCss3Alt className="text-blue-500 text-base mr-3" size={22}/>
                                             <span className="text-white text-sm">CSS</span>
                                         </div>
                                         <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaJs className="text-yellow-500 text-base mr-3" />
+                                            <FaJs className="text-yellow-500 text-base mr-3" size={22}/>
                                             <span className="text-white text-sm">JavaScript</span>
                                         </div>
                                         <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <SiTypescript className="text-blue-600 text-base mr-3" />
+                                            <SiTypescript className="text-blue-600 text-base mr-3" size={22}/>
                                             <span className="text-white text-sm">TypeScript</span>
                                         </div>
                                         <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaReact className="text-cyan-500 text-base mr-3" />
+                                            <FaReact className="text-cyan-500 text-base mr-3" size={22}/>
                                             <span className="text-white text-sm">React.js</span>
                                         </div>
                                         <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <SiNextdotjs className="text-white text-base mr-3" />
+                                            <SiNextdotjs className="text-white text-base mr-3" size={22}/>
                                             <span className="text-white text-sm">Next.js</span>
                                         </div>
                                         <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <SiRedux className="text-purple-600 text-base mr-3" />
+                                            <SiRedux className="text-purple-600 text-base mr-3" size={22}/>
                                             <span className="text-white text-sm">Redux</span>
                                         </div>
                                     </div>
@@ -189,7 +189,7 @@ const StartMenu = ({ isOpen, onClose }) => {
                                     className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer"
                                     onClick={() => toggleFolder('Backend Development')}
                                 >
-                                    <FaFolder className="text-yellow-500 text-base mr-3" />
+                                    <FaFolder className="text-yellow-500 text-base mr-3" size={23}/>
                                     <span className="text-white text-sm flex-1">Backend Development</span>
                                     {expandedFolders['Backend Development'] ? (
                                         <FaChevronDown className="text-gray-400 text-xs" />
@@ -202,11 +202,11 @@ const StartMenu = ({ isOpen, onClose }) => {
                                 {expandedFolders['Backend Development'] && (
                                     <div className="ml-6">
                                         <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaNodeJs className="text-green-600 text-base mr-3" />
+                                            <FaNodeJs className="text-green-600 text-base mr-3" size={22}/>
                                             <span className="text-white text-sm">Node.js</span>
                                         </div>
                                         <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <SiExpress className="text-gray-300 text-base mr-3" />
+                                            <SiExpress className="text-gray-300 text-base mr-3" size={22}/>
                                             <span className="text-white text-sm">Express.js</span>
                                         </div>
                                     </div>
@@ -217,7 +217,7 @@ const StartMenu = ({ isOpen, onClose }) => {
                                     className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer"
                                     onClick={() => toggleFolder('Databases')}
                                 >
-                                    <FaFolder className="text-yellow-500 text-base mr-3" />
+                                    <FaFolder className="text-yellow-500 text-base mr-3" size={23}/>
                                     <span className="text-white text-sm flex-1">Databases</span>
                                     {expandedFolders['Databases'] ? (
                                         <FaChevronDown className="text-gray-400 text-xs" />
@@ -230,11 +230,11 @@ const StartMenu = ({ isOpen, onClose }) => {
                                 {expandedFolders['Databases'] && (
                                     <div className="ml-6">
                                         <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <SiMongodb className="text-green-500 text-base mr-3" />
+                                            <SiMongodb className="text-green-500 text-base mr-3" size={22}/>
                                             <span className="text-white text-sm">MongoDB</span>
                                         </div>
                                         <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <SiMysql className="text-blue-600 text-base mr-3" />
+                                            <SiMysql className="text-blue-600 text-base mr-3" size={22}/>
                                             <span className="text-white text-sm">MySQL</span>
                                         </div>
                                     </div>
@@ -245,7 +245,7 @@ const StartMenu = ({ isOpen, onClose }) => {
                                     className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer"
                                     onClick={() => toggleFolder('Version Control & Collaboration')}
                                 >
-                                    <FaFolder className="text-yellow-500 text-base mr-3" />
+                                    <FaFolder className="text-yellow-500 text-base mr-3" size={23}/>
                                     <span className="text-white text-sm flex-1">Version Control & Collaboration</span>
                                     {expandedFolders['Version Control & Collaboration'] ? (
                                         <FaChevronDown className="text-gray-400 text-xs" />
@@ -258,11 +258,11 @@ const StartMenu = ({ isOpen, onClose }) => {
                                 {expandedFolders['Version Control & Collaboration'] && (
                                     <div className="ml-6">
                                         <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaGitAlt className="text-orange-600 text-base mr-3" />
+                                            <FaGitAlt className="text-orange-600 text-base mr-3" size={22}/>
                                             <span className="text-white text-sm">Git</span>
                                         </div>
                                         <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaGithub className="text-white text-base mr-3" />
+                                            <FaGithub className="text-white text-base mr-3" size={22}/>
                                             <span className="text-white text-sm">GitHub</span>
                                         </div>
                                     </div>
