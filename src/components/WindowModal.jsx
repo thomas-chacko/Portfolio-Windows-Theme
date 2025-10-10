@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 
 const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaximize, onFocus }) => {
-  // Calculate initial center position
+  // Calculate initial center position for desktop
   const getInitialPosition = () => {
     const windowWidth = 600
     const windowHeight = 500
@@ -24,12 +24,17 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
       const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
       const isSmallScreen = window.innerWidth < 1024 // lg breakpoint in Tailwind
       setIsMobileOrTablet(isTouchDevice || isSmallScreen)
+
+      // Auto-maximize on mobile for better UX
+      if (isTouchDevice || isSmallScreen) {
+        setIsMaximized(true)
+      }
     }
 
     // Ensure window stays centered on window resize
     const handleResize = () => {
       checkDevice()
-      if (!isMaximized && !isDragging) {
+      if (!isMaximized && !isDragging && !isMobileOrTablet) {
         const newPosition = getInitialPosition()
         setPosition(newPosition)
         setPreviousPosition(newPosition)
@@ -39,11 +44,11 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
     checkDevice()
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [isMaximized, isDragging])
+  }, [isMaximized, isDragging, isMobileOrTablet])
 
   const handleMouseDown = (e) => {
     if (e.target.closest('.window-controls')) return
-    if (isMaximized) return // Don't allow dragging when maximized
+    if (isMaximized || isMobileOrTablet) return // Don't allow dragging when maximized or on mobile
 
     setIsDragging(true)
     setDragOffset({
@@ -100,41 +105,69 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
 
   if (windowData.isMinimized) return null
 
-  const windowStyle = isMaximized
-    ? {
-      left: '0px',
-      top: '0px',
-      width: '100vw',
-      height: 'calc(100vh - 48px)', // Account for taskbar height
-      borderRadius: '0px'
+  // Responsive window styling
+  const getWindowClasses = () => {
+    if (isMobileOrTablet) {
+      return `
+        fixed inset-0 bg-white
+        transition-all duration-200 ease-out
+        ${isActive ? 'z-50' : 'z-40'}
+        flex flex-col
+      `
     }
-    : {
+
+    return `
+      fixed bg-white shadow-2xl border border-gray-300
+      transition-all duration-200 ease-out
+      ${isActive ? 'z-50' : 'z-40'}
+      ${isDragging ? 'cursor-grabbing' : 'cursor-default'}
+      ${isMaximized ? 'rounded-none' : 'rounded-lg'}
+      animate-slideInUp
+    `
+  }
+
+  const getWindowStyle = () => {
+    if (isMobileOrTablet) {
+      return {
+        left: '0px',
+        top: '0px',
+        width: '100vw',
+        height: '100vh',
+      }
+    }
+
+    if (isMaximized) {
+      return {
+        left: '0px',
+        top: '0px',
+        width: '100vw',
+        height: 'calc(100vh - 48px)', // Account for taskbar height
+        borderRadius: '0px'
+      }
+    }
+
+    return {
       left: `${position.x}px`,
       top: `${position.y}px`,
       width: '600px',
       height: '500px',
       minHeight: '300px'
     }
+  }
 
   return (
     <div
       ref={windowRef}
-      className={`
-        fixed bg-white shadow-2xl border border-gray-300
-        transition-all duration-200 ease-out
-        ${isActive ? 'z-50' : 'z-40'}
-        ${isDragging ? 'cursor-grabbing' : 'cursor-default'}
-        ${isMaximized ? 'rounded-none' : 'rounded-lg'}
-        animate-slideInUp
-      `}
-      style={windowStyle}
+      className={getWindowClasses()}
+      style={getWindowStyle()}
       onClick={onFocus}
     >
       {/* Window Title Bar */}
       <div
         className={`
-          flex items-center justify-between px-4 py-2 cursor-grab select-none
-          ${isMaximized ? 'rounded-none' : 'rounded-t-lg'}
+          flex items-center justify-between select-none flex-shrink-0
+          ${isMobileOrTablet ? 'px-4 py-3 h-14' : 'px-4 py-2 cursor-grab'}
+          ${isMaximized && !isMobileOrTablet ? 'rounded-none' : !isMobileOrTablet ? 'rounded-t-lg' : ''}
           ${isActive ? 'bg-blue-600' : 'bg-gray-400'}
           transition-colors duration-200
         `}
@@ -142,48 +175,52 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
         onDoubleClick={handleDoubleClickTitleBar}
       >
         <div className="flex items-center">
-          <span className={`text-sm font-medium ${isActive ? 'text-white' : 'text-gray-700'}`}>
+          <span className={`${isMobileOrTablet ? 'text-base' : 'text-sm'} font-medium ${isActive ? 'text-white' : 'text-gray-700'}`}>
             {windowData.title}
           </span>
         </div>
 
         <div className="flex items-center window-controls">
-          {/* Minimize Button */}
-          <button
-            onClick={onMinimize}
-            className="w-11 h-7 hover:bg-black hover:bg-opacity-20 flex items-center justify-center transition-colors"
-            title="Minimize"
-          >
-            <div className={`w-3 h-0.5 ${isActive ? 'bg-white' : 'bg-gray-700'}`}></div>
-          </button>
+          {/* Minimize Button - Hide on mobile */}
+          {!isMobileOrTablet && (
+            <button
+              onClick={onMinimize}
+              className="w-11 h-7 hover:bg-black hover:bg-opacity-20 flex items-center justify-center transition-colors"
+              title="Minimize"
+            >
+              <div className={`w-3 h-0.5 ${isActive ? 'bg-white' : 'bg-gray-700'}`}></div>
+            </button>
+          )}
 
-          {/* Maximize/Restore Button */}
-          <button
-            onClick={handleMaximize}
-            className="w-11 h-7 hover:bg-black hover:bg-opacity-20 flex items-center justify-center transition-colors"
-            title={isMaximized ? "Restore Down" : "Maximize"}
-          >
-            {isMaximized ? (
-              // Restore icon (two overlapping squares)
-              <div className="relative">
-                <div className={`w-2.5 h-2.5 border ${isActive ? 'border-white' : 'border-gray-700'} absolute -top-0.5 -left-0.5`}></div>
-                <div className={`w-2.5 h-2.5 border ${isActive ? 'border-white' : 'border-gray-700'} bg-transparent`}></div>
-              </div>
-            ) : (
-              // Maximize icon (single square)
-              <div className={`w-3 h-3 border ${isActive ? 'border-white' : 'border-gray-700'}`}></div>
-            )}
-          </button>
+          {/* Maximize/Restore Button - Hide on mobile */}
+          {!isMobileOrTablet && (
+            <button
+              onClick={handleMaximize}
+              className="w-11 h-7 hover:bg-black hover:bg-opacity-20 flex items-center justify-center transition-colors"
+              title={isMaximized ? "Restore Down" : "Maximize"}
+            >
+              {isMaximized ? (
+                // Restore icon (two overlapping squares)
+                <div className="relative">
+                  <div className={`w-2.5 h-2.5 border ${isActive ? 'border-white' : 'border-gray-700'} absolute -top-0.5 -left-0.5`}></div>
+                  <div className={`w-2.5 h-2.5 border ${isActive ? 'border-white' : 'border-gray-700'} bg-transparent`}></div>
+                </div>
+              ) : (
+                // Maximize icon (single square)
+                <div className={`w-3 h-3 border ${isActive ? 'border-white' : 'border-gray-700'}`}></div>
+              )}
+            </button>
+          )}
 
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="w-11 h-7 hover:bg-red-500 flex items-center justify-center transition-colors group"
+            className={`${isMobileOrTablet ? 'w-12 h-10' : 'w-11 h-7'} hover:bg-red-500 flex items-center justify-center transition-colors group`}
             title="Close"
           >
-            <div className="relative w-3 h-3">
-              <div className={`absolute w-3 h-0.5 ${isActive ? 'bg-white' : 'bg-gray-700'} group-hover:bg-white transform rotate-45 top-1.5`}></div>
-              <div className={`absolute w-3 h-0.5 ${isActive ? 'bg-white' : 'bg-gray-700'} group-hover:bg-white transform -rotate-45 top-1.5`}></div>
+            <div className={`relative ${isMobileOrTablet ? 'w-4 h-4' : 'w-3 h-3'}`}>
+              <div className={`absolute ${isMobileOrTablet ? 'w-4 h-0.5' : 'w-3 h-0.5'} ${isActive ? 'bg-white' : 'bg-gray-700'} group-hover:bg-white transform rotate-45 ${isMobileOrTablet ? 'top-2' : 'top-1.5'}`}></div>
+              <div className={`absolute ${isMobileOrTablet ? 'w-4 h-0.5' : 'w-3 h-0.5'} ${isActive ? 'bg-white' : 'bg-gray-700'} group-hover:bg-white transform -rotate-45 ${isMobileOrTablet ? 'top-2' : 'top-1.5'}`}></div>
             </div>
           </button>
         </div>
@@ -191,13 +228,27 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
 
       {/* Window Content */}
       <div
-        className="overflow-y-auto bg-white"
+        className={`
+          overflow-y-auto bg-white flex-1
+          ${isMobileOrTablet ? 'px-4 py-4' : ''}
+        `}
         style={{
-          height: isMaximized ? 'calc(100vh - 96px)' : '450px',
-          maxHeight: isMaximized ? 'calc(100vh - 96px)' : '450px'
+          height: isMobileOrTablet
+            ? 'calc(100vh - 56px)' // Full height minus title bar on mobile
+            : isMaximized
+              ? 'calc(100vh - 96px)'
+              : '450px',
+          maxHeight: isMobileOrTablet
+            ? 'calc(100vh - 56px)'
+            : isMaximized
+              ? 'calc(100vh - 96px)'
+              : '450px'
         }}
       >
-        {windowData.content}
+        {/* Mobile-optimized content wrapper */}
+        <div className={isMobileOrTablet ? 'space-y-4' : ''}>
+          {windowData.content}
+        </div>
       </div>
     </div>
   )

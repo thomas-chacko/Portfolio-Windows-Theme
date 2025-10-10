@@ -18,30 +18,30 @@ const Desktop = ({ onOpenWindow }) => {
                 type: 'system',
                 icon: desktopIcon,
                 content: (
-                    <div className="p-6">
-                        <div className="flex items-center mb-4">
-                            <div className="text-4xl mr-4">🖥️</div>
+                    <div className="p-4 lg:p-6">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center mb-4 lg:mb-6">
+                            <div className="text-3xl lg:text-4xl mb-2 sm:mb-0 sm:mr-4">🖥️</div>
                             <div>
-                                <h3 className="text-xl font-semibold">System Information</h3>
-                                <p className="text-gray-600">Windows 10 Portfolio Edition</p>
+                                <h3 className="text-lg lg:text-xl font-semibold">System Information</h3>
+                                <p className="text-gray-600 text-sm lg:text-base">Windows 10 Portfolio Edition</p>
                             </div>
                         </div>
-                        <div className="grid grid-cols-2 gap-4 mt-6">
-                            <div className="bg-gray-50 p-4 rounded">
-                                <h4 className="font-semibold">Processor</h4>
-                                <p className="text-sm text-gray-600">React.js Engine</p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 mt-4 lg:mt-6">
+                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
+                                <h4 className="font-semibold text-sm lg:text-base">Processor</h4>
+                                <p className="text-xs lg:text-sm text-gray-600">React.js Engine</p>
                             </div>
-                            <div className="bg-gray-50 p-4 rounded">
-                                <h4 className="font-semibold">Memory</h4>
-                                <p className="text-sm text-gray-600">Unlimited Creativity</p>
+                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
+                                <h4 className="font-semibold text-sm lg:text-base">Memory</h4>
+                                <p className="text-xs lg:text-sm text-gray-600">Unlimited Creativity</p>
                             </div>
-                            <div className="bg-gray-50 p-4 rounded">
-                                <h4 className="font-semibold">Graphics</h4>
-                                <p className="text-sm text-gray-600">Tailwind CSS Powered</p>
+                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
+                                <h4 className="font-semibold text-sm lg:text-base">Graphics</h4>
+                                <p className="text-xs lg:text-sm text-gray-600">Tailwind CSS Powered</p>
                             </div>
-                            <div className="bg-gray-50 p-4 rounded">
-                                <h4 className="font-semibold">Storage</h4>
-                                <p className="text-sm text-gray-600">Cloud-based Portfolio</p>
+                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
+                                <h4 className="font-semibold text-sm lg:text-base">Storage</h4>
+                                <p className="text-xs lg:text-sm text-gray-600">Cloud-based Portfolio</p>
                             </div>
                         </div>
                     </div>
@@ -57,36 +57,36 @@ const Desktop = ({ onOpenWindow }) => {
                 type: 'profile',
                 icon: boyIcon,
                 content: (
-                    <div className="p-6">
-                        <div className="flex items-start mb-6">
-                            <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white text-3xl mr-6">
+                    <div className="p-4 lg:p-6">
+                        <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4 lg:mb-6">
+                            <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white text-2xl lg:text-3xl mb-4 sm:mb-0 sm:mr-6">
                                 👤
                             </div>
-                            <div>
-                                <h3 className="text-2xl font-bold mb-2">[Your Name]</h3>
-                                <p className="text-lg text-blue-600 mb-2">Front-End Developer</p>
-                                <p className="text-gray-600 leading-relaxed">
+                            <div className="text-center sm:text-left">
+                                <h3 className="text-xl lg:text-2xl font-bold mb-2">[Your Name]</h3>
+                                <p className="text-base lg:text-lg text-blue-600 mb-2">Front-End Developer</p>
+                                <p className="text-sm lg:text-base text-gray-600 leading-relaxed">
                                     Passionate front-end developer with expertise in React, JavaScript, and modern web technologies.
                                     I create beautiful, responsive, and user-friendly web applications.
                                 </p>
                             </div>
                         </div>
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="bg-gray-50 p-4 rounded">
-                                <h4 className="font-semibold mb-2">Location</h4>
-                                <p className="text-gray-600">[Your City, Country]</p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4">
+                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
+                                <h4 className="font-semibold mb-2 text-sm lg:text-base">Location</h4>
+                                <p className="text-gray-600 text-xs lg:text-sm">[Your City, Country]</p>
                             </div>
-                            <div className="bg-gray-50 p-4 rounded">
-                                <h4 className="font-semibold mb-2">Experience</h4>
-                                <p className="text-gray-600">[X] Years</p>
+                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
+                                <h4 className="font-semibold mb-2 text-sm lg:text-base">Experience</h4>
+                                <p className="text-gray-600 text-xs lg:text-sm">[X] Years</p>
                             </div>
-                            <div className="bg-gray-50 p-4 rounded">
-                                <h4 className="font-semibold mb-2">Email</h4>
-                                <p className="text-gray-600">[your.email@example.com]</p>
+                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
+                                <h4 className="font-semibold mb-2 text-sm lg:text-base">Email</h4>
+                                <p className="text-gray-600 text-xs lg:text-sm break-all">[your.email@example.com]</p>
                             </div>
-                            <div className="bg-gray-50 p-4 rounded">
-                                <h4 className="font-semibold mb-2">Phone</h4>
-                                <p className="text-gray-600">[+1234567890]</p>
+                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
+                                <h4 className="font-semibold mb-2 text-sm lg:text-base">Phone</h4>
+                                <p className="text-gray-600 text-xs lg:text-sm">[+1234567890]</p>
                             </div>
                         </div>
                     </div>
@@ -102,28 +102,28 @@ const Desktop = ({ onOpenWindow }) => {
                 type: 'games',
                 icon: gamesIcon,
                 content: (
-                    <div className="p-6">
-                        <h3 className="text-xl font-semibold mb-4">Game Projects</h3>
-                        <div className="grid grid-cols-2 gap-4">
-                            <div className="bg-gradient-to-br from-purple-400 to-purple-600 p-4 rounded-lg text-white cursor-pointer hover:scale-105 transition-transform">
-                                <div className="text-2xl mb-2">🎯</div>
-                                <h4 className="font-semibold">Tic Tac Toe</h4>
-                                <p className="text-sm opacity-90">Classic game built with React</p>
+                    <div className="p-4 lg:p-6">
+                        <h3 className="text-lg lg:text-xl font-semibold mb-4">Game Projects</h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4">
+                            <div className="bg-gradient-to-br from-purple-400 to-purple-600 p-3 lg:p-4 rounded-lg text-white cursor-pointer hover:scale-105 transition-transform">
+                                <div className="text-xl lg:text-2xl mb-2">🎯</div>
+                                <h4 className="font-semibold text-sm lg:text-base">Tic Tac Toe</h4>
+                                <p className="text-xs lg:text-sm opacity-90">Classic game built with React</p>
                             </div>
-                            <div className="bg-gradient-to-br from-green-400 to-green-600 p-4 rounded-lg text-white cursor-pointer hover:scale-105 transition-transform">
-                                <div className="text-2xl mb-2">🐍</div>
-                                <h4 className="font-semibold">Snake Game</h4>
-                                <p className="text-sm opacity-90">Retro snake game in JavaScript</p>
+                            <div className="bg-gradient-to-br from-green-400 to-green-600 p-3 lg:p-4 rounded-lg text-white cursor-pointer hover:scale-105 transition-transform">
+                                <div className="text-xl lg:text-2xl mb-2">🐍</div>
+                                <h4 className="font-semibold text-sm lg:text-base">Snake Game</h4>
+                                <p className="text-xs lg:text-sm opacity-90">Retro snake game in JavaScript</p>
                             </div>
-                            <div className="bg-gradient-to-br from-red-400 to-red-600 p-4 rounded-lg text-white cursor-pointer hover:scale-105 transition-transform">
-                                <div className="text-2xl mb-2">🧩</div>
-                                <h4 className="font-semibold">Puzzle Game</h4>
-                                <p className="text-sm opacity-90">Interactive puzzle solver</p>
+                            <div className="bg-gradient-to-br from-red-400 to-red-600 p-3 lg:p-4 rounded-lg text-white cursor-pointer hover:scale-105 transition-transform">
+                                <div className="text-xl lg:text-2xl mb-2">🧩</div>
+                                <h4 className="font-semibold text-sm lg:text-base">Puzzle Game</h4>
+                                <p className="text-xs lg:text-sm opacity-90">Interactive puzzle solver</p>
                             </div>
-                            <div className="bg-gradient-to-br from-yellow-400 to-yellow-600 p-4 rounded-lg text-white cursor-pointer hover:scale-105 transition-transform">
-                                <div className="text-2xl mb-2">🎲</div>
-                                <h4 className="font-semibold">Memory Game</h4>
-                                <p className="text-sm opacity-90">Card matching memory game</p>
+                            <div className="bg-gradient-to-br from-yellow-400 to-yellow-600 p-3 lg:p-4 rounded-lg text-white cursor-pointer hover:scale-105 transition-transform">
+                                <div className="text-xl lg:text-2xl mb-2">🎲</div>
+                                <h4 className="font-semibold text-sm lg:text-base">Memory Game</h4>
+                                <p className="text-xs lg:text-sm opacity-90">Card matching memory game</p>
                             </div>
                         </div>
                     </div>
@@ -190,7 +190,7 @@ const Desktop = ({ onOpenWindow }) => {
         },
         {
             id: 'my-works',
-            name: 'My Works',
+            name: 'Works',
             icon: suitcaseIcon,
             content: {
                 title: 'My Works',
