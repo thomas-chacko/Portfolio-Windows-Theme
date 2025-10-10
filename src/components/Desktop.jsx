@@ -1,13 +1,18 @@
 import React from 'react'
 import DesktopIcon from './DesktopIcon'
 import wallpaper from '../assets/images/windows-wallaper.jpg'
+import desktopIcon from '../assets/images/desktop.png'
+import boyIcon from '../assets/images/boy.png'
+import gamesIcon from "../assets/images/game.png"
+import fileIcon from "../assets/images/file.png"
+import suitcaseIcon from "../assets/images/suitcase.png"
 
 const Desktop = ({ onOpenWindow }) => {
     const desktopIcons = [
         {
             id: 'this-pc',
             name: 'This PC',
-            icon: '🖥️',
+            icon: desktopIcon,
             content: {
                 title: 'This PC',
                 type: 'system',
@@ -45,7 +50,7 @@ const Desktop = ({ onOpenWindow }) => {
         {
             id: 'profile',
             name: 'Profile',
-            icon: '👤',
+            icon: boyIcon,
             content: {
                 title: 'Profile',
                 type: 'profile',
@@ -89,7 +94,7 @@ const Desktop = ({ onOpenWindow }) => {
         {
             id: 'games',
             name: 'Games',
-            icon: '🎮',
+            icon: gamesIcon,
             content: {
                 title: 'Games',
                 type: 'games',
@@ -125,7 +130,7 @@ const Desktop = ({ onOpenWindow }) => {
         {
             id: 'resume',
             name: 'Resume',
-            icon: '📄',
+            icon: fileIcon,
             content: {
                 title: 'Resume',
                 type: 'resume',
@@ -182,7 +187,7 @@ const Desktop = ({ onOpenWindow }) => {
         {
             id: 'my-works',
             name: 'My Works',
-            icon: '💼',
+            icon: suitcaseIcon,
             content: {
                 title: 'My Works',
                 type: 'portfolio',
@@ -249,71 +254,12 @@ const Desktop = ({ onOpenWindow }) => {
                     </div>
                 )
             }
-        },
-        {
-            id: 'tutorial-videos',
-            name: 'Tutorial Videos',
-            icon: '🎥',
-            content: {
-                title: 'Tutorial Videos',
-                type: 'videos',
-                content: (
-                    <div className="p-6">
-                        <h3 className="text-xl font-semibold mb-4">Tutorial Videos</h3>
-                        <div className="space-y-4">
-                            <div className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
-                                <div className="w-16 h-12 bg-red-500 rounded flex items-center justify-center text-white mr-4">
-                                    ▶️
-                                </div>
-                                <div className="flex-1">
-                                    <h4 className="font-semibold">React Hooks Explained</h4>
-                                    <p className="text-sm text-gray-600">Complete guide to React Hooks with practical examples</p>
-                                    <p className="text-xs text-gray-500">Duration: 15:30</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
-                                <div className="w-16 h-12 bg-red-500 rounded flex items-center justify-center text-white mr-4">
-                                    ▶️
-                                </div>
-                                <div className="flex-1">
-                                    <h4 className="font-semibold">CSS Grid Mastery</h4>
-                                    <p className="text-sm text-gray-600">Master CSS Grid layout with real-world projects</p>
-                                    <p className="text-xs text-gray-500">Duration: 22:45</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
-                                <div className="w-16 h-12 bg-red-500 rounded flex items-center justify-center text-white mr-4">
-                                    ▶️
-                                </div>
-                                <div className="flex-1">
-                                    <h4 className="font-semibold">JavaScript ES6+ Features</h4>
-                                    <p className="text-sm text-gray-600">Modern JavaScript features every developer should know</p>
-                                    <p className="text-xs text-gray-500">Duration: 18:20</p>
-                                </div>
-                            </div>
-
-                            <div className="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer">
-                                <div className="w-16 h-12 bg-red-500 rounded flex items-center justify-center text-white mr-4">
-                                    ▶️
-                                </div>
-                                <div className="flex-1">
-                                    <h4 className="font-semibold">Building Responsive Websites</h4>
-                                    <p className="text-sm text-gray-600">Create mobile-first responsive designs</p>
-                                    <p className="text-xs text-gray-500">Duration: 25:10</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                )
-            }
         }
     ]
 
     return (
         <div
-            className="absolute inset-0 p-4"
+            className="absolute inset-0 py-4 px-3"
             style={{
                 backgroundImage: `url(${wallpaper})`,
                 backgroundSize: 'cover',
@@ -321,7 +267,7 @@ const Desktop = ({ onOpenWindow }) => {
                 backgroundRepeat: 'no-repeat'
             }}
         >
-            <div className="grid grid-cols-1 gap-4 w-fit">
+            <div className="grid grid-cols-1 gap-6 w-fit">
                 {desktopIcons.map((icon, index) => (
                     <DesktopIcon
                         key={icon.id}

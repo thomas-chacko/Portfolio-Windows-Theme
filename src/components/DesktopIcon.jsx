@@ -15,10 +15,7 @@ const DesktopIcon = ({ icon, onDoubleClick, style }) => {
   return (
     <div
       className={`
-        flex flex-col items-center p-2 rounded cursor-pointer
-        transition-all duration-200 ease-in-out
-        hover:bg-white hover:bg-opacity-20 hover:backdrop-blur-sm
-        active:scale-95
+        flex flex-col items-center p-0 rounded cursor-pointer
         ${isSelected ? 'bg-blue-500 bg-opacity-30' : ''}
         animate-fadeInUp
       `}
@@ -26,10 +23,14 @@ const DesktopIcon = ({ icon, onDoubleClick, style }) => {
       onClick={handleClick}
       onDoubleClick={handleDoubleClick}
     >
-      <div className="text-3xl mb-1 filter drop-shadow-sm">
-        {icon.icon}
+      <div className="w-12 h-12 mb-1 filter drop-shadow-sm flex items-center justify-center">
+        {typeof icon.icon === 'string' ? (
+          <img src={icon.icon} alt={icon.name} className="w-full h-full object-contain" />
+        ) : (
+          <div className="text-3xl">{icon.icon}</div>
+        )}
       </div>
-      <span className="text-white text-sm font-medium text-center drop-shadow-sm max-w-20 leading-tight">
+      <span className="text-white text-xs text-center drop-shadow-sm max-w-20 leading-tight tracking-wider">
         {icon.name}
       </span>
     </div>
