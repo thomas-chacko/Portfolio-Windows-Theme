@@ -1,7 +1,6 @@
 import React from 'react'
 import DesktopIcon from './DesktopIcon'
 import wallpaper from '../assets/images/windows-wallaper.jpg'
-import mobileWallaper from '../assets/images/mobile-wallaper.jpg'
 
 const Desktop = ({ onOpenWindow }) => {
     const desktopIcons = [

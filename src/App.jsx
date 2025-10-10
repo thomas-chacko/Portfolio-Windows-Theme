@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Desktop from './components/Desktop'
 import Taskbar from './components/Taskbar'
 import WindowModal from './components/WindowModal'
@@ -6,6 +6,19 @@ import WindowModal from './components/WindowModal'
 const App = () => {
   const [activeWindow, setActiveWindow] = useState(null)
   const [windows, setWindows] = useState([])
+
+  // Global right-click prevention
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      e.preventDefault()
+    }
+
+    document.addEventListener('contextmenu', handleContextMenu)
+
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu)
+    }
+  }, [])
 
   const openWindow = (windowData) => {
     const newWindow = {
