@@ -1,15 +1,37 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const DesktopIcon = ({ icon, onDoubleClick, style }) => {
   const [isSelected, setIsSelected] = useState(false)
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false)
+
+  useEffect(() => {
+    // Check if device is mobile or tablet
+    const checkDevice = () => {
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+      const isSmallScreen = window.innerWidth < 1024 // lg breakpoint in Tailwind
+      setIsMobileOrTablet(isTouchDevice || isSmallScreen)
+    }
+
+    checkDevice()
+    window.addEventListener('resize', checkDevice)
+    return () => window.removeEventListener('resize', checkDevice)
+  }, [])
 
   const handleClick = () => {
     setIsSelected(true)
     setTimeout(() => setIsSelected(false), 200)
+    
+    // On mobile/tablet, single click opens the app
+    if (isMobileOrTablet) {
+      onDoubleClick()
+    }
   }
 
   const handleDoubleClick = () => {
-    onDoubleClick()
+    // On desktop, double click opens the app
+    if (!isMobileOrTablet) {
+      onDoubleClick()
+    }
   }
 
   return (

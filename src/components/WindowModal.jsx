@@ -15,11 +15,20 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
   const [isMaximized, setIsMaximized] = useState(false)
   const [previousPosition, setPreviousPosition] = useState(getInitialPosition())
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false)
   const windowRef = useRef(null)
 
   useEffect(() => {
+    // Check if device is mobile or tablet
+    const checkDevice = () => {
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+      const isSmallScreen = window.innerWidth < 1024 // lg breakpoint in Tailwind
+      setIsMobileOrTablet(isTouchDevice || isSmallScreen)
+    }
+
     // Ensure window stays centered on window resize
     const handleResize = () => {
+      checkDevice()
       if (!isMaximized && !isDragging) {
         const newPosition = getInitialPosition()
         setPosition(newPosition)
@@ -27,6 +36,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
       }
     }
 
+    checkDevice()
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [isMaximized, isDragging])
@@ -58,7 +68,10 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
 
   const handleDoubleClickTitleBar = (e) => {
     if (e.target.closest('.window-controls')) return
-    handleMaximize()
+    // Only allow double-click maximize on desktop devices
+    if (!isMobileOrTablet) {
+      handleMaximize()
+    }
   }
 
   const handleMouseMove = (e) => {
