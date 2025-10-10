@@ -50,6 +50,16 @@
   background: #a8a8a8;
 }
 
+/* Hide scrollbar for start menu like Windows 10 */
+.start-menu-scroll {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.start-menu-scroll::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
 /* Prevent text selection on UI elements */
 .no-select {
   -webkit-user-select: none;

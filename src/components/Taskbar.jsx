@@ -7,12 +7,14 @@ import {
     FaVolumeUp,
     FaChevronUp
 } from 'react-icons/fa'
+import StartMenu from './StartMenu'
 
 const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
     const [currentTime, setCurrentTime] = useState(new Date())
     const [showBatteryTooltip, setShowBatteryTooltip] = useState(false)
     const [showWifiTooltip, setShowWifiTooltip] = useState(false)
     const [showVolumeTooltip, setShowVolumeTooltip] = useState(false)
+    const [isStartMenuOpen, setIsStartMenuOpen] = useState(false)
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -51,11 +53,21 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
 
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 h-12 bg-gray-900 bg-opacity-95 backdrop-blur-sm flex items-center justify-between px-1 z-50 border-t border-gray-800">
+        <>
+            <StartMenu 
+                isOpen={isStartMenuOpen} 
+                onClose={() => setIsStartMenuOpen(false)} 
+            />
+            <div className="fixed bottom-0 left-0 right-0 h-12 bg-gray-900 bg-opacity-95 backdrop-blur-sm flex items-center justify-between px-1 z-50 border-t border-gray-800">
             {/* Left Side - Start Button and Search */}
             <div className="flex items-center space-x-1 flex-1 min-w-0">
                 {/* Windows Start Button */}
-                <button className="w-8 sm:w-12 h-8 cursor-pointer bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors group flex-shrink-0">
+                <button 
+                    onClick={() => setIsStartMenuOpen(!isStartMenuOpen)}
+                    className={`w-8 sm:w-12 h-8 cursor-pointer flex items-center justify-center transition-colors group flex-shrink-0 ${
+                        isStartMenuOpen ? 'bg-gray-700 bg-opacity-70' : 'bg-transparent hover:bg-gray-700 hover:bg-opacity-50'
+                    }`}
+                >
                     <FaWindows className="w-4 sm:w-6 h-4 sm:h-6 text-white" />
                 </button>
 
@@ -208,6 +220,7 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
                 </button> */}
             </div>
         </div>
+        </>
     )
 }
 
