@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { GoSearch } from "react-icons/go";
 import {
     FaWindows,
     FaSearch,
@@ -28,16 +29,17 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
         return date.toLocaleTimeString([], {
             hour: '2-digit',
             minute: '2-digit',
-            hour12: false
+            hour12: true
         })
     }
 
     const formatDate = (date) => {
-        return date.toLocaleDateString('en-US', {
-            month: 'numeric',
-            day: 'numeric',
-            year: 'numeric'
-        })
+        const options = {
+            day: '2-digit',
+            month: 'short',
+            year: '2-digit'
+        }
+        return date.toLocaleDateString('en-GB', options)
     }
 
     // Windows-style system icons
@@ -53,13 +55,13 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
             {/* Left Side - Start Button and Search */}
             <div className="flex items-center space-x-1">
                 {/* Windows Start Button */}
-                <button className="w-12 h-8 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors group">
-                    <FaWindows className="w-4 h-4 text-white" />
+                <button className="w-12 h-8 cursor-pointer bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors group">
+                    <FaWindows className="w-6 h-6 text-white" />
                 </button>
 
                 {/* Search Icon */}
-                <button className="w-10 h-8 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors">
-                    <FaSearch className="w-4 h-4 text-white" />
+                <button className="w-10 cursor-pointer h-8 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors">
+                    <GoSearch className="w-6 h-6 rotate-90 text-white" />
                 </button>
 
                 {/* Open Windows */}
@@ -85,38 +87,29 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
 
             {/* Right Side - System Tray */}
             <div className="flex items-center space-x-1">
-                {/* System Icons */}
-                <div className="flex items-center space-x-1">
-                    {systemIcons.map((icon, index) => {
-                        const IconComponent = icon.icon
-                        return (
-                            <button
-                                key={index}
-                                className="w-8 h-8 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors"
-                                title={icon.title}
-                            >
-                                {icon.name === 'Language' ? (
-                                    <div className="flex flex-col items-center">
-                                        <IconComponent className="w-3 h-3 text-white" />
-                                        <span className="text-white text-xs font-medium leading-none">ENG</span>
-                                    </div>
-                                ) : (
-                                    <IconComponent className="w-4 h-4 text-white" />
-                                )}
-                            </button>
-                        )
-                    })}
-                </div>
-
                 {/* Notification Area */}
                 <button className="w-8 h-8 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors">
                     <FaChevronUp className="w-3 h-3 text-white" />
                 </button>
 
-                {/* Notifications */}
-                <button className="w-8 h-8 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors">
-                    <MdNotifications className="w-4 h-4 text-white" />
+                {/* Language */}
+                <button className="bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex flex-col items-center justify-center transition-colors px-2 py-1">
+                    <span className="text-white text-xs font-medium leading-tight">ENG</span>
+                    <span className="text-white text-xs font-medium leading-tight">IN</span>
                 </button>
+
+                {/* System Icons */}
+                <div className="flex items-center">
+                    <button className="w-8 h-8 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors" title="Network">
+                        <FaWifi className="w-4 h-4 text-white" />
+                    </button>
+                    <button className="w-8 h-8 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors" title="Volume">
+                        <FaVolumeUp className="w-4 h-4 text-white" />
+                    </button>
+                    <button className="w-8 h-8 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors" title="Battery">
+                        <FaBatteryFull className="w-4 h-4 text-white" />
+                    </button>
+                </div>
 
                 {/* Date and Time */}
                 <button className="text-white text-right hover:bg-gray-700 hover:bg-opacity-50 px-2 py-1 transition-colors">
