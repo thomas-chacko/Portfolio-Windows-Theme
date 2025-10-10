@@ -45,7 +45,7 @@ const DesktopIcon = ({ icon, onDoubleClick, style }) => {
       onClick={handleClick}
       onDoubleClick={handleDoubleClick}
     >
-      <div className="w-12 h-12 mb-1 filter drop-shadow-sm flex items-center justify-center">
+      <div className="w-10 h-10 mb-1 filter drop-shadow-sm flex items-center justify-center">
         {typeof icon.icon === 'string' ? (
           <img src={icon.icon} alt={icon.name} className="w-full h-full object-contain" />
         ) : (

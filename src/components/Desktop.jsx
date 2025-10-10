@@ -6,6 +6,8 @@ import boyIcon from '../assets/images/boy.png'
 import gamesIcon from "../assets/images/game.png"
 import fileIcon from "../assets/images/file.png"
 import suitcaseIcon from "../assets/images/suitcase.png"
+import recycleBinIcon from "../assets/images/recycle-bin.png"
+import settingIcon from "../assets/images/setting.png"
 
 const Desktop = ({ onOpenWindow }) => {
     const desktopIcons = [
@@ -259,7 +261,129 @@ const Desktop = ({ onOpenWindow }) => {
                     </div>
                 )
             }
-        }
+        },
+        {
+            id: 'settings',
+            name: 'Settings',
+            icon: settingIcon,
+            content: {
+                title: 'Settings',
+                type: 'settings',
+                icon: settingIcon,
+                content: (
+                    <div className="p-4 lg:p-6">
+                        <h3 className="text-lg lg:text-xl font-semibold mb-4">System Settings</h3>
+                        <div className="space-y-4">
+                            {/* Display Settings */}
+                            <div className="bg-gray-50 p-3 lg:p-4 rounded-lg">
+                                <div className="flex items-center mb-3">
+                                    <div className="text-xl lg:text-2xl mr-3">🖥️</div>
+                                    <h4 className="font-semibold text-sm lg:text-base">Display</h4>
+                                </div>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div className="bg-white p-3 rounded border">
+                                        <p className="text-xs lg:text-sm font-medium">Resolution</p>
+                                        <p className="text-xs text-gray-600">1920 x 1080</p>
+                                    </div>
+                                    <div className="bg-white p-3 rounded border">
+                                        <p className="text-xs lg:text-sm font-medium">Theme</p>
+                                        <p className="text-xs text-gray-600">Windows Light</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* System Settings */}
+                            <div className="bg-gray-50 p-3 lg:p-4 rounded-lg">
+                                <div className="flex items-center mb-3">
+                                    <div className="text-xl lg:text-2xl mr-3">⚙️</div>
+                                    <h4 className="font-semibold text-sm lg:text-base">System</h4>
+                                </div>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div className="bg-white p-3 rounded border">
+                                        <p className="text-xs lg:text-sm font-medium">Version</p>
+                                        <p className="text-xs text-gray-600">Portfolio OS v1.0</p>
+                                    </div>
+                                    <div className="bg-white p-3 rounded border">
+                                        <p className="text-xs lg:text-sm font-medium">Build</p>
+                                        <p className="text-xs text-gray-600">React 18.2.0</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Network Settings */}
+                            <div className="bg-gray-50 p-3 lg:p-4 rounded-lg">
+                                <div className="flex items-center mb-3">
+                                    <div className="text-xl lg:text-2xl mr-3">🌐</div>
+                                    <h4 className="font-semibold text-sm lg:text-base">Network & Internet</h4>
+                                </div>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    <div className="bg-white p-3 rounded border">
+                                        <p className="text-xs lg:text-sm font-medium">Status</p>
+                                        <p className="text-xs text-green-600">Connected</p>
+                                    </div>
+                                    <div className="bg-white p-3 rounded border">
+                                        <p className="text-xs lg:text-sm font-medium">Connection</p>
+                                        <p className="text-xs text-gray-600">Wi-Fi</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Privacy Settings */}
+                            <div className="bg-gray-50 p-3 lg:p-4 rounded-lg">
+                                <div className="flex items-center mb-3">
+                                    <div className="text-xl lg:text-2xl mr-3">🔒</div>
+                                    <h4 className="font-semibold text-sm lg:text-base">Privacy & Security</h4>
+                                </div>
+                                <div className="space-y-2">
+                                    <div className="flex items-center justify-between bg-white p-3 rounded border">
+                                        <span className="text-xs lg:text-sm">Location Services</span>
+                                        <div className="w-10 h-5 bg-blue-500 rounded-full relative">
+                                            <div className="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5"></div>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center justify-between bg-white p-3 rounded border">
+                                        <span className="text-xs lg:text-sm">Analytics</span>
+                                        <div className="w-10 h-5 bg-gray-300 rounded-full relative">
+                                            <div className="w-4 h-4 bg-white rounded-full absolute left-0.5 top-0.5"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+        },
+        {
+            id: 'recycle-bin',
+            name: 'Recycle Bin',
+            icon: recycleBinIcon,
+            content: {
+                title: 'Recycle Bin',
+                type: 'recycle-bin',
+                icon: recycleBinIcon,
+                content: (
+                    <div className="p-4 lg:p-6">
+                        <div className="flex flex-col items-center justify-center h-full min-h-[300px]">
+                            <div className="text-6xl lg:text-8xl mb-4 opacity-50">🗑️</div>
+                            <h3 className="text-lg lg:text-xl font-semibold mb-2 text-gray-600">Recycle Bin is Empty</h3>
+                            <p className="text-sm lg:text-base text-gray-500 text-center max-w-md">
+                                When you delete files, they will appear here before being permanently removed.
+                            </p>
+                            <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                                <div className="flex items-center text-blue-700">
+                                    <div className="text-lg mr-2">💡</div>
+                                    <p className="text-xs lg:text-sm">
+                                        <strong>Tip:</strong> You can restore deleted files from here or empty the recycle bin to free up space.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+        },
+
     ]
 
     return (
