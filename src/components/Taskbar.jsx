@@ -1,19 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { GoSearch } from "react-icons/go";
 import { FaBatteryHalf } from "react-icons/fa";
 import {
     FaWindows,
-    FaSearch,
     FaWifi,
     FaVolumeUp,
-    FaBatteryFull,
-    FaBell,
     FaChevronUp
 } from 'react-icons/fa'
-import {
-    MdLanguage,
-    MdNotifications
-} from 'react-icons/md'
 
 const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
     const [currentTime, setCurrentTime] = useState(new Date())
@@ -46,13 +39,7 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
         return date.toLocaleDateString('en-GB', options)
     }
 
-    // Windows-style system icons
-    const systemIcons = [
-        { name: 'WiFi', icon: FaWifi, title: 'Network' },
-        { name: 'Volume', icon: FaVolumeUp, title: 'Volume' },
-        { name: 'Battery', icon: FaBatteryFull, title: 'Battery' },
-        { name: 'Language', icon: MdLanguage, title: 'Language' },
-    ]
+
 
     return (
         <div className="fixed bottom-0 left-0 right-0 h-12 bg-gray-900 bg-opacity-95 backdrop-blur-sm flex items-center justify-between px-1 z-50 border-t border-gray-800">
@@ -75,15 +62,35 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
                             key={window.id}
                             onClick={() => onRestoreWindow(window.id)}
                             className={`
-                px-3 h-8 text-white text-xs font-medium transition-colors border-b-2
+                h-8 transition-colors border-b-2 flex items-center justify-center
                 ${activeWindow === window.id && !window.isMinimized
                                     ? 'bg-gray-700 bg-opacity-50 border-blue-400'
                                     : 'hover:bg-gray-700 hover:bg-opacity-30 border-transparent'
                                 }
                 ${window.isMinimized ? 'bg-gray-800 bg-opacity-30' : ''}
+                ${window.isMinimized ? 'px-2' : 'px-3'}
               `}
+                            title={window.title}
                         >
-                            {window.title}
+                            {window.isMinimized ? (
+                                // Show icon when minimized
+                                <div className="w-6 h-6 flex items-center justify-center">
+                                    {window.icon ? (
+                                        <img 
+                                            src={window.icon} 
+                                            alt={window.title} 
+                                            className="w-4 h-4 object-contain"
+                                        />
+                                    ) : (
+                                        <div className="w-4 h-4 bg-gray-400 rounded"></div>
+                                    )}
+                                </div>
+                            ) : (
+                                // Show title when not minimized
+                                <span className="text-white text-xs font-medium">
+                                    {window.title}
+                                </span>
+                            )}
                         </button>
                     ))}
                 </div>

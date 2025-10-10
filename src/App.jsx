@@ -24,7 +24,8 @@ const App = () => {
     const newWindow = {
       id: Date.now(),
       ...windowData,
-      isMinimized: false
+      isMinimized: false,
+      isMaximized: false
     }
     setWindows(prev => [...prev, newWindow])
     setActiveWindow(newWindow.id)
@@ -40,6 +41,12 @@ const App = () => {
       w.id === windowId ? { ...w, isMinimized: true } : w
     ))
     setActiveWindow(null)
+  }
+
+  const maximizeWindow = (windowId) => {
+    setWindows(prev => prev.map(w =>
+      w.id === windowId ? { ...w, isMaximized: !w.isMaximized } : w
+    ))
   }
 
   const restoreWindow = (windowId) => {
@@ -67,6 +74,7 @@ const App = () => {
           isActive={activeWindow === window.id}
           onClose={() => closeWindow(window.id)}
           onMinimize={() => minimizeWindow(window.id)}
+          onMaximize={() => maximizeWindow(window.id)}
           onFocus={() => focusWindow(window.id)}
         />
       ))}

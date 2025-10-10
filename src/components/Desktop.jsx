@@ -16,6 +16,7 @@ const Desktop = ({ onOpenWindow }) => {
             content: {
                 title: 'This PC',
                 type: 'system',
+                icon: desktopIcon,
                 content: (
                     <div className="p-6">
                         <div className="flex items-center mb-4">
@@ -54,6 +55,7 @@ const Desktop = ({ onOpenWindow }) => {
             content: {
                 title: 'Profile',
                 type: 'profile',
+                icon: boyIcon,
                 content: (
                     <div className="p-6">
                         <div className="flex items-start mb-6">
@@ -98,6 +100,7 @@ const Desktop = ({ onOpenWindow }) => {
             content: {
                 title: 'Games',
                 type: 'games',
+                icon: gamesIcon,
                 content: (
                     <div className="p-6">
                         <h3 className="text-xl font-semibold mb-4">Game Projects</h3>
@@ -134,6 +137,7 @@ const Desktop = ({ onOpenWindow }) => {
             content: {
                 title: 'Resume',
                 type: 'resume',
+                icon: fileIcon,
                 content: (
                     <div className="p-6">
                         <div className="flex justify-between items-center mb-6">
@@ -191,6 +195,7 @@ const Desktop = ({ onOpenWindow }) => {
             content: {
                 title: 'My Works',
                 type: 'portfolio',
+                icon: suitcaseIcon,
                 content: (
                     <div className="p-6">
                         <h3 className="text-xl font-semibold mb-4">Portfolio Projects</h3>

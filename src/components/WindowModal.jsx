@@ -1,25 +1,40 @@
-import React, { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
-const WindowModal = ({ window, isActive, onClose, onMinimize, onFocus }) => {
-  const [position, setPosition] = useState({ x: 100, y: 100 })
+const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaximize, onFocus }) => {
+  // Calculate initial center position
+  const getInitialPosition = () => {
+    const windowWidth = 600
+    const windowHeight = 500
+    const centerX = (window.innerWidth - windowWidth) / 2
+    const centerY = (window.innerHeight - windowHeight) / 2 - 50 // Account for taskbar
+    return { x: Math.max(0, centerX), y: Math.max(0, centerY) }
+  }
+
+  const [position, setPosition] = useState(getInitialPosition())
   const [isDragging, setIsDragging] = useState(false)
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
+  const [isMaximized, setIsMaximized] = useState(false)
+  const [previousPosition, setPreviousPosition] = useState(getInitialPosition())
   const windowRef = useRef(null)
 
   useEffect(() => {
-    // Center window on first open
-    if (windowRef.current) {
-      const rect = windowRef.current.getBoundingClientRect()
-      setPosition({
-        x: (window.innerWidth - rect.width) / 2,
-        y: (window.innerHeight - rect.height) / 2 - 50
-      })
+    // Ensure window stays centered on window resize
+    const handleResize = () => {
+      if (!isMaximized && !isDragging) {
+        const newPosition = getInitialPosition()
+        setPosition(newPosition)
+        setPreviousPosition(newPosition)
+      }
     }
-  }, [])
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [isMaximized, isDragging])
 
   const handleMouseDown = (e) => {
     if (e.target.closest('.window-controls')) return
-    
+    if (isMaximized) return // Don't allow dragging when maximized
+
     setIsDragging(true)
     setDragOffset({
       x: e.clientX - position.x,
@@ -28,9 +43,27 @@ const WindowModal = ({ window, isActive, onClose, onMinimize, onFocus }) => {
     onFocus()
   }
 
+  const handleMaximize = () => {
+    if (isMaximized) {
+      // Restore to previous size and position
+      setIsMaximized(false)
+      setPosition(previousPosition)
+    } else {
+      // Save current position and maximize
+      setPreviousPosition(position)
+      setIsMaximized(true)
+      setPosition({ x: 0, y: 0 })
+    }
+  }
+
+  const handleDoubleClickTitleBar = (e) => {
+    if (e.target.closest('.window-controls')) return
+    handleMaximize()
+  }
+
   const handleMouseMove = (e) => {
     if (!isDragging) return
-    
+
     setPosition({
       x: e.clientX - dragOffset.x,
       y: Math.max(0, e.clientY - dragOffset.y)
@@ -52,61 +85,106 @@ const WindowModal = ({ window, isActive, onClose, onMinimize, onFocus }) => {
     }
   }, [isDragging, dragOffset])
 
-  if (window.isMinimized) return null
+  if (windowData.isMinimized) return null
+
+  const windowStyle = isMaximized
+    ? {
+      left: '0px',
+      top: '0px',
+      width: '100vw',
+      height: 'calc(100vh - 48px)', // Account for taskbar height
+      borderRadius: '0px'
+    }
+    : {
+      left: `${position.x}px`,
+      top: `${position.y}px`,
+      width: '600px',
+      height: '500px',
+      minHeight: '300px'
+    }
 
   return (
     <div
       ref={windowRef}
       className={`
-        fixed bg-white rounded-lg shadow-2xl border border-gray-300
-        transition-all duration-300 ease-out
+        fixed bg-white shadow-2xl border border-gray-300
+        transition-all duration-200 ease-out
         ${isActive ? 'z-50' : 'z-40'}
         ${isDragging ? 'cursor-grabbing' : 'cursor-default'}
+        ${isMaximized ? 'rounded-none' : 'rounded-lg'}
         animate-slideInUp
       `}
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        width: '600px',
-        maxHeight: '500px',
-        minHeight: '300px'
-      }}
+      style={windowStyle}
       onClick={onFocus}
     >
       {/* Window Title Bar */}
       <div
         className={`
-          flex items-center justify-between px-4 py-2 rounded-t-lg cursor-grab
+          flex items-center justify-between px-4 py-2 cursor-grab select-none
+          ${isMaximized ? 'rounded-none' : 'rounded-t-lg'}
           ${isActive ? 'bg-blue-600' : 'bg-gray-400'}
           transition-colors duration-200
         `}
         onMouseDown={handleMouseDown}
+        onDoubleClick={handleDoubleClickTitleBar}
       >
         <div className="flex items-center">
           <span className={`text-sm font-medium ${isActive ? 'text-white' : 'text-gray-700'}`}>
-            {window.title}
+            {windowData.title}
           </span>
         </div>
-        
-        <div className="flex items-center space-x-1 window-controls">
+
+        <div className="flex items-center window-controls">
+          {/* Minimize Button */}
           <button
             onClick={onMinimize}
-            className="w-6 h-6 rounded hover:bg-black hover:bg-opacity-20 flex items-center justify-center transition-colors"
+            className="w-11 h-7 hover:bg-black hover:bg-opacity-20 flex items-center justify-center transition-colors"
+            title="Minimize"
           >
-            <span className={`text-xs ${isActive ? 'text-white' : 'text-gray-700'}`}>−</span>
+            <div className={`w-3 h-0.5 ${isActive ? 'bg-white' : 'bg-gray-700'}`}></div>
           </button>
+
+          {/* Maximize/Restore Button */}
+          <button
+            onClick={handleMaximize}
+            className="w-11 h-7 hover:bg-black hover:bg-opacity-20 flex items-center justify-center transition-colors"
+            title={isMaximized ? "Restore Down" : "Maximize"}
+          >
+            {isMaximized ? (
+              // Restore icon (two overlapping squares)
+              <div className="relative">
+                <div className={`w-2.5 h-2.5 border ${isActive ? 'border-white' : 'border-gray-700'} absolute -top-0.5 -left-0.5`}></div>
+                <div className={`w-2.5 h-2.5 border ${isActive ? 'border-white' : 'border-gray-700'} bg-transparent`}></div>
+              </div>
+            ) : (
+              // Maximize icon (single square)
+              <div className={`w-3 h-3 border ${isActive ? 'border-white' : 'border-gray-700'}`}></div>
+            )}
+          </button>
+
+          {/* Close Button */}
           <button
             onClick={onClose}
-            className="w-6 h-6 rounded hover:bg-red-500 flex items-center justify-center transition-colors group"
+            className="w-11 h-7 hover:bg-red-500 flex items-center justify-center transition-colors group"
+            title="Close"
           >
-            <span className={`text-xs group-hover:text-white ${isActive ? 'text-white' : 'text-gray-700'}`}>×</span>
+            <div className="relative w-3 h-3">
+              <div className={`absolute w-3 h-0.5 ${isActive ? 'bg-white' : 'bg-gray-700'} group-hover:bg-white transform rotate-45 top-1.5`}></div>
+              <div className={`absolute w-3 h-0.5 ${isActive ? 'bg-white' : 'bg-gray-700'} group-hover:bg-white transform -rotate-45 top-1.5`}></div>
+            </div>
           </button>
         </div>
       </div>
 
       {/* Window Content */}
-      <div className="overflow-y-auto" style={{ maxHeight: '450px' }}>
-        {window.content}
+      <div
+        className="overflow-y-auto bg-white"
+        style={{
+          height: isMaximized ? 'calc(100vh - 96px)' : '450px',
+          maxHeight: isMaximized ? 'calc(100vh - 96px)' : '450px'
+        }}
+      >
+        {windowData.content}
       </div>
     </div>
   )

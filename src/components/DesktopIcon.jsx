@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 const DesktopIcon = ({ icon, onDoubleClick, style }) => {
   const [isSelected, setIsSelected] = useState(false)
