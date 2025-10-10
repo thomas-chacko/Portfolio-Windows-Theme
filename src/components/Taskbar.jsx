@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { GoSearch } from "react-icons/go";
+import { FaBatteryHalf } from "react-icons/fa";
 import {
     FaWindows,
     FaSearch,
@@ -16,6 +17,9 @@ import {
 
 const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
     const [currentTime, setCurrentTime] = useState(new Date())
+    const [showBatteryTooltip, setShowBatteryTooltip] = useState(false)
+    const [showWifiTooltip, setShowWifiTooltip] = useState(false)
+    const [showVolumeTooltip, setShowVolumeTooltip] = useState(false)
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -86,9 +90,9 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
             </div>
 
             {/* Right Side - System Tray */}
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center space-x-2">
                 {/* Notification Area */}
-                <button className="w-8 h-8 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors">
+                <button className="w-8 h-8 cursor-pointer bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors">
                     <FaChevronUp className="w-3 h-3 text-white" />
                 </button>
 
@@ -100,15 +104,77 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
 
                 {/* System Icons */}
                 <div className="flex items-center">
-                    <button className="w-8 h-8 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors" title="Network">
-                        <FaWifi className="w-4 h-4 text-white" />
-                    </button>
-                    <button className="w-8 h-8 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors" title="Volume">
-                        <FaVolumeUp className="w-4 h-4 text-white" />
-                    </button>
-                    <button className="w-8 h-8 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors" title="Battery">
-                        <FaBatteryFull className="w-4 h-4 text-white" />
-                    </button>
+                    {/* WiFi Icon */}
+                    <div className="relative">
+                        <button
+                            className="w-7 h-7 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors"
+                            onMouseEnter={() => setShowWifiTooltip(true)}
+                            onMouseLeave={() => setShowWifiTooltip(false)}
+                        >
+                            <FaWifi className="w-4 h-4 text-white" />
+                        </button>
+
+                        {/* WiFi Tooltip */}
+                        {showWifiTooltip && (
+                            <div className="absolute bottom-12 right-0 bg-gray-800 bg-opacity-95 backdrop-blur-sm text-white p-2 rounded-lg shadow-lg border border-gray-700 min-w-[120px]">
+                                <div className="text-xs text-gray-300 mb-1">
+                                    BSNL
+                                </div>
+                                <div className="text-xs text-gray-400">
+                                    Internet access
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Volume Icon */}
+                    <div className="relative">
+                        <button
+                            className="w-7 h-7 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors"
+                            onMouseEnter={() => setShowVolumeTooltip(true)}
+                            onMouseLeave={() => setShowVolumeTooltip(false)}
+                        >
+                            <FaVolumeUp className="w-4 h-4 text-white" />
+                        </button>
+
+                        {/* Volume Tooltip */}
+                        {showVolumeTooltip && (
+                            <div className="absolute bottom-12 right-0 bg-gray-800 bg-opacity-95 backdrop-blur-sm text-white p-3 rounded-lg shadow-lg border border-gray-700 min-w-[180px]">
+                                <div className="text-xs mb-2">
+                                    Speakers: 75%
+                                </div>
+                                <div className="w-full bg-gray-600 rounded-full h-2">
+                                    <div className="bg-white h-2 rounded-full" style={{ width: '75%' }}></div>
+                                </div>
+                                <div className="text-xs text-gray-400 mt-2">
+                                    Realtek Audio
+                                </div>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Battery Icon */}
+                    <div className="relative">
+                        <button
+                            className="w-7 h-7 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors"
+                            onMouseEnter={() => setShowBatteryTooltip(true)}
+                            onMouseLeave={() => setShowBatteryTooltip(false)}
+                        >
+                            <FaBatteryHalf className="w-4 h-4 text-white" />
+                        </button>
+
+                        {/* Battery Tooltip */}
+                        {showBatteryTooltip && (
+                            <div className="absolute bottom-12 right-0 bg-gray-800 bg-opacity-95 backdrop-blur-sm text-white p-3 rounded-lg shadow-lg border border-gray-700 min-w-[220px]">
+                                <div className="text-sm mb-1">
+                                    Battery status: 81% remaining
+                                </div>
+                                <div className="text-sm text-gray-300">
+                                    2h 16min
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </div>
 
                 {/* Date and Time */}
@@ -118,8 +184,8 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
                 </button>
 
                 {/* Show Desktop Button */}
-                <button className="w-2 h-8 bg-transparent hover:bg-gray-600 border-l border-gray-700 transition-colors">
-                </button>
+                {/* <button className="w-2 h-8 bg-transparent hover:bg-gray-600 border-l border-gray-700 transition-colors">
+                </button> */}
             </div>
         </div>
     )
