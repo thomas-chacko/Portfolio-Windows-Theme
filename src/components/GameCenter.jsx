@@ -2,11 +2,11 @@ import { useState } from 'react'
 import TicTacToe from './games/TicTacToe'
 import MemoryGame from './games/MemoryGame'
 import NumberGuessing from './games/NumberGuessing'
-import { 
-  FaGamepad, 
-  FaArrowLeft, 
-  FaTh, 
-  FaBrain, 
+import {
+  FaGamepad,
+  FaArrowLeft,
+  FaTh,
+  FaBrain,
   FaBullseye,
   FaPlay,
   FaTrophy,
@@ -72,7 +72,7 @@ const GameCenter = () => {
           </button>
           <h2 className="text-xl lg:text-2xl font-bold text-white">{game.name}</h2>
         </div>
-        
+
         <div className="bg-gray-700 bg-opacity-50 rounded-lg border border-gray-600">
           <GameComponent />
         </div>
@@ -111,7 +111,7 @@ const GameCenter = () => {
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-xs text-gray-400 uppercase tracking-wide">Interactive Game</span>
-                <button 
+                <button
                   onClick={() => handleGameSelect(game.id)}
                   className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm font-medium transition-colors flex items-center cursor-pointer"
                 >
@@ -136,7 +136,7 @@ const GameCenter = () => {
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
             We're working on exciting new games to add to the collection. Stay tuned for more interactive experiences!
           </p>
-          
+
           {/* Preview Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="bg-gray-600 bg-opacity-30 border border-gray-500 border-dashed rounded-lg p-4">
@@ -149,7 +149,7 @@ const GameCenter = () => {
                 </span>
               </div>
             </div>
-            
+
             <div className="bg-gray-600 bg-opacity-30 border border-gray-500 border-dashed rounded-lg p-4">
               <div className="text-3xl mb-2 opacity-50">🧩</div>
               <h5 className="font-medium text-gray-400 mb-1">Puzzle Solver</h5>
@@ -160,7 +160,7 @@ const GameCenter = () => {
                 </span>
               </div>
             </div>
-            
+
             <div className="bg-gray-600 bg-opacity-30 border border-gray-500 border-dashed rounded-lg p-4">
               <div className="text-3xl mb-2 opacity-50">🎲</div>
               <h5 className="font-medium text-gray-400 mb-1">Dice Roller</h5>
@@ -172,7 +172,7 @@ const GameCenter = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="mt-6">
             <button className="bg-gray-600 text-gray-300 px-6 py-2 rounded font-medium cursor-not-allowed opacity-50">
               More Games Coming Soon

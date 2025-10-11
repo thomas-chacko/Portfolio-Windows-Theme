@@ -13,7 +13,9 @@ import me from "../assets/images/thomas.jpg"
 import {
     FaRocket, FaBolt, FaPhone, FaEnvelope, FaMobileAlt, FaMapMarkerAlt,
     FaLinkedin, FaGithub, FaFacebook, FaInstagram, FaDownload, FaUser,
-    FaLaptopCode, FaPalette, FaMobile, FaTools, FaCog, FaProjectDiagram
+    FaLaptopCode, FaPalette, FaMobile, FaTools, FaCog, FaProjectDiagram,
+    FaBriefcase, FaGraduationCap, FaCode, FaDatabase, FaReact, FaNodeJs,
+    FaGitAlt, FaCalendarAlt, FaMapPin, FaExternalLinkAlt
 } from 'react-icons/fa'
 import {
     HiSparkles, HiLightningBolt
@@ -533,50 +535,203 @@ const Desktop = ({ onOpenWindow }) => {
                 type: 'resume',
                 icon: fileIcon,
                 content: (
-                    <div className="p-6">
-                        <div className="flex justify-between items-center mb-6">
-                            <h3 className="text-xl font-semibold">Resume</h3>
-                            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
-                                📥 Download Resume
-                            </button>
+                    <div className="p-4 lg:p-6">
+                        {/* Header Section */}
+                        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg p-6 mb-6 text-white">
+                            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                                <div className="mb-4 lg:mb-0">
+                                    <h1 className="text-2xl lg:text-3xl font-bold mb-2">Thomas Chacko</h1>
+                                    <p className="text-blue-100 text-lg mb-3">Front-End Developer</p>
+                                    <div className="flex flex-wrap gap-4 text-sm">
+                                        <div className="flex items-center">
+                                            <FaMapPin className="mr-2" />
+                                            Kochi, India
+                                        </div>
+                                        <div className="flex items-center">
+                                            <FaPhone className="mr-2" />
+                                            8330811956
+                                        </div>
+                                        <div className="flex items-center">
+                                            <MdEmail className="mr-2" />
+                                            thomaschacko180@gmail.com
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col gap-2">
+                                    <button className="bg-white text-blue-600 px-4 py-2 rounded font-medium hover:bg-blue-50 transition-colors flex items-center justify-center">
+                                        <FaDownload className="mr-2" />
+                                        Download Resume
+                                    </button>
+                                    <div className="flex gap-2">
+                                        <a href="https://thomaschacko.com" className="bg-blue-500 hover:bg-blue-400 px-3 py-1 rounded text-sm transition-colors flex items-center">
+                                            <FaExternalLinkAlt className="mr-1" />
+                                            Portfolio
+                                        </a>
+                                        <a href="https://linkedin.com/in/thomas-chacko" className="bg-blue-500 hover:bg-blue-400 px-3 py-1 rounded text-sm transition-colors flex items-center">
+                                            <FaLinkedin className="mr-1" />
+                                            LinkedIn
+                                        </a>
+                                        <a href="https://github.com/thomas-chacko" className="bg-blue-500 hover:bg-blue-400 px-3 py-1 rounded text-sm transition-colors flex items-center">
+                                            <FaGithub className="mr-1" />
+                                            GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div className="space-y-6">
-                            <section>
-                                <h4 className="text-lg font-semibold mb-3 text-blue-600">Experience</h4>
+                        {/* Summary Section */}
+                        <div className="bg-gray-700 bg-opacity-50 border border-gray-600 rounded-lg p-6 mb-6">
+                            <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                                <FaUser className="mr-3 text-blue-400" />
+                                Professional Summary
+                            </h3>
+                            <p className="text-gray-300 leading-relaxed">
+                                Self-taught Front-End Developer passionate about building responsive, user-friendly web applications.
+                                Proficient in React.js, JavaScript, HTML, CSS, and Tailwind CSS, with expertise in component-based
+                                architecture and state management. Dedicated to writing clean, efficient code, optimizing performance,
+                                and continuous learning.
+                            </p>
+                        </div>
+
+                        {/* Experience Section */}
+                        <div className="bg-gray-700 bg-opacity-50 border border-gray-600 rounded-lg p-6 mb-6">
+                            <h3 className="text-xl font-bold text-white mb-6 flex items-center">
+                                <FaBriefcase className="mr-3 text-green-400" />
+                                Professional Experience
+                            </h3>
+
+                            <div className="border-l-4 border-blue-500 pl-6 relative">
+                                <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full"></div>
+                                <div className="mb-6">
+                                    <h4 className="text-lg font-semibold text-white mb-2">Front End Developer</h4>
+                                    <div className="flex flex-wrap items-center gap-4 mb-3">
+                                        <span className="text-blue-400 font-medium">StratAgile, Kochi</span>
+                                        <span className="bg-green-600 bg-opacity-20 text-green-400 px-2 py-1 rounded text-sm">On-site</span>
+                                        <div className="flex items-center text-gray-400 text-sm">
+                                            <FaCalendarAlt className="mr-1" />
+                                            March 2024 – Present
+                                        </div>
+                                    </div>
+                                    <ul className="text-gray-300 space-y-2 text-sm">
+                                        <li>• Developed an HRMS application using React.js, integrating APIs and collaborating with backend teams to deliver a responsive, mobile-friendly solution</li>
+                                        <li>• Built an AI-powered template generation application using Next.js with TypeScript and Tailwind CSS, implementing efficient state management</li>
+                                        <li>• Designed an interactive internal platform using React.js, Tailwind CSS, and GSAP with Node.js and Express.js backend and MySQL database</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Projects Section */}
+                        <div className="bg-gray-700 bg-opacity-50 border border-gray-600 rounded-lg p-6 mb-6">
+                            <h3 className="text-xl font-bold text-white mb-6 flex items-center">
+                                <FaCode className="mr-3 text-purple-400" />
+                                Featured Projects
+                            </h3>
+
+                            <div className="space-y-6">
+                                {/* Threads Clone */}
+                                <div className="border border-gray-600 rounded-lg p-4">
+                                    <h4 className="text-lg font-semibold text-white mb-2">Threads Clone</h4>
+                                    <p className="text-gray-300 text-sm mb-3">
+                                        Full-stack social media platform built with MERN stack, featuring user authentication,
+                                        thread creation, and social interactions with secure JWT authentication and bcrypt password hashing.
+                                    </p>
+                                    <div className="flex flex-wrap gap-2">
+                                        <span className="bg-slate-600 bg-opacity-40 text-slate-300 px-2 py-1 rounded text-xs border border-slate-500">React.js</span>
+                                        <span className="bg-emerald-700 bg-opacity-40 text-emerald-300 px-2 py-1 rounded text-xs border border-emerald-600">Node.js</span>
+                                        <span className="bg-emerald-700 bg-opacity-40 text-emerald-300 px-2 py-1 rounded text-xs border border-emerald-600">MongoDB</span>
+                                        <span className="bg-indigo-700 bg-opacity-40 text-indigo-300 px-2 py-1 rounded text-xs border border-indigo-600">Chakra UI</span>
+                                    </div>
+                                </div>
+
+                                {/* Portfolio */}
+                                <div className="border border-gray-600 rounded-lg p-4">
+                                    <h4 className="text-lg font-semibold text-white mb-2">Personal Portfolio</h4>
+                                    <p className="text-gray-300 text-sm mb-3">
+                                        Responsive portfolio website built with Next.js and Tailwind CSS, deployed on Vercel
+                                        for optimal performance and scalability.
+                                    </p>
+                                    <div className="flex flex-wrap gap-2">
+                                        <span className="bg-slate-600 bg-opacity-40 text-slate-300 px-2 py-1 rounded text-xs border border-slate-500">Next.js</span>
+                                        <span className="bg-indigo-700 bg-opacity-40 text-indigo-300 px-2 py-1 rounded text-xs border border-indigo-600">Tailwind CSS</span>
+                                        <span className="bg-amber-700 bg-opacity-40 text-amber-300 px-2 py-1 rounded text-xs border border-amber-600">Vercel</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Education & Skills */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            {/* Education */}
+                            <div className="bg-gray-700 bg-opacity-50 border border-gray-600 rounded-lg p-6">
+                                <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                                    <FaGraduationCap className="mr-3 text-yellow-400" />
+                                    Education
+                                </h3>
                                 <div className="space-y-4">
-                                    <div className="border-l-4 border-blue-200 pl-4">
-                                        <h5 className="font-semibold">[Job Title] - [Company Name]</h5>
-                                        <p className="text-sm text-gray-600 mb-2">[Start Date] - [End Date]</p>
-                                        <p className="text-gray-700">Description of your role and achievements...</p>
+                                    <div>
+                                        <h4 className="font-semibold text-white">Full Stack Development Internship</h4>
+                                        <p className="text-blue-400 text-sm">Luminar TechnoLab, Kochi</p>
+                                        <p className="text-gray-400 text-sm">July 2023 – January 2024</p>
                                     </div>
-                                    <div className="border-l-4 border-blue-200 pl-4">
-                                        <h5 className="font-semibold">[Previous Job Title] - [Previous Company]</h5>
-                                        <p className="text-sm text-gray-600 mb-2">[Start Date] - [End Date]</p>
-                                        <p className="text-gray-700">Description of your previous role...</p>
+                                    <div>
+                                        <h4 className="font-semibold text-white">Bachelor of Computer Application (BCA)</h4>
+                                        <p className="text-blue-400 text-sm">University of Kerala</p>
+                                        <p className="text-gray-400 text-sm">June 2020 – March 2023</p>
                                     </div>
                                 </div>
-                            </section>
+                            </div>
 
-                            <section>
-                                <h4 className="text-lg font-semibold mb-3 text-blue-600">Education</h4>
-                                <div className="border-l-4 border-green-200 pl-4">
-                                    <h5 className="font-semibold">[Degree] - [University Name]</h5>
-                                    <p className="text-sm text-gray-600 mb-2">[Graduation Year]</p>
-                                    <p className="text-gray-700">Relevant coursework and achievements...</p>
+                            {/* Skills */}
+                            <div className="bg-gray-700 bg-opacity-50 border border-gray-600 rounded-lg p-6">
+                                <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                                    <FaTools className="mr-3 text-orange-400" />
+                                    Technical Skills
+                                </h3>
+                                <div className="space-y-4">
+                                    <div>
+                                        <h4 className="text-sm font-medium text-gray-300 mb-2">Frontend</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            {['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React.js', 'Next.js', 'Redux'].map(skill => (
+                                                <span key={skill} className="bg-slate-600 bg-opacity-40 text-slate-300 px-2 py-1 rounded text-xs border border-slate-500">
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 className="text-sm font-medium text-gray-300 mb-2">Styling & UI</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            {['Tailwind CSS', 'SASS', 'Bootstrap', 'Chakra UI', 'Material UI'].map(skill => (
+                                                <span key={skill} className="bg-indigo-700 bg-opacity-40 text-indigo-300 px-2 py-1 rounded text-xs border border-indigo-600">
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 className="text-sm font-medium text-gray-300 mb-2">Backend & Database</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            {['Node.js', 'Express.js', 'MongoDB', 'MySQL'].map(skill => (
+                                                <span key={skill} className="bg-emerald-700 bg-opacity-40 text-emerald-300 px-2 py-1 rounded text-xs border border-emerald-600">
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h4 className="text-sm font-medium text-gray-300 mb-2">Tools & Deployment</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            {['Git', 'GitHub', 'Vercel'].map(skill => (
+                                                <span key={skill} className="bg-amber-700 bg-opacity-40 text-amber-300 px-2 py-1 rounded text-xs border border-amber-600">
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
-                            </section>
-
-                            <section>
-                                <h4 className="text-lg font-semibold mb-3 text-blue-600">Skills</h4>
-                                <div className="flex flex-wrap gap-2">
-                                    {['React', 'JavaScript', 'TypeScript', 'HTML/CSS', 'Node.js', 'Git', 'Tailwind CSS', 'MongoDB'].map(skill => (
-                                        <span key={skill} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">
-                                            {skill}
-                                        </span>
-                                    ))}
-                                </div>
-                            </section>
+                            </div>
                         </div>
                     </div>
                 )
