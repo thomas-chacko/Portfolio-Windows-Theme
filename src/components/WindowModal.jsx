@@ -184,7 +184,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
       <div
         className={`
           flex items-center justify-between select-none flex-shrink-0
-          ${isMobileOrTablet ? 'px-4 py-3 h-14' : 'px-4 py-2'}
+          ${isMobileOrTablet ? 'pl-4 pr-0 h-14' : 'pl-4 pr-0 h-10'}
           ${isDragging ? 'cursor-grabbing' : !isMobileOrTablet ? 'cursor-grab' : ''}
           ${isMaximized && !isMobileOrTablet ? 'rounded-none' : !isMobileOrTablet ? 'rounded-t-lg' : ''}
           ${isActive ? 'bg-gray-700' : 'bg-gray-600'}
@@ -211,7 +211,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
           {!isMobileOrTablet && (
             <button
               onClick={onMinimize}
-              className="w-11 h-7 hover:bg-black hover:bg-opacity-20 flex items-center justify-center transition-colors"
+              className="w-11 h-10 cursor-pointer hover:bg-gray-600 hover:bg-opacity-80 flex items-center justify-center transition-colors"
               title="Minimize"
             >
               <div className={`w-3 h-0.5 ${isActive ? 'bg-white' : 'bg-gray-200'}`}></div>
@@ -222,7 +222,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
           {!isMobileOrTablet && (
             <button
               onClick={handleMaximize}
-              className="w-11 h-7 hover:bg-black hover:bg-opacity-20 flex items-center justify-center transition-colors"
+              className="w-11 h-10 cursor-pointer hover:bg-gray-600 hover:bg-opacity-80 flex items-center justify-center transition-colors"
               title={isMaximized ? "Restore Down" : "Maximize"}
             >
               {isMaximized ? (
@@ -241,7 +241,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
           {/* Close Button */}
           <button
             onClick={onClose}
-            className={`${isMobileOrTablet ? 'w-12 h-10' : 'w-11 h-7'} hover:bg-red-500 flex items-center justify-center transition-colors group`}
+            className={`${isMobileOrTablet ? 'w-12 h-14' : 'w-11 h-10'} cursor-pointer hover:bg-red-500 flex items-center justify-center transition-colors group ${isMaximized || isMobileOrTablet ? '' : 'rounded-tr-lg'}`}
             title="Close"
           >
             <div className={`relative ${isMobileOrTablet ? 'w-4 h-4' : 'w-3 h-3'}`}>
