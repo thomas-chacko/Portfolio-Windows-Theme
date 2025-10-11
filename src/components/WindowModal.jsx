@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 
 const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaximize, onFocus }) => {
   // Calculate initial center position for desktop
@@ -16,6 +16,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
   const [isMaximized, setIsMaximized] = useState(false)
   const [previousPosition, setPreviousPosition] = useState(getInitialPosition())
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false)
+  const [hasEverBeenDragged, setHasEverBeenDragged] = useState(false)
   const windowRef = useRef(null)
 
   useEffect(() => {
@@ -51,6 +52,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
     if (isMaximized || isMobileOrTablet) return // Don't allow dragging when maximized or on mobile
 
     setIsDragging(true)
+    setHasEverBeenDragged(true)
     setDragOffset({
       x: e.clientX - position.x,
       y: e.clientY - position.y
@@ -79,29 +81,42 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
     }
   }
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = useCallback((e) => {
     if (!isDragging) return
 
-    setPosition({
-      x: e.clientX - dragOffset.x,
-      y: Math.max(0, e.clientY - dragOffset.y)
+    // Use requestAnimationFrame for smooth animation
+    requestAnimationFrame(() => {
+      setPosition({
+        x: e.clientX - dragOffset.x,
+        y: Math.max(0, e.clientY - dragOffset.y)
+      })
     })
-  }
+  }, [isDragging, dragOffset])
 
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     setIsDragging(false)
-  }
+  }, [])
 
   useEffect(() => {
     if (isDragging) {
-      document.addEventListener('mousemove', handleMouseMove)
-      document.addEventListener('mouseup', handleMouseUp)
+      // Use passive listeners for better performance
+      document.addEventListener('mousemove', handleMouseMove, { passive: true })
+      document.addEventListener('mouseup', handleMouseUp, { passive: true })
+
+      // Disable text selection during drag
+      document.body.style.userSelect = 'none'
+      document.body.style.pointerEvents = 'none'
+
       return () => {
         document.removeEventListener('mousemove', handleMouseMove)
         document.removeEventListener('mouseup', handleMouseUp)
+        document.body.style.userSelect = ''
+        document.body.style.pointerEvents = ''
       }
     }
-  }, [isDragging, dragOffset])
+  }, [isDragging, handleMouseMove, handleMouseUp])
+
+
 
   if (windowData.isMinimized) return null
 
@@ -110,7 +125,6 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
     if (isMobileOrTablet) {
       return `
         fixed inset-0 bg-white
-        transition-all duration-200 ease-out
         ${isActive ? 'z-50' : 'z-40'}
         flex flex-col
       `
@@ -118,11 +132,10 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
 
     return `
       fixed bg-white shadow-2xl border border-gray-300
-      transition-all duration-200 ease-out
       ${isActive ? 'z-50' : 'z-40'}
       ${isDragging ? 'cursor-grabbing' : 'cursor-default'}
       ${isMaximized ? 'rounded-none' : 'rounded-lg'}
-      animate-slideInUp
+      ${!hasEverBeenDragged ? 'animate-slideInUp' : ''}
     `
   }
 
@@ -159,20 +172,33 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
     <div
       ref={windowRef}
       className={getWindowClasses()}
-      style={getWindowStyle()}
+      style={{
+        ...getWindowStyle(),
+        // Hardware acceleration for smooth dragging
+        transform: 'translateZ(0)',
+        willChange: isDragging ? 'transform' : 'auto'
+      }}
       onClick={onFocus}
     >
       {/* Window Title Bar */}
       <div
         className={`
           flex items-center justify-between select-none flex-shrink-0
-          ${isMobileOrTablet ? 'px-4 py-3 h-14' : 'px-4 py-2 cursor-grab'}
+          ${isMobileOrTablet ? 'px-4 py-3 h-14' : 'px-4 py-2'}
+          ${isDragging ? 'cursor-grabbing' : !isMobileOrTablet ? 'cursor-grab' : ''}
           ${isMaximized && !isMobileOrTablet ? 'rounded-none' : !isMobileOrTablet ? 'rounded-t-lg' : ''}
           ${isActive ? 'bg-blue-600' : 'bg-gray-400'}
-          transition-colors duration-200
+          ${!isDragging ? 'transition-colors duration-200' : ''}
         `}
         onMouseDown={handleMouseDown}
         onDoubleClick={handleDoubleClickTitleBar}
+        style={{
+          // Prevent text selection and improve drag performance
+          WebkitUserSelect: 'none',
+          MozUserSelect: 'none',
+          msUserSelect: 'none',
+          userSelect: 'none'
+        }}
       >
         <div className="flex items-center">
           <span className={`${isMobileOrTablet ? 'text-base' : 'text-sm'} font-medium ${isActive ? 'text-white' : 'text-gray-700'}`}>
