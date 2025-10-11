@@ -3,8 +3,9 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaximize, onFocus }) => {
   // Calculate initial center position for desktop
   const getInitialPosition = () => {
-    const windowWidth = 600
-    const windowHeight = 500
+    // Calculate actual pixel values for centering
+    const windowWidth = window.innerWidth * 0.8  // 80% of screen width
+    const windowHeight = window.innerHeight * 0.7 // 70% of screen height
     const centerX = (window.innerWidth - windowWidth) / 2
     const centerY = (window.innerHeight - windowHeight) / 2 - 50 // Account for taskbar
     return { x: Math.max(0, centerX), y: Math.max(0, centerY) }
@@ -160,10 +161,10 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
     }
 
     return {
-      left: `${position.x}px`,
-      top: `${position.y}px`,
-      width: '600px',
-      height: '500px',
+      left: `${position.x}px`,  // Use pixels for proper dragging
+      top: `${position.y}px`,   // Use pixels for proper dragging
+      width: '80vw',   // 80% of viewport width
+      height: '70vh',  // 70% of viewport height
       minHeight: '300px'
     }
   }
@@ -255,7 +256,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
       {/* Window Content */}
       <div
         className={`
-          overflow-y-auto bg-gray-800 bg-opacity-90 flex-1 text-white
+          overflow-y-auto bg-gray-800 bg-opacity-90 flex-1 text-white modal-scrollbar
           ${isMobileOrTablet ? 'px-4 py-4' : ''}
         `}
         style={{
@@ -263,12 +264,12 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
             ? 'calc(100vh - 56px)' // Full height minus title bar on mobile
             : isMaximized
               ? 'calc(100vh - 96px)'
-              : '450px',
+              : 'calc(70vh - 50px)', // Content area: 70% viewport height minus title bar
           maxHeight: isMobileOrTablet
             ? 'calc(100vh - 56px)'
             : isMaximized
               ? 'calc(100vh - 96px)'
-              : '450px'
+              : 'calc(70vh - 50px)'
         }}
       >
         {/* Mobile-optimized content wrapper */}

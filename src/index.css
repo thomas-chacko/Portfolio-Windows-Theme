@@ -50,6 +50,30 @@
   background: #a8a8a8;
 }
 
+/* Dark theme scrollbar for modal windows */
+.modal-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.modal-scrollbar::-webkit-scrollbar-track {
+  background: #374151;
+  border-radius: 6px;
+}
+
+.modal-scrollbar::-webkit-scrollbar-thumb {
+  background: #6b7280;
+  border-radius: 6px;
+  border: 2px solid #374151;
+}
+
+.modal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+.modal-scrollbar::-webkit-scrollbar-thumb:active {
+  background: #d1d5db;
+}
+
 /* Hide scrollbar for start menu like Windows 10 */
 .start-menu-scroll {
   scrollbar-width: none; /* Firefox */
