@@ -3,9 +3,9 @@ import { useState, useRef, useEffect, useCallback } from 'react'
 const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaximize, onFocus }) => {
   // Calculate initial center position for desktop
   const getInitialPosition = () => {
-    // Calculate actual pixel values for centering
+    // Calculate actual pixel values for centering with increased height
     const windowWidth = window.innerWidth * 0.8  // 80% of screen width
-    const windowHeight = window.innerHeight * 0.7 // 70% of screen height
+    const windowHeight = (window.innerHeight * 0.7) + 100 // 70% of screen height + 100px
     const centerX = (window.innerWidth - windowWidth) / 2
     const centerY = (window.innerHeight - windowHeight) / 2 - 50 // Account for taskbar
     return { x: Math.max(0, centerX), y: Math.max(0, centerY) }
@@ -164,8 +164,8 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
       left: `${position.x}px`,  // Use pixels for proper dragging
       top: `${position.y}px`,   // Use pixels for proper dragging
       width: '80vw',   // 80% of viewport width
-      height: '70vh',  // 70% of viewport height
-      minHeight: '300px'
+      height: 'calc(70vh + 100px)',  // 70% of viewport height + 100px
+      minHeight: '400px'
     }
   }
 
@@ -264,12 +264,12 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
             ? 'calc(100vh - 56px)' // Full height minus title bar on mobile
             : isMaximized
               ? 'calc(100vh - 96px)'
-              : 'calc(70vh - 50px)', // Content area: 70% viewport height minus title bar
+              : 'calc(70vh + 100px - 50px)', // Content area: 70% viewport height + 100px minus title bar
           maxHeight: isMobileOrTablet
             ? 'calc(100vh - 56px)'
             : isMaximized
               ? 'calc(100vh - 96px)'
-              : 'calc(70vh - 50px)'
+              : 'calc(70vh + 100px - 50px)'
         }}
       >
         {/* Mobile-optimized content wrapper */}
