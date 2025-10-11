@@ -22,6 +22,9 @@ import {
     MdEmail, MdPhone, MdLocationOn, MdDesignServices
 } from 'react-icons/md'
 
+// Game components
+import GameCenter from './GameCenter'
+
 const Desktop = ({ onOpenWindow }) => {
     const desktopIcons = [
         {
@@ -360,7 +363,7 @@ const Desktop = ({ onOpenWindow }) => {
                                     About Me
                                 </h3>
                                 <p className="text-gray-300 text-sm lg:text-base leading-relaxed mb-4">
-                                   I’m a self-taught Front-End Developer driven by the passion to create responsive, engaging, and user-focused web experiences. I love turning design ideas into interactive, visually appealing interfaces.
+                                    I’m a self-taught Front-End Developer driven by the passion to create responsive, engaging, and user-focused web experiences. I love turning design ideas into interactive, visually appealing interfaces.
                                 </p>
                                 <p className="text-gray-300 text-sm lg:text-base leading-relaxed">
                                     My toolkit includes React.js, JavaScript, HTML, CSS, and Tailwind CSS — with a focus on component-based development and smooth state management. I take pride in writing clean, efficient code and constantly improving my skills to build faster, better-performing web applications.
@@ -517,31 +520,7 @@ const Desktop = ({ onOpenWindow }) => {
                 type: 'games',
                 icon: gamesIcon,
                 content: (
-                    <div className="p-4 lg:p-6">
-                        <h3 className="text-lg lg:text-xl font-semibold mb-4">Game Projects</h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4">
-                            <div className="bg-gradient-to-br from-purple-400 to-purple-600 p-3 lg:p-4 rounded-lg text-white cursor-pointer hover:scale-105 transition-transform">
-                                <div className="text-xl lg:text-2xl mb-2">🎯</div>
-                                <h4 className="font-semibold text-sm lg:text-base">Tic Tac Toe</h4>
-                                <p className="text-xs lg:text-sm opacity-90">Classic game built with React</p>
-                            </div>
-                            <div className="bg-gradient-to-br from-green-400 to-green-600 p-3 lg:p-4 rounded-lg text-white cursor-pointer hover:scale-105 transition-transform">
-                                <div className="text-xl lg:text-2xl mb-2">🐍</div>
-                                <h4 className="font-semibold text-sm lg:text-base">Snake Game</h4>
-                                <p className="text-xs lg:text-sm opacity-90">Retro snake game in JavaScript</p>
-                            </div>
-                            <div className="bg-gradient-to-br from-red-400 to-red-600 p-3 lg:p-4 rounded-lg text-white cursor-pointer hover:scale-105 transition-transform">
-                                <div className="text-xl lg:text-2xl mb-2">🧩</div>
-                                <h4 className="font-semibold text-sm lg:text-base">Puzzle Game</h4>
-                                <p className="text-xs lg:text-sm opacity-90">Interactive puzzle solver</p>
-                            </div>
-                            <div className="bg-gradient-to-br from-yellow-400 to-yellow-600 p-3 lg:p-4 rounded-lg text-white cursor-pointer hover:scale-105 transition-transform">
-                                <div className="text-xl lg:text-2xl mb-2">🎲</div>
-                                <h4 className="font-semibold text-sm lg:text-base">Memory Game</h4>
-                                <p className="text-xs lg:text-sm opacity-90">Card matching memory game</p>
-                            </div>
-                        </div>
-                    </div>
+                    <GameCenter />
                 )
             }
         },
