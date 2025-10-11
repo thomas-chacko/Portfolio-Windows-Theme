@@ -24,26 +24,242 @@ const Desktop = ({ onOpenWindow }) => {
                         <div className="flex flex-col sm:flex-row items-start sm:items-center mb-4 lg:mb-6">
                             <div className="text-3xl lg:text-4xl mb-2 sm:mb-0 sm:mr-4">🖥️</div>
                             <div>
-                                <h3 className="text-lg lg:text-xl font-semibold">System Information</h3>
-                                <p className="text-gray-600 text-sm lg:text-base">Windows 10 Portfolio Edition</p>
+                                <h3 className="text-lg lg:text-xl font-semibold text-white">Portfolio System Overview</h3>
+                                <p className="text-gray-400 text-sm lg:text-base">Developer Workstation • Portfolio Edition 2025</p>
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 mt-4 lg:mt-6">
-                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
-                                <h4 className="font-semibold text-sm lg:text-base text-white">Processor</h4>
-                                <p className="text-xs lg:text-sm text-gray-300">React.js Engine</p>
+
+                        {/* Creative System Overview */}
+                        <div className="mt-4 lg:mt-6 space-y-4">
+                            {/* System Status Dashboard */}
+                            <div className="bg-gradient-to-r from-gray-700 to-gray-800 bg-opacity-50 p-4 lg:p-6 rounded-lg border border-gray-600">
+                                <div className="flex items-center justify-between mb-4">
+                                    <h4 className="text-lg lg:text-xl font-bold text-white flex items-center">
+                                        <span className="text-2xl mr-3">⚡</span>
+                                        System Performance
+                                    </h4>
+                                    <div className="flex items-center text-green-400">
+                                        <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+                                        <span className="text-xs lg:text-sm">Online</span>
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                                    <div className="text-center">
+                                        <div className="text-2xl lg:text-3xl mb-2">🧠</div>
+                                        <div className="text-xs lg:text-sm text-gray-300">CPU Usage</div>
+                                        <div className="text-lg lg:text-xl font-bold text-blue-400">23%</div>
+                                        <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
+                                            <div className="bg-blue-400 h-2 rounded-full" style={{ width: '23%' }}></div>
+                                        </div>
+                                    </div>
+
+                                    <div className="text-center">
+                                        <div className="text-2xl lg:text-3xl mb-2">💾</div>
+                                        <div className="text-xs lg:text-sm text-gray-300">Memory</div>
+                                        <div className="text-lg lg:text-xl font-bold text-green-400">67%</div>
+                                        <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
+                                            <div className="bg-green-400 h-2 rounded-full" style={{ width: '67%' }}></div>
+                                        </div>
+                                    </div>
+
+                                    <div className="text-center">
+                                        <div className="text-2xl lg:text-3xl mb-2">💿</div>
+                                        <div className="text-xs lg:text-sm text-gray-300">Storage</div>
+                                        <div className="text-lg lg:text-xl font-bold text-yellow-400">45%</div>
+                                        <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
+                                            <div className="bg-yellow-400 h-2 rounded-full" style={{ width: '45%' }}></div>
+                                        </div>
+                                    </div>
+
+                                    <div className="text-center">
+                                        <div className="text-2xl lg:text-3xl mb-2">🌐</div>
+                                        <div className="text-xs lg:text-sm text-gray-300">Network</div>
+                                        <div className="text-lg lg:text-xl font-bold text-purple-400">89%</div>
+                                        <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
+                                            <div className="bg-purple-400 h-2 rounded-full" style={{ width: '89%' }}></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
-                                <h4 className="font-semibold text-sm lg:text-base text-white">Memory</h4>
-                                <p className="text-xs lg:text-sm text-gray-300">Unlimited Creativity</p>
+
+                            {/* System Specifications */}
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600">
+                                    <h5 className="font-semibold text-white mb-3 flex items-center">
+                                        <span className="text-xl mr-2">🖥️</span>
+                                        Hardware Specs
+                                    </h5>
+                                    <div className="space-y-3">
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-xs lg:text-sm text-gray-300">Processor</span>
+                                            <span className="text-xs lg:text-sm text-white font-medium">React.js Engine v18.2</span>
+                                        </div>
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-xs lg:text-sm text-gray-300">Memory</span>
+                                            <span className="text-xs lg:text-sm text-white font-medium">Unlimited Creativity</span>
+                                        </div>
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-xs lg:text-sm text-gray-300">Graphics</span>
+                                            <span className="text-xs lg:text-sm text-white font-medium">Tailwind CSS Powered</span>
+                                        </div>
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-xs lg:text-sm text-gray-300">Storage</span>
+                                            <span className="text-xs lg:text-sm text-white font-medium">Cloud Portfolio</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600">
+                                    <h5 className="font-semibold text-white mb-3 flex items-center">
+                                        <span className="text-xl mr-2">⚙️</span>
+                                        System Info
+                                    </h5>
+                                    <div className="space-y-3">
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-xs lg:text-sm text-gray-300">OS Version</span>
+                                            <span className="text-xs lg:text-sm text-white font-medium">Portfolio OS 2024</span>
+                                        </div>
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-xs lg:text-sm text-gray-300">Build</span>
+                                            <span className="text-xs lg:text-sm text-white font-medium">22H2.1001</span>
+                                        </div>
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-xs lg:text-sm text-gray-300">Architecture</span>
+                                            <span className="text-xs lg:text-sm text-white font-medium">x64-based PC</span>
+                                        </div>
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-xs lg:text-sm text-gray-300">Last Updated</span>
+                                            <span className="text-xs lg:text-sm text-white font-medium">Today</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
-                                <h4 className="font-semibold text-sm lg:text-base text-white">Graphics</h4>
-                                <p className="text-xs lg:text-sm text-gray-300">Tailwind CSS Powered</p>
+
+                            {/* Portfolio Drives & Tools */}
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                {/* Portfolio Drives */}
+                                <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600">
+                                    <h5 className="font-semibold text-white mb-4 flex items-center">
+                                        <span className="text-xl mr-2">💾</span>
+                                        Portfolio Drives
+                                    </h5>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-40 rounded-lg hover:bg-opacity-60 transition-all cursor-pointer">
+                                            <div className="flex items-center">
+                                                <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center mr-3">
+                                                    <span className="text-white text-sm">💼</span>
+                                                </div>
+                                                <div>
+                                                    <div className="text-sm font-medium text-white">Projects (C:)</div>
+                                                    <div className="text-xs text-gray-300">15.2 GB free of 50 GB</div>
+                                                </div>
+                                            </div>
+                                            <div className="text-xs text-blue-400">69% full</div>
+                                        </div>
+
+                                        <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-40 rounded-lg hover:bg-opacity-60 transition-all cursor-pointer">
+                                            <div className="flex items-center">
+                                                <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center mr-3">
+                                                    <span className="text-white text-sm">🎨</span>
+                                                </div>
+                                                <div>
+                                                    <div className="text-sm font-medium text-white">Creative (D:)</div>
+                                                    <div className="text-xs text-gray-300">25.8 GB free of 100 GB</div>
+                                                </div>
+                                            </div>
+                                            <div className="text-xs text-green-400">74% full</div>
+                                        </div>
+
+                                        <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-40 rounded-lg hover:bg-opacity-60 transition-all cursor-pointer">
+                                            <div className="flex items-center">
+                                                <div className="w-8 h-8 bg-purple-500 rounded flex items-center justify-center mr-3">
+                                                    <span className="text-white text-sm">☁️</span>
+                                                </div>
+                                                <div>
+                                                    <div className="text-sm font-medium text-white">Cloud Sync</div>
+                                                    <div className="text-xs text-gray-300">Unlimited storage</div>
+                                                </div>
+                                            </div>
+                                            <div className="text-xs text-purple-400">Synced</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Developer Tools */}
+                                <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600">
+                                    <h5 className="font-semibold text-white mb-4 flex items-center">
+                                        <span className="text-xl mr-2">🛠️</span>
+                                        Developer Tools
+                                    </h5>
+                                    <div className="grid grid-cols-2 gap-3">
+                                        <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-lg text-white hover:scale-105 transition-transform cursor-pointer">
+                                            <div className="text-lg mb-1">⚛️</div>
+                                            <div className="text-xs font-medium">React DevTools</div>
+                                            <div className="text-xs opacity-80">v4.28.0</div>
+                                        </div>
+
+                                        <div className="bg-gradient-to-br from-green-500 to-green-600 p-3 rounded-lg text-white hover:scale-105 transition-transform cursor-pointer">
+                                            <div className="text-lg mb-1">📦</div>
+                                            <div className="text-xs font-medium">Node.js</div>
+                                            <div className="text-xs opacity-80">v18.17.0</div>
+                                        </div>
+
+                                        <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-3 rounded-lg text-white hover:scale-105 transition-transform cursor-pointer">
+                                            <div className="text-lg mb-1">🎨</div>
+                                            <div className="text-xs font-medium">Figma</div>
+                                            <div className="text-xs opacity-80">Design Tool</div>
+                                        </div>
+
+                                        <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-3 rounded-lg text-white hover:scale-105 transition-transform cursor-pointer">
+                                            <div className="text-lg mb-1">💻</div>
+                                            <div className="text-xs font-medium">VS Code</div>
+                                            <div className="text-xs opacity-80">Editor</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
-                                <h4 className="font-semibold text-sm lg:text-base text-white">Storage</h4>
-                                <p className="text-xs lg:text-sm text-gray-300">Cloud-based Portfolio</p>
+
+                            {/* Recent Activity */}
+                            <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600">
+                                <h5 className="font-semibold text-white mb-4 flex items-center">
+                                    <span className="text-xl mr-2">📈</span>
+                                    Recent Portfolio Activity
+                                </h5>
+                                <div className="space-y-3">
+                                    <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-30 rounded-lg">
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                                            <div>
+                                                <div className="text-sm text-white">Portfolio website updated</div>
+                                                <div className="text-xs text-gray-400">2 hours ago</div>
+                                            </div>
+                                        </div>
+                                        <div className="text-xs text-green-400">✓ Deployed</div>
+                                    </div>
+
+                                    <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-30 rounded-lg">
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
+                                            <div>
+                                                <div className="text-sm text-white">New project: E-commerce App</div>
+                                                <div className="text-xs text-gray-400">1 day ago</div>
+                                            </div>
+                                        </div>
+                                        <div className="text-xs text-blue-400">In Progress</div>
+                                    </div>
+
+                                    <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-30 rounded-lg">
+                                        <div className="flex items-center">
+                                            <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                                            <div>
+                                                <div className="text-sm text-white">Skills updated: TypeScript</div>
+                                                <div className="text-xs text-gray-400">3 days ago</div>
+                                            </div>
+                                        </div>
+                                        <div className="text-xs text-purple-400">Certified</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -59,36 +275,72 @@ const Desktop = ({ onOpenWindow }) => {
                 type: 'profile',
                 icon: boyIcon,
                 content: (
-                    <div className="p-4 lg:p-6">
-                        <div className="flex flex-col sm:flex-row items-center sm:items-start mb-4 lg:mb-6">
-                            <div className="w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white text-2xl lg:text-3xl mb-4 sm:mb-0 sm:mr-6">
-                                👤
+                    <div className="flex gap-4 lg:gap-6 mt-4 lg:mt-6">
+                        {/* Sidebar Navigation */}
+                        <div className="w-48 lg:w-56 bg-gray-700 bg-opacity-50 rounded border border-gray-600">
+                            <div className="p-3 lg:p-4 border-b border-gray-600">
+                                <h4 className="font-semibold text-sm lg:text-base text-white">Accounts</h4>
                             </div>
-                            <div className="text-center sm:text-left">
-                                <h3 className="text-xl lg:text-2xl font-bold mb-2">[Your Name]</h3>
-                                <p className="text-base lg:text-lg text-blue-600 mb-2">Front-End Developer</p>
-                                <p className="text-sm lg:text-base text-gray-600 leading-relaxed">
-                                    Passionate front-end developer with expertise in React, JavaScript, and modern web technologies.
-                                    I create beautiful, responsive, and user-friendly web applications.
-                                </p>
+                            <div className="p-2">
+                                <div className="flex items-center p-2 lg:p-3 rounded hover:bg-gray-600 hover:bg-opacity-50 cursor-pointer">
+                                    <div className="text-lg mr-3">👤</div>
+                                    <span className="text-xs lg:text-sm text-white">My info</span>
+                                </div>
+                                <div className="flex items-center p-2 lg:p-3 rounded hover:bg-gray-600 hover:bg-opacity-50 cursor-pointer">
+                                    <div className="text-lg mr-3">📧</div>
+                                    <span className="text-xs lg:text-sm text-gray-300">Email & Accounts</span>
+                                </div>
+                                <div className="flex items-center p-2 lg:p-3 rounded hover:bg-gray-600 hover:bg-opacity-50 cursor-pointer">
+                                    <div className="text-lg mr-3">📱</div>
+                                    <span className="text-xs lg:text-sm text-gray-300">Social Media</span>
+                                </div>
+                                <div className="flex items-center p-2 lg:p-3 rounded hover:bg-gray-600 hover:bg-opacity-50 cursor-pointer">
+                                    <div className="text-lg mr-3">👁️</div>
+                                    <span className="text-xs lg:text-sm text-gray-300">My Vision</span>
+                                </div>
+                                <div className="flex items-center p-2 lg:p-3 rounded hover:bg-gray-600 hover:bg-opacity-50 cursor-pointer">
+                                    <div className="text-lg mr-3">💼</div>
+                                    <span className="text-xs lg:text-sm text-gray-300">Career Journey</span>
+                                </div>
+                                <div className="flex items-center p-2 lg:p-3 rounded hover:bg-gray-600 hover:bg-opacity-50 cursor-pointer bg-blue-600 bg-opacity-30">
+                                    <div className="text-lg mr-3">📥</div>
+                                    <div>
+                                        <div className="text-xs lg:text-sm text-blue-300 font-medium">Download</div>
+                                        <div className="text-xs text-blue-400">Resume PDF (1.3MB)</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4">
-                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
-                                <h4 className="font-semibold mb-2 text-sm lg:text-base text-white">Location</h4>
-                                <p className="text-gray-300 text-xs lg:text-sm">[Your City, Country]</p>
-                            </div>
-                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
-                                <h4 className="font-semibold mb-2 text-sm lg:text-base text-white">Experience</h4>
-                                <p className="text-gray-300 text-xs lg:text-sm">[X] Years</p>
-                            </div>
-                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
-                                <h4 className="font-semibold mb-2 text-sm lg:text-base text-white">Email</h4>
-                                <p className="text-gray-300 text-xs lg:text-sm break-all">[your.email@example.com]</p>
-                            </div>
-                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
-                                <h4 className="font-semibold mb-2 text-sm lg:text-base text-white">Phone</h4>
-                                <p className="text-gray-300 text-xs lg:text-sm">[+1234567890]</p>
+
+                        {/* Main Content Area */}
+                        <div className="flex-1 bg-gray-700 bg-opacity-30 rounded border border-gray-600">
+                            <div className="p-4 lg:p-6">
+                                <div className="mb-4">
+                                    <h3 className="text-lg lg:text-xl font-semibold text-white mb-1">My info</h3>
+                                    <p className="text-xs lg:text-sm text-gray-300">Active Windows User</p>
+                                </div>
+
+                                <div className="flex items-start gap-4 lg:gap-6 mb-6">
+                                    <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden bg-gray-600 border-2 border-gray-500">
+                                        <img
+                                            src="https://via.placeholder.com/150x150/4B5563/FFFFFF?text=Profile"
+                                            alt="Profile"
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                    <div className="flex-1">
+                                        <h4 className="text-xl lg:text-2xl font-bold text-white mb-2">Sagar Surendhranbabu</h4>
+                                        <p className="text-sm lg:text-base text-blue-400 mb-3">Front-end Developer & UI Designer</p>
+                                        <p className="text-xs lg:text-sm text-gray-300 leading-relaxed">
+                                            Hello there! I'm Sagar Surendhranbabu, a passionate UI/UX designer and front-end developer with a journey spanning over a decade. For the past ten years, I've been immersed in the captivating realm of design and development, crafting digital experiences that seamlessly blend aesthetics with functionality. My mission? To transform ideas into visually stunning and user-centric digital solutions that leave a lasting impact.
+                                        </p>
+                                        <div className="mt-4">
+                                            <button className="text-xs lg:text-sm text-blue-400 hover:text-blue-300 flex items-center">
+                                                📥 Download Resume
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
