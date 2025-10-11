@@ -29,21 +29,21 @@ const Desktop = ({ onOpenWindow }) => {
                             </div>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 mt-4 lg:mt-6">
-                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
-                                <h4 className="font-semibold text-sm lg:text-base">Processor</h4>
-                                <p className="text-xs lg:text-sm text-gray-600">React.js Engine</p>
+                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
+                                <h4 className="font-semibold text-sm lg:text-base text-white">Processor</h4>
+                                <p className="text-xs lg:text-sm text-gray-300">React.js Engine</p>
                             </div>
-                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
-                                <h4 className="font-semibold text-sm lg:text-base">Memory</h4>
-                                <p className="text-xs lg:text-sm text-gray-600">Unlimited Creativity</p>
+                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
+                                <h4 className="font-semibold text-sm lg:text-base text-white">Memory</h4>
+                                <p className="text-xs lg:text-sm text-gray-300">Unlimited Creativity</p>
                             </div>
-                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
-                                <h4 className="font-semibold text-sm lg:text-base">Graphics</h4>
-                                <p className="text-xs lg:text-sm text-gray-600">Tailwind CSS Powered</p>
+                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
+                                <h4 className="font-semibold text-sm lg:text-base text-white">Graphics</h4>
+                                <p className="text-xs lg:text-sm text-gray-300">Tailwind CSS Powered</p>
                             </div>
-                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
-                                <h4 className="font-semibold text-sm lg:text-base">Storage</h4>
-                                <p className="text-xs lg:text-sm text-gray-600">Cloud-based Portfolio</p>
+                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
+                                <h4 className="font-semibold text-sm lg:text-base text-white">Storage</h4>
+                                <p className="text-xs lg:text-sm text-gray-300">Cloud-based Portfolio</p>
                             </div>
                         </div>
                     </div>
@@ -74,21 +74,21 @@ const Desktop = ({ onOpenWindow }) => {
                             </div>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4">
-                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
-                                <h4 className="font-semibold mb-2 text-sm lg:text-base">Location</h4>
-                                <p className="text-gray-600 text-xs lg:text-sm">[Your City, Country]</p>
+                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
+                                <h4 className="font-semibold mb-2 text-sm lg:text-base text-white">Location</h4>
+                                <p className="text-gray-300 text-xs lg:text-sm">[Your City, Country]</p>
                             </div>
-                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
-                                <h4 className="font-semibold mb-2 text-sm lg:text-base">Experience</h4>
-                                <p className="text-gray-600 text-xs lg:text-sm">[X] Years</p>
+                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
+                                <h4 className="font-semibold mb-2 text-sm lg:text-base text-white">Experience</h4>
+                                <p className="text-gray-300 text-xs lg:text-sm">[X] Years</p>
                             </div>
-                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
-                                <h4 className="font-semibold mb-2 text-sm lg:text-base">Email</h4>
-                                <p className="text-gray-600 text-xs lg:text-sm break-all">[your.email@example.com]</p>
+                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
+                                <h4 className="font-semibold mb-2 text-sm lg:text-base text-white">Email</h4>
+                                <p className="text-gray-300 text-xs lg:text-sm break-all">[your.email@example.com]</p>
                             </div>
-                            <div className="bg-gray-50 p-3 lg:p-4 rounded">
-                                <h4 className="font-semibold mb-2 text-sm lg:text-base">Phone</h4>
-                                <p className="text-gray-600 text-xs lg:text-sm">[+1234567890]</p>
+                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded border border-gray-600">
+                                <h4 className="font-semibold mb-2 text-sm lg:text-base text-white">Phone</h4>
+                                <p className="text-gray-300 text-xs lg:text-sm">[+1234567890]</p>
                             </div>
                         </div>
                     </div>
@@ -202,58 +202,58 @@ const Desktop = ({ onOpenWindow }) => {
                     <div className="p-6">
                         <h3 className="text-xl font-semibold mb-4">Portfolio Projects</h3>
                         <div className="grid grid-cols-2 gap-6">
-                            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+                            <div className="bg-gray-700 bg-opacity-50 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer border border-gray-600">
                                 <div className="h-32 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
                                     <span className="text-white text-2xl">🌐</span>
                                 </div>
                                 <div className="p-4">
-                                    <h4 className="font-semibold mb-2">E-commerce Website</h4>
-                                    <p className="text-sm text-gray-600 mb-3">Full-stack e-commerce platform built with React and Node.js</p>
+                                    <h4 className="font-semibold mb-2 text-white">E-commerce Website</h4>
+                                    <p className="text-sm text-gray-300 mb-3">Full-stack e-commerce platform built with React and Node.js</p>
                                     <div className="flex gap-2">
-                                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">React</span>
-                                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Node.js</span>
+                                        <span className="bg-blue-600 text-blue-100 px-2 py-1 rounded text-xs">React</span>
+                                        <span className="bg-green-600 text-green-100 px-2 py-1 rounded text-xs">Node.js</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+                            <div className="bg-gray-700 bg-opacity-50 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer border border-gray-600">
                                 <div className="h-32 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
                                     <span className="text-white text-2xl">📱</span>
                                 </div>
                                 <div className="p-4">
-                                    <h4 className="font-semibold mb-2">Mobile App UI</h4>
-                                    <p className="text-sm text-gray-600 mb-3">Responsive mobile-first design with modern UI components</p>
+                                    <h4 className="font-semibold mb-2 text-white">Mobile App UI</h4>
+                                    <p className="text-sm text-gray-300 mb-3">Responsive mobile-first design with modern UI components</p>
                                     <div className="flex gap-2">
-                                        <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">React Native</span>
-                                        <span className="bg-pink-100 text-pink-800 px-2 py-1 rounded text-xs">UI/UX</span>
+                                        <span className="bg-purple-600 text-purple-100 px-2 py-1 rounded text-xs">React Native</span>
+                                        <span className="bg-pink-600 text-pink-100 px-2 py-1 rounded text-xs">UI/UX</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+                            <div className="bg-gray-700 bg-opacity-50 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer border border-gray-600">
                                 <div className="h-32 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
                                     <span className="text-white text-2xl">📊</span>
                                 </div>
                                 <div className="p-4">
-                                    <h4 className="font-semibold mb-2">Dashboard Analytics</h4>
-                                    <p className="text-sm text-gray-600 mb-3">Data visualization dashboard with interactive charts</p>
+                                    <h4 className="font-semibold mb-2 text-white">Dashboard Analytics</h4>
+                                    <p className="text-sm text-gray-300 mb-3">Data visualization dashboard with interactive charts</p>
                                     <div className="flex gap-2">
-                                        <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">D3.js</span>
-                                        <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">React</span>
+                                        <span className="bg-green-600 text-green-100 px-2 py-1 rounded text-xs">D3.js</span>
+                                        <span className="bg-blue-600 text-blue-100 px-2 py-1 rounded text-xs">React</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+                            <div className="bg-gray-700 bg-opacity-50 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer border border-gray-600">
                                 <div className="h-32 bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center">
                                     <span className="text-white text-2xl">🎨</span>
                                 </div>
                                 <div className="p-4">
-                                    <h4 className="font-semibold mb-2">Creative Portfolio</h4>
-                                    <p className="text-sm text-gray-600 mb-3">Interactive portfolio showcasing creative projects</p>
+                                    <h4 className="font-semibold mb-2 text-white">Creative Portfolio</h4>
+                                    <p className="text-sm text-gray-300 mb-3">Interactive portfolio showcasing creative projects</p>
                                     <div className="flex gap-2">
-                                        <span className="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">CSS3</span>
-                                        <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Animation</span>
+                                        <span className="bg-red-600 text-red-100 px-2 py-1 rounded text-xs">CSS3</span>
+                                        <span className="bg-yellow-600 text-yellow-100 px-2 py-1 rounded text-xs">Animation</span>
                                     </div>
                                 </div>
                             </div>
@@ -275,75 +275,75 @@ const Desktop = ({ onOpenWindow }) => {
                         <h3 className="text-lg lg:text-xl font-semibold mb-4">System Settings</h3>
                         <div className="space-y-4">
                             {/* Display Settings */}
-                            <div className="bg-gray-50 p-3 lg:p-4 rounded-lg">
+                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded-lg border border-gray-600">
                                 <div className="flex items-center mb-3">
                                     <div className="text-xl lg:text-2xl mr-3">🖥️</div>
-                                    <h4 className="font-semibold text-sm lg:text-base">Display</h4>
+                                    <h4 className="font-semibold text-sm lg:text-base text-white">Display</h4>
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <div className="bg-white p-3 rounded border">
-                                        <p className="text-xs lg:text-sm font-medium">Resolution</p>
-                                        <p className="text-xs text-gray-600">1920 x 1080</p>
+                                    <div className="bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
+                                        <p className="text-xs lg:text-sm font-medium text-white">Resolution</p>
+                                        <p className="text-xs text-gray-300">1920 x 1080</p>
                                     </div>
-                                    <div className="bg-white p-3 rounded border">
-                                        <p className="text-xs lg:text-sm font-medium">Theme</p>
-                                        <p className="text-xs text-gray-600">Windows Light</p>
+                                    <div className="bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
+                                        <p className="text-xs lg:text-sm font-medium text-white">Theme</p>
+                                        <p className="text-xs text-gray-300">Windows Dark</p>
                                     </div>
                                 </div>
                             </div>
 
                             {/* System Settings */}
-                            <div className="bg-gray-50 p-3 lg:p-4 rounded-lg">
+                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded-lg border border-gray-600">
                                 <div className="flex items-center mb-3">
                                     <div className="text-xl lg:text-2xl mr-3">⚙️</div>
-                                    <h4 className="font-semibold text-sm lg:text-base">System</h4>
+                                    <h4 className="font-semibold text-sm lg:text-base text-white">System</h4>
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <div className="bg-white p-3 rounded border">
-                                        <p className="text-xs lg:text-sm font-medium">Version</p>
-                                        <p className="text-xs text-gray-600">Portfolio OS v1.0</p>
+                                    <div className="bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
+                                        <p className="text-xs lg:text-sm font-medium text-white">Version</p>
+                                        <p className="text-xs text-gray-300">Portfolio OS v1.0</p>
                                     </div>
-                                    <div className="bg-white p-3 rounded border">
-                                        <p className="text-xs lg:text-sm font-medium">Build</p>
-                                        <p className="text-xs text-gray-600">React 18.2.0</p>
+                                    <div className="bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
+                                        <p className="text-xs lg:text-sm font-medium text-white">Build</p>
+                                        <p className="text-xs text-gray-300">React 18.2.0</p>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Network Settings */}
-                            <div className="bg-gray-50 p-3 lg:p-4 rounded-lg">
+                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded-lg border border-gray-600">
                                 <div className="flex items-center mb-3">
                                     <div className="text-xl lg:text-2xl mr-3">🌐</div>
-                                    <h4 className="font-semibold text-sm lg:text-base">Network & Internet</h4>
+                                    <h4 className="font-semibold text-sm lg:text-base text-white">Network & Internet</h4>
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <div className="bg-white p-3 rounded border">
-                                        <p className="text-xs lg:text-sm font-medium">Status</p>
-                                        <p className="text-xs text-green-600">Connected</p>
+                                    <div className="bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
+                                        <p className="text-xs lg:text-sm font-medium text-white">Status</p>
+                                        <p className="text-xs text-green-400">Connected</p>
                                     </div>
-                                    <div className="bg-white p-3 rounded border">
-                                        <p className="text-xs lg:text-sm font-medium">Connection</p>
-                                        <p className="text-xs text-gray-600">Wi-Fi</p>
+                                    <div className="bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
+                                        <p className="text-xs lg:text-sm font-medium text-white">Connection</p>
+                                        <p className="text-xs text-gray-300">Wi-Fi</p>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Privacy Settings */}
-                            <div className="bg-gray-50 p-3 lg:p-4 rounded-lg">
+                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded-lg border border-gray-600">
                                 <div className="flex items-center mb-3">
                                     <div className="text-xl lg:text-2xl mr-3">🔒</div>
-                                    <h4 className="font-semibold text-sm lg:text-base">Privacy & Security</h4>
+                                    <h4 className="font-semibold text-sm lg:text-base text-white">Privacy & Security</h4>
                                 </div>
                                 <div className="space-y-2">
-                                    <div className="flex items-center justify-between bg-white p-3 rounded border">
-                                        <span className="text-xs lg:text-sm">Location Services</span>
+                                    <div className="flex items-center justify-between bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
+                                        <span className="text-xs lg:text-sm text-white">Location Services</span>
                                         <div className="w-10 h-5 bg-blue-500 rounded-full relative">
                                             <div className="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5"></div>
                                         </div>
                                     </div>
-                                    <div className="flex items-center justify-between bg-white p-3 rounded border">
-                                        <span className="text-xs lg:text-sm">Analytics</span>
-                                        <div className="w-10 h-5 bg-gray-300 rounded-full relative">
+                                    <div className="flex items-center justify-between bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
+                                        <span className="text-xs lg:text-sm text-white">Analytics</span>
+                                        <div className="w-10 h-5 bg-gray-400 rounded-full relative">
                                             <div className="w-4 h-4 bg-white rounded-full absolute left-0.5 top-0.5"></div>
                                         </div>
                                     </div>

@@ -131,7 +131,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
     }
 
     return `
-      fixed bg-white shadow-2xl border border-gray-300
+      fixed bg-gray-800 bg-opacity-90 shadow-2xl border border-gray-600
       ${isActive ? 'z-50' : 'z-40'}
       ${isDragging ? 'cursor-grabbing' : 'cursor-default'}
       ${isMaximized ? 'rounded-none' : 'rounded-lg'}
@@ -187,7 +187,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
           ${isMobileOrTablet ? 'px-4 py-3 h-14' : 'px-4 py-2'}
           ${isDragging ? 'cursor-grabbing' : !isMobileOrTablet ? 'cursor-grab' : ''}
           ${isMaximized && !isMobileOrTablet ? 'rounded-none' : !isMobileOrTablet ? 'rounded-t-lg' : ''}
-          ${isActive ? 'bg-blue-600' : 'bg-gray-400'}
+          ${isActive ? 'bg-gray-700' : 'bg-gray-600'}
           ${!isDragging ? 'transition-colors duration-200' : ''}
         `}
         onMouseDown={handleMouseDown}
@@ -201,7 +201,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
         }}
       >
         <div className="flex items-center">
-          <span className={`${isMobileOrTablet ? 'text-base' : 'text-sm'} font-medium ${isActive ? 'text-white' : 'text-gray-700'}`}>
+          <span className={`${isMobileOrTablet ? 'text-base' : 'text-sm'} font-medium ${isActive ? 'text-white' : 'text-gray-200'}`}>
             {windowData.title}
           </span>
         </div>
@@ -214,7 +214,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
               className="w-11 h-7 hover:bg-black hover:bg-opacity-20 flex items-center justify-center transition-colors"
               title="Minimize"
             >
-              <div className={`w-3 h-0.5 ${isActive ? 'bg-white' : 'bg-gray-700'}`}></div>
+              <div className={`w-3 h-0.5 ${isActive ? 'bg-white' : 'bg-gray-200'}`}></div>
             </button>
           )}
 
@@ -228,12 +228,12 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
               {isMaximized ? (
                 // Restore icon (two overlapping squares)
                 <div className="relative">
-                  <div className={`w-2.5 h-2.5 border ${isActive ? 'border-white' : 'border-gray-700'} absolute -top-0.5 -left-0.5`}></div>
-                  <div className={`w-2.5 h-2.5 border ${isActive ? 'border-white' : 'border-gray-700'} bg-transparent`}></div>
+                  <div className={`w-2.5 h-2.5 border ${isActive ? 'border-white' : 'border-gray-200'} absolute -top-0.5 -left-0.5`}></div>
+                  <div className={`w-2.5 h-2.5 border ${isActive ? 'border-white' : 'border-gray-200'} bg-transparent`}></div>
                 </div>
               ) : (
                 // Maximize icon (single square)
-                <div className={`w-3 h-3 border ${isActive ? 'border-white' : 'border-gray-700'}`}></div>
+                <div className={`w-3 h-3 border ${isActive ? 'border-white' : 'border-gray-200'}`}></div>
               )}
             </button>
           )}
@@ -245,8 +245,8 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
             title="Close"
           >
             <div className={`relative ${isMobileOrTablet ? 'w-4 h-4' : 'w-3 h-3'}`}>
-              <div className={`absolute ${isMobileOrTablet ? 'w-4 h-0.5' : 'w-3 h-0.5'} ${isActive ? 'bg-white' : 'bg-gray-700'} group-hover:bg-white transform rotate-45 ${isMobileOrTablet ? 'top-2' : 'top-1.5'}`}></div>
-              <div className={`absolute ${isMobileOrTablet ? 'w-4 h-0.5' : 'w-3 h-0.5'} ${isActive ? 'bg-white' : 'bg-gray-700'} group-hover:bg-white transform -rotate-45 ${isMobileOrTablet ? 'top-2' : 'top-1.5'}`}></div>
+              <div className={`absolute ${isMobileOrTablet ? 'w-4 h-0.5' : 'w-3 h-0.5'} ${isActive ? 'bg-white' : 'bg-gray-200'} group-hover:bg-white transform rotate-45 ${isMobileOrTablet ? 'top-2' : 'top-1.5'}`}></div>
+              <div className={`absolute ${isMobileOrTablet ? 'w-4 h-0.5' : 'w-3 h-0.5'} ${isActive ? 'bg-white' : 'bg-gray-200'} group-hover:bg-white transform -rotate-45 ${isMobileOrTablet ? 'top-2' : 'top-1.5'}`}></div>
             </div>
           </button>
         </div>
@@ -255,7 +255,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
       {/* Window Content */}
       <div
         className={`
-          overflow-y-auto bg-white flex-1
+          overflow-y-auto bg-gray-800 bg-opacity-90 flex-1 text-white
           ${isMobileOrTablet ? 'px-4 py-4' : ''}
         `}
         style={{
