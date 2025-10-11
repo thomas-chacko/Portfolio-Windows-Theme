@@ -90,15 +90,15 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
       // Calculate modal dimensions
       const modalWidth = window.innerWidth * 0.8  // 80vw
       const modalHeight = (window.innerHeight * 0.7) + 100  // 70vh + 100px
-      
+
       // Calculate new position
       const newX = e.clientX - dragOffset.x
       const newY = e.clientY - dragOffset.y
-      
+
       // Apply boundary constraints
       const constrainedX = Math.max(0, Math.min(newX, window.innerWidth - modalWidth))
       const constrainedY = Math.max(0, Math.min(newY, window.innerHeight - modalHeight - 48)) // 48px for taskbar
-      
+
       setPosition({
         x: constrainedX,
         y: constrainedY

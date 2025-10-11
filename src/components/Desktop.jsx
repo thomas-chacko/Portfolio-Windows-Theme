@@ -8,6 +8,19 @@ import fileIcon from "../assets/images/file.png"
 import suitcaseIcon from "../assets/images/suitcase.png"
 import recycleBinIcon from "../assets/images/recycle-bin.png"
 import settingIcon from "../assets/images/setting.png"
+import me from "../assets/images/thomas.jpg"
+// React Icons imports
+import {
+    FaRocket, FaBolt, FaPhone, FaEnvelope, FaMobileAlt, FaMapMarkerAlt,
+    FaLinkedin, FaGithub, FaFacebook, FaInstagram, FaDownload, FaUser,
+    FaLaptopCode, FaPalette, FaMobile, FaTools, FaCog, FaProjectDiagram
+} from 'react-icons/fa'
+import {
+    HiSparkles, HiLightningBolt
+} from 'react-icons/hi'
+import {
+    MdEmail, MdPhone, MdLocationOn, MdDesignServices
+} from 'react-icons/md'
 
 const Desktop = ({ onOpenWindow }) => {
     const desktopIcons = [
@@ -275,70 +288,218 @@ const Desktop = ({ onOpenWindow }) => {
                 type: 'profile',
                 icon: boyIcon,
                 content: (
-                    <div className="flex gap-4 lg:gap-6 mt-4 lg:mt-6">
-                        {/* Sidebar Navigation */}
-                        <div className="w-48 lg:w-56 bg-gray-700 bg-opacity-50 rounded border border-gray-600">
-                            <div className="p-3 lg:p-4 border-b border-gray-600">
-                                <h4 className="font-semibold text-sm lg:text-base text-white">Accounts</h4>
-                            </div>
-                            <div className="p-2">
-                                <div className="flex items-center p-2 lg:p-3 rounded hover:bg-gray-600 hover:bg-opacity-50 cursor-pointer">
-                                    <div className="text-lg mr-3">👤</div>
-                                    <span className="text-xs lg:text-sm text-white">My info</span>
+                    <div className="p-4 lg:p-6">
+                        {/* Hero Section */}
+                        <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 rounded-xl p-6 lg:p-8 mb-6 overflow-hidden">
+                            <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+                            <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-start gap-6">
+                                <div className="relative">
+                                    <div className="w-32 h-32 lg:w-44 lg:h-44 rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                                        <img
+                                            src={me}
+                                            alt="Thomas Chacko"
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                    {/* <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
+                                        <div className="w-3 h-3 bg-white rounded-full"></div>
+                                    </div> */}
                                 </div>
-                                <div className="flex items-center p-2 lg:p-3 rounded hover:bg-gray-600 hover:bg-opacity-50 cursor-pointer">
-                                    <div className="text-lg mr-3">📧</div>
-                                    <span className="text-xs lg:text-sm text-gray-300">Email & Accounts</span>
-                                </div>
-                                <div className="flex items-center p-2 lg:p-3 rounded hover:bg-gray-600 hover:bg-opacity-50 cursor-pointer">
-                                    <div className="text-lg mr-3">📱</div>
-                                    <span className="text-xs lg:text-sm text-gray-300">Social Media</span>
-                                </div>
-                                <div className="flex items-center p-2 lg:p-3 rounded hover:bg-gray-600 hover:bg-opacity-50 cursor-pointer">
-                                    <div className="text-lg mr-3">👁️</div>
-                                    <span className="text-xs lg:text-sm text-gray-300">My Vision</span>
-                                </div>
-                                <div className="flex items-center p-2 lg:p-3 rounded hover:bg-gray-600 hover:bg-opacity-50 cursor-pointer">
-                                    <div className="text-lg mr-3">💼</div>
-                                    <span className="text-xs lg:text-sm text-gray-300">Career Journey</span>
-                                </div>
-                                <div className="flex items-center p-2 lg:p-3 rounded hover:bg-gray-600 hover:bg-opacity-50 cursor-pointer bg-blue-600 bg-opacity-30">
-                                    <div className="text-lg mr-3">📥</div>
-                                    <div>
-                                        <div className="text-xs lg:text-sm text-blue-300 font-medium">Download</div>
-                                        <div className="text-xs text-blue-400">Resume PDF (1.3MB)</div>
+                                <div className="flex-1 text-center lg:text-left">
+                                    <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2">
+                                        Thomas Chacko
+                                    </h1>
+                                    <p className="text-xl lg:text-2xl text-blue-100 mb-4 flex items-center justify-center lg:justify-start">
+                                        <HiSparkles className="mr-2" />
+                                        Front-End Developer
+                                    </p>
+                                    <p className="text-blue-100 text-sm lg:text-base leading-relaxed mb-6">
+                                        Crafting digital experiences that blend creativity with functionality.
+                                        Passionate about turning complex problems into simple, beautiful solutions.
+                                    </p>
+                                    <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+                                        {/* <button className="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors flex items-center">
+                                            <MdEmail className="mr-2" />
+                                            Get In Touch
+                                        </button> */}
+                                        <button className="cursor-pointer bg-blue-500 bg-opacity-30 text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-40 transition-colors flex items-center">
+                                            <FaDownload className="mr-2" />
+                                            Download CV
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Main Content Area */}
-                        <div className="flex-1 bg-gray-700 bg-opacity-30 rounded border border-gray-600">
-                            <div className="p-4 lg:p-6">
-                                <div className="mb-4">
-                                    <h3 className="text-lg lg:text-xl font-semibold text-white mb-1">My info</h3>
-                                    <p className="text-xs lg:text-sm text-gray-300">Active Windows User</p>
-                                </div>
+                        {/* Stats & Quick Info */}
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                            <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600 text-center">
+                                <div className="text-2xl lg:text-3xl font-bold text-blue-400 mb-1">1.6+</div>
+                                <div className="text-xs lg:text-sm text-gray-300">Years Experience</div>
+                            </div>
+                            <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600 text-center">
+                                <div className="text-2xl lg:text-3xl font-bold text-green-400 mb-1">20+</div>
+                                <div className="text-xs lg:text-sm text-gray-300">Projects Completed</div>
+                            </div>
+                            <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600 text-center">
+                                <div className="text-2xl lg:text-3xl font-bold text-purple-400 mb-1">10+</div>
+                                <div className="text-xs lg:text-sm text-gray-300">Happy Clients</div>
+                            </div>
+                            <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600 text-center">
+                                <div className="text-2xl lg:text-3xl font-bold text-yellow-400 mb-1">10+</div>
+                                <div className="text-xs lg:text-sm text-gray-300">Technologies</div>
+                            </div>
+                        </div>
 
-                                <div className="flex items-start gap-4 lg:gap-6 mb-6">
-                                    <div className="w-20 h-20 lg:w-24 lg:h-24 rounded-full overflow-hidden bg-gray-600 border-2 border-gray-500">
-                                        <img
-                                            src="https://via.placeholder.com/150x150/4B5563/FFFFFF?text=Profile"
-                                            alt="Profile"
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                    <div className="flex-1">
-                                        <h4 className="text-xl lg:text-2xl font-bold text-white mb-2">Sagar Surendhranbabu</h4>
-                                        <p className="text-sm lg:text-base text-blue-400 mb-3">Front-end Developer & UI Designer</p>
-                                        <p className="text-xs lg:text-sm text-gray-300 leading-relaxed">
-                                            Hello there! I'm Sagar Surendhranbabu, a passionate UI/UX designer and front-end developer with a journey spanning over a decade. For the past ten years, I've been immersed in the captivating realm of design and development, crafting digital experiences that seamlessly blend aesthetics with functionality. My mission? To transform ideas into visually stunning and user-centric digital solutions that leave a lasting impact.
-                                        </p>
-                                        <div className="mt-4">
-                                            <button className="text-xs lg:text-sm text-blue-400 hover:text-blue-300 flex items-center">
-                                                📥 Download Resume
-                                            </button>
+                        {/* About & Skills */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                            {/* About Me */}
+                            <div className="bg-gray-700 bg-opacity-50 p-6 rounded-lg border border-gray-600">
+                                <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                                    <FaRocket className="text-2xl mr-3 text-blue-400" />
+                                    About Me
+                                </h3>
+                                <p className="text-gray-300 text-sm lg:text-base leading-relaxed mb-4">
+                                   I’m a self-taught Front-End Developer driven by the passion to create responsive, engaging, and user-focused web experiences. I love turning design ideas into interactive, visually appealing interfaces.
+                                </p>
+                                <p className="text-gray-300 text-sm lg:text-base leading-relaxed">
+                                    My toolkit includes React.js, JavaScript, HTML, CSS, and Tailwind CSS — with a focus on component-based development and smooth state management. I take pride in writing clean, efficient code and constantly improving my skills to build faster, better-performing web applications.
+                                </p>
+                            </div>
+
+                            {/* Core Skills */}
+                            <div className="bg-gray-700 bg-opacity-50 p-6 rounded-lg border border-gray-600">
+                                <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+                                    <HiLightningBolt className="text-2xl mr-3 text-yellow-400" />
+                                    Core Skills
+                                </h3>
+                                <div className="space-y-4">
+                                    <div>
+                                        <div className="flex justify-between mb-2">
+                                            <span className="text-sm text-gray-300">React & Next.js</span>
+                                            <span className="text-sm text-blue-400">75%</span>
                                         </div>
+                                        <div className="w-full bg-gray-600 rounded-full h-2">
+                                            <div className="bg-blue-400 h-2 rounded-full" style={{ width: '75%' }}></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="flex justify-between mb-2">
+                                            <span className="text-sm text-gray-300">UI/UX Design</span>
+                                            <span className="text-sm text-purple-400">50%</span>
+                                        </div>
+                                        <div className="w-full bg-gray-600 rounded-full h-2">
+                                            <div className="bg-purple-400 h-2 rounded-full" style={{ width: '50%' }}></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="flex justify-between mb-2">
+                                            <span className="text-sm text-gray-300">TypeScript</span>
+                                            <span className="text-sm text-green-400">70%</span>
+                                        </div>
+                                        <div className="w-full bg-gray-600 rounded-full h-2">
+                                            <div className="bg-green-400 h-2 rounded-full" style={{ width: '70%' }}></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="flex justify-between mb-2">
+                                            <span className="text-sm text-gray-300">Node.js & APIs</span>
+                                            <span className="text-sm text-yellow-400">60%</span>
+                                        </div>
+                                        <div className="w-full bg-gray-600 rounded-full h-2">
+                                            <div className="bg-yellow-400 h-2 rounded-full" style={{ width: '60%' }}></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Services & Specializations */}
+                        <div className="bg-gray-700 bg-opacity-50 p-6 rounded-lg border border-gray-600 mb-6">
+                            <h3 className="text-xl font-bold text-white mb-6 flex items-center">
+                                <FaProjectDiagram className="text-2xl mr-3 text-purple-400" />
+                                What I Do Best
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 rounded-lg text-white">
+                                    <FaLaptopCode className="text-3xl mb-3" />
+                                    <h4 className="font-semibold mb-2">Frontend Development</h4>
+                                    <p className="text-sm opacity-90">Building responsive, performant web applications with modern frameworks</p>
+                                </div>
+                                <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-4 rounded-lg text-white">
+                                    <FaPalette className="text-3xl mb-3" />
+                                    <h4 className="font-semibold mb-2">UI/UX Design</h4>
+                                    <p className="text-sm opacity-90">Creating intuitive and beautiful user interfaces that users love</p>
+                                </div>
+                                <div className="bg-gradient-to-br from-green-500 to-green-600 p-4 rounded-lg text-white">
+                                    <FaMobile className="text-3xl mb-3" />
+                                    <h4 className="font-semibold mb-2">Mobile-First Design</h4>
+                                    <p className="text-sm opacity-90">Ensuring perfect experiences across all devices and screen sizes</p>
+                                </div>
+                                <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-4 rounded-lg text-white">
+                                    <FaBolt className="text-3xl mb-3" />
+                                    <h4 className="font-semibold mb-2">Performance Optimization</h4>
+                                    <p className="text-sm opacity-90">Making websites lightning-fast with advanced optimization techniques</p>
+                                </div>
+                                <div className="bg-gradient-to-br from-red-500 to-red-600 p-4 rounded-lg text-white">
+                                    <FaTools className="text-3xl mb-3" />
+                                    <h4 className="font-semibold mb-2">Technical Consulting</h4>
+                                    <p className="text-sm opacity-90">Helping teams choose the right technologies and architectures</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Contact & Social */}
+                        <div className="bg-gray-700 bg-opacity-50 p-6 rounded-lg border border-gray-600">
+                            <h3 className="text-xl font-bold text-white mb-6 flex items-center">
+                                <FaPhone className="text-2xl mr-3 text-green-400" />
+                                Let's Connect
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="space-y-4">
+                                    <div className="flex items-center">
+                                        <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                                            <MdEmail className="text-white text-lg" />
+                                        </div>
+                                        <div>
+                                            <div className="text-sm text-gray-400">Email</div>
+                                            <div className="text-white">thomaschacko180@gmail.com</div>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center">
+                                        <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                                            <MdPhone className="text-white text-lg" />
+                                        </div>
+                                        <div>
+                                            <div className="text-sm text-gray-400">Phone</div>
+                                            <div className="text-white">+91 8330811956</div>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center">
+                                        <div className="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center mr-4">
+                                            <MdLocationOn className="text-white text-lg" />
+                                        </div>
+                                        <div>
+                                            <div className="text-sm text-gray-400">Location</div>
+                                            <div className="text-white">Kochi, Kerala</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="text-sm text-gray-400 mb-4">Follow me on social media</div>
+                                    <div className="flex flex-wrap gap-3">
+                                        <button className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
+                                            <FaLinkedin className="mr-2" /> LinkedIn
+                                        </button>
+                                        <button className="bg-gray-800 cursor-pointer hover:bg-gray-900 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
+                                            <FaGithub className="mr-2" /> GitHub
+                                        </button>
+                                        <button className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
+                                            <FaFacebook className="mr-2" /> Facebook
+                                        </button>
+                                        <button className="bg-gradient-to-r from-purple-500 to-pink-500 cursor-pointer hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
+                                            <FaInstagram className="mr-2" /> Instagram
+                                        </button>
                                     </div>
                                 </div>
                             </div>
