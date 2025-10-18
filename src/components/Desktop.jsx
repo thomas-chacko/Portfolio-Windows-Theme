@@ -1,6 +1,5 @@
 import React from 'react'
 import DesktopIcon from './DesktopIcon'
-import wallpaper from '../assets/images/windows-wallaper.jpg'
 import desktopIcon from '../assets/images/desktop.png'
 import boyIcon from '../assets/images/boy.png'
 import gamesIcon from "../assets/images/game.png"
@@ -28,8 +27,10 @@ import {
 import GameCenter from './GameCenter'
 // Project data
 import { projects } from '../data/projects'
+// Wallpaper data
+import { wallpapers, themeColors } from '../data/wallpapers'
 
-const Desktop = ({ onOpenWindow }) => {
+const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme }) => {
     const desktopIcons = [
         {
             id: 'this-pc',
@@ -325,14 +326,19 @@ const Desktop = ({ onOpenWindow }) => {
                                         Passionate about turning complex problems into simple, beautiful solutions.
                                     </p>
                                     <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-                                        {/* <button className="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors flex items-center">
-                                            <MdEmail className="mr-2" />
-                                            Get In Touch
-                                        </button> */}
-                                        <button className="cursor-pointer bg-blue-500 bg-opacity-30 text-white px-6 py-2 rounded-full font-semibold hover:bg-opacity-40 transition-colors flex items-center">
+                                        <a 
+                                            href="/resume.pdf" 
+                                            download="Thomas_Chacko_Resume.pdf"
+                                            className="cursor-pointer text-white px-6 py-2 rounded-full font-semibold hover:opacity-80 transition-all flex items-center"
+                                            style={{ 
+                                                backgroundColor: `${currentTheme.color}50`,
+                                                borderColor: currentTheme.color,
+                                                borderWidth: '2px'
+                                            }}
+                                        >
                                             <FaDownload className="mr-2" />
                                             Download CV
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -495,18 +501,38 @@ const Desktop = ({ onOpenWindow }) => {
                                 <div>
                                     <div className="text-sm text-gray-400 mb-4">Follow me on social media</div>
                                     <div className="flex flex-wrap gap-3">
-                                        <button className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
+                                        <a 
+                                            href="https://www.linkedin.com/in/thomas-chacko" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center"
+                                        >
                                             <FaLinkedin className="mr-2" /> LinkedIn
-                                        </button>
-                                        <button className="bg-gray-800 cursor-pointer hover:bg-gray-900 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
+                                        </a>
+                                        <a 
+                                            href="https://github.com/thomas-chacko" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="bg-gray-800 cursor-pointer hover:bg-gray-900 text-white px-4 py-2 rounded-lg transition-colors flex items-center"
+                                        >
                                             <FaGithub className="mr-2" /> GitHub
-                                        </button>
-                                        <button className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
+                                        </a>
+                                        <a 
+                                            href="https://www.facebook.com/thomas.chacko" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center"
+                                        >
                                             <FaFacebook className="mr-2" /> Facebook
-                                        </button>
-                                        <button className="bg-gradient-to-r from-purple-500 to-pink-500 cursor-pointer hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg transition-colors flex items-center">
+                                        </a>
+                                        <a 
+                                            href="https://www.instagram.com/thomas.chacko" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="bg-gradient-to-r from-purple-500 to-pink-500 cursor-pointer hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg transition-colors flex items-center"
+                                        >
                                             <FaInstagram className="mr-2" /> Instagram
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -871,31 +897,57 @@ const Desktop = ({ onOpenWindow }) => {
                 icon: settingIcon,
                 content: (
                     <div className="p-4 lg:p-6">
-                        <h3 className="text-lg lg:text-xl font-semibold mb-4">System Settings</h3>
-                        <div className="space-y-4">
-                            {/* Display Settings */}
-                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded-lg border border-gray-600">
-                                <div className="flex items-center mb-3">
-                                    <div className="text-xl lg:text-2xl mr-3">🖥️</div>
-                                    <h4 className="font-semibold text-sm lg:text-base text-white">Display</h4>
+                        <h3 className="text-lg lg:text-xl font-semibold mb-6 text-white">Personalization Settings</h3>
+                        <div className="space-y-6">
+                            {/* Wallpaper Customization */}
+                            <div className="bg-gray-700 bg-opacity-50 p-4 lg:p-6 rounded-lg border border-gray-600">
+                                <div className="flex items-center mb-4">
+                                    <h4 className="font-semibold text-base lg:text-lg text-white">Wallpaper</h4>
                                 </div>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <div className="bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
-                                        <p className="text-xs lg:text-sm font-medium text-white">Resolution</p>
-                                        <p className="text-xs text-gray-300">1920 x 1080</p>
-                                    </div>
-                                    <div className="bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
-                                        <p className="text-xs lg:text-sm font-medium text-white">Theme</p>
-                                        <p className="text-xs text-gray-300">Windows Dark</p>
-                                    </div>
+                                <p className="text-sm text-gray-300 mb-4">Choose your desktop wallpaper</p>
+                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                                    {wallpapers.map((wallpaper) => (
+                                        <div
+                                            key={wallpaper.id}
+                                            onClick={() => onChangeWallpaper(wallpaper.id)}
+                                            className={`cursor-pointer rounded-lg overflow-hidden border-2 transition-all ${
+                                                localStorage.getItem('selectedWallpaper') === wallpaper.id || (!localStorage.getItem('selectedWallpaper') && wallpaper.id === 'default')
+                                                    ? `border-${currentTheme.id}-500 ring-2 ring-${currentTheme.id}-400 scale-105`
+                                                    : 'border-gray-500 hover:border-gray-400'
+                                            }`}
+                                            style={{
+                                                borderColor: localStorage.getItem('selectedWallpaper') === wallpaper.id || (!localStorage.getItem('selectedWallpaper') && wallpaper.id === 'default') ? currentTheme.color : undefined
+                                            }}
+                                        >
+                                            <div className="aspect-video relative">
+                                                {wallpaper.type === 'image' ? (
+                                                    <img
+                                                        src={wallpaper.image}
+                                                        alt={wallpaper.name}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                ) : (
+                                                    <div className={`w-full h-full ${wallpaper.gradient}`}></div>
+                                                )}
+                                                {(localStorage.getItem('selectedWallpaper') === wallpaper.id || (!localStorage.getItem('selectedWallpaper') && wallpaper.id === 'default')) && (
+                                                    <div className="absolute top-1 right-1 bg-white rounded-full p-1">
+                                                        <div className="w-3 h-3 rounded-full" style={{ backgroundColor: currentTheme.color }}></div>
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div className="p-2 bg-gray-800 bg-opacity-50">
+                                                <p className="text-xs text-white text-center truncate">{wallpaper.name}</p>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
 
-                            {/* System Settings */}
+                            {/* System Info */}
                             <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded-lg border border-gray-600">
                                 <div className="flex items-center mb-3">
                                     <div className="text-xl lg:text-2xl mr-3">⚙️</div>
-                                    <h4 className="font-semibold text-sm lg:text-base text-white">System</h4>
+                                    <h4 className="font-semibold text-sm lg:text-base text-white">System Information</h4>
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <div className="bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
@@ -904,47 +956,26 @@ const Desktop = ({ onOpenWindow }) => {
                                     </div>
                                     <div className="bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
                                         <p className="text-xs lg:text-sm font-medium text-white">Build</p>
-                                        <p className="text-xs text-gray-300">React 18.2.0</p>
+                                        <p className="text-xs text-gray-300">React 19.0.0</p>
+                                    </div>
+                                    <div className="bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
+                                        <p className="text-xs lg:text-sm font-medium text-white">Last Updated</p>
+                                        <p className="text-xs text-gray-300">Today</p>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Network Settings */}
-                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded-lg border border-gray-600">
-                                <div className="flex items-center mb-3">
-                                    <div className="text-xl lg:text-2xl mr-3">🌐</div>
-                                    <h4 className="font-semibold text-sm lg:text-base text-white">Network & Internet</h4>
-                                </div>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <div className="bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
-                                        <p className="text-xs lg:text-sm font-medium text-white">Status</p>
-                                        <p className="text-xs text-green-400">Connected</p>
-                                    </div>
-                                    <div className="bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
-                                        <p className="text-xs lg:text-sm font-medium text-white">Connection</p>
-                                        <p className="text-xs text-gray-300">Wi-Fi</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Privacy Settings */}
-                            <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded-lg border border-gray-600">
-                                <div className="flex items-center mb-3">
-                                    <div className="text-xl lg:text-2xl mr-3">🔒</div>
-                                    <h4 className="font-semibold text-sm lg:text-base text-white">Privacy & Security</h4>
-                                </div>
-                                <div className="space-y-2">
-                                    <div className="flex items-center justify-between bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
-                                        <span className="text-xs lg:text-sm text-white">Location Services</span>
-                                        <div className="w-10 h-5 bg-blue-500 rounded-full relative">
-                                            <div className="w-4 h-4 bg-white rounded-full absolute right-0.5 top-0.5"></div>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center justify-between bg-gray-600 bg-opacity-50 p-3 rounded border border-gray-500">
-                                        <span className="text-xs lg:text-sm text-white">Analytics</span>
-                                        <div className="w-10 h-5 bg-gray-400 rounded-full relative">
-                                            <div className="w-4 h-4 bg-white rounded-full absolute left-0.5 top-0.5"></div>
-                                        </div>
+                            {/* Tips */}
+                            <div className="bg-blue-500 bg-opacity-10 border border-blue-500 border-opacity-30 rounded-lg p-4">
+                                <div className="flex items-start">
+                                    <div className="text-2xl mr-3">💡</div>
+                                    <div>
+                                        <h5 className="font-semibold text-white mb-2">Personalization Tips</h5>
+                                        <ul className="text-sm text-gray-300 space-y-1">
+                                            <li>• Your preferences are automatically saved</li>
+                                            <li>• Try different wallpapers to match your mood</li>
+                                            <li>• Changes apply instantly across the portfolio</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -986,15 +1017,7 @@ const Desktop = ({ onOpenWindow }) => {
     ]
 
     return (
-        <div
-            className="absolute inset-0 py-4 px-3"
-            style={{
-                backgroundImage: `url(${wallpaper})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-            }}
-        >
+        <div className="absolute inset-0 py-4 px-3">
             <div className="grid grid-cols-1 gap-6 w-fit">
                 {desktopIcons.map((icon, index) => (
                     <DesktopIcon

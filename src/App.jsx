@@ -2,10 +2,27 @@ import React, { useState, useEffect } from 'react'
 import Desktop from './components/Desktop'
 import Taskbar from './components/Taskbar'
 import WindowModal from './components/WindowModal'
+import { wallpapers, themeColors } from './data/wallpapers'
 
 const App = () => {
   const [activeWindow, setActiveWindow] = useState(null)
   const [windows, setWindows] = useState([])
+  const [selectedWallpaper, setSelectedWallpaper] = useState(() => {
+    return localStorage.getItem('selectedWallpaper') || 'default'
+  })
+  const [selectedTheme, setSelectedTheme] = useState(() => {
+    return localStorage.getItem('selectedTheme') || 'blue'
+  })
+
+  // Save wallpaper preference
+  useEffect(() => {
+    localStorage.setItem('selectedWallpaper', selectedWallpaper)
+  }, [selectedWallpaper])
+
+  // Save theme preference
+  useEffect(() => {
+    localStorage.setItem('selectedTheme', selectedTheme)
+  }, [selectedTheme])
 
   // Global right-click prevention
   useEffect(() => {
@@ -60,12 +77,38 @@ const App = () => {
     setActiveWindow(windowId)
   }
 
-  return (
-    <div className="h-screen w-screen overflow-hidden bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 relative">
-      {/* Windows 10 Wallpaper Background */}
-      <div className="absolute inset-0 bg-gradient-radial from-white/10 to-transparent"></div>
+  const changeWallpaper = (wallpaperId) => {
+    setSelectedWallpaper(wallpaperId)
+  }
 
-      <Desktop onOpenWindow={openWindow} />
+  const changeTheme = (themeId) => {
+    setSelectedTheme(themeId)
+  }
+
+  // Get current wallpaper
+  const currentWallpaper = wallpapers.find(w => w.id === selectedWallpaper) || wallpapers[0]
+  const currentTheme = themeColors.find(t => t.id === selectedTheme) || themeColors[0]
+
+  return (
+    <div className="h-screen w-screen overflow-hidden relative">
+      {/* Wallpaper Background */}
+      {currentWallpaper.type === 'image' ? (
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
+          style={{ backgroundImage: `url(${currentWallpaper.image})` }}
+        />
+      ) : (
+        <div 
+          className="absolute inset-0 transition-all duration-700"
+          style={{
+            background: `linear-gradient(135deg, ${currentTheme.color}40, ${currentTheme.dark}90)`
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-radial from-white/10 to-transparent"></div>
+        </div>
+      )}
+
+      <Desktop onOpenWindow={openWindow} onChangeWallpaper={changeWallpaper} onChangeTheme={changeTheme} currentTheme={currentTheme} />
 
       {windows.map(window => (
         <WindowModal
