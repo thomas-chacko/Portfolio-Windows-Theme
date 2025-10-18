@@ -25,6 +25,8 @@ import {
 
 // Game components
 import GameCenter from './GameCenter'
+// Recycle Bin component
+import RecycleBinContent from './RecycleBinContent'
 // Project data
 import { projects } from '../data/projects'
 // Wallpaper data
@@ -993,23 +995,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                 type: 'recycle-bin',
                 icon: recycleBinIcon,
                 content: (
-                    <div className="p-4 lg:p-6">
-                        <div className="flex flex-col items-center justify-center h-full min-h-[300px]">
-                            <div className="text-6xl lg:text-8xl mb-4 opacity-50">🗑️</div>
-                            <h3 className="text-lg lg:text-xl font-semibold mb-2 text-gray-600">Recycle Bin is Empty</h3>
-                            <p className="text-sm lg:text-base text-gray-500 text-center max-w-md">
-                                When you delete files, they will appear here before being permanently removed.
-                            </p>
-                            <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                                <div className="flex items-center text-blue-700">
-                                    <div className="text-lg mr-2">💡</div>
-                                    <p className="text-xs lg:text-sm">
-                                        <strong>Tip:</strong> You can restore deleted files from here or empty the recycle bin to free up space.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <RecycleBinContent />
                 )
             }
         },
