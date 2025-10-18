@@ -61,8 +61,8 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                         <span className="text-2xl mr-3">⚡</span>
                                         System Performance
                                     </h4>
-                                    <div className="flex items-center text-green-400">
-                                        <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+                                    <div className="flex items-center text-gray-300">
+                                        <div className="w-2 h-2 bg-gray-400 rounded-full mr-2 animate-pulse"></div>
                                         <span className="text-xs lg:text-sm">Online</span>
                                     </div>
                                 </div>
@@ -71,36 +71,36 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                     <div className="text-center">
                                         <div className="text-2xl lg:text-3xl mb-2">🧠</div>
                                         <div className="text-xs lg:text-sm text-gray-300">CPU Usage</div>
-                                        <div className="text-lg lg:text-xl font-bold text-blue-400">23%</div>
+                                        <div className="text-lg lg:text-xl font-bold text-gray-200">23%</div>
                                         <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
-                                            <div className="bg-blue-400 h-2 rounded-full" style={{ width: '23%' }}></div>
+                                            <div className="bg-gray-400 h-2 rounded-full" style={{ width: '23%' }}></div>
                                         </div>
                                     </div>
 
                                     <div className="text-center">
                                         <div className="text-2xl lg:text-3xl mb-2">💾</div>
                                         <div className="text-xs lg:text-sm text-gray-300">Memory</div>
-                                        <div className="text-lg lg:text-xl font-bold text-green-400">67%</div>
+                                        <div className="text-lg lg:text-xl font-bold text-gray-200">67%</div>
                                         <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
-                                            <div className="bg-green-400 h-2 rounded-full" style={{ width: '67%' }}></div>
+                                            <div className="bg-gray-400 h-2 rounded-full" style={{ width: '67%' }}></div>
                                         </div>
                                     </div>
 
                                     <div className="text-center">
                                         <div className="text-2xl lg:text-3xl mb-2">💿</div>
                                         <div className="text-xs lg:text-sm text-gray-300">Storage</div>
-                                        <div className="text-lg lg:text-xl font-bold text-yellow-400">45%</div>
+                                        <div className="text-lg lg:text-xl font-bold text-gray-200">45%</div>
                                         <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
-                                            <div className="bg-yellow-400 h-2 rounded-full" style={{ width: '45%' }}></div>
+                                            <div className="bg-gray-400 h-2 rounded-full" style={{ width: '45%' }}></div>
                                         </div>
                                     </div>
 
                                     <div className="text-center">
                                         <div className="text-2xl lg:text-3xl mb-2">🌐</div>
                                         <div className="text-xs lg:text-sm text-gray-300">Network</div>
-                                        <div className="text-lg lg:text-xl font-bold text-purple-400">89%</div>
+                                        <div className="text-lg lg:text-xl font-bold text-gray-200">89%</div>
                                         <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
-                                            <div className="bg-purple-400 h-2 rounded-full" style={{ width: '89%' }}></div>
+                                            <div className="bg-gray-400 h-2 rounded-full" style={{ width: '89%' }}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -170,7 +170,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                     <div className="space-y-3">
                                         <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-40 rounded-lg hover:bg-opacity-60 transition-all cursor-pointer">
                                             <div className="flex items-center">
-                                                <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center mr-3">
+                                                <div className="w-8 h-8 bg-gray-500 bg-opacity-50 rounded flex items-center justify-center mr-3 border border-gray-500">
                                                     <span className="text-white text-sm">💼</span>
                                                 </div>
                                                 <div>
@@ -178,12 +178,12 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                                     <div className="text-xs text-gray-300">15.2 GB free of 50 GB</div>
                                                 </div>
                                             </div>
-                                            <div className="text-xs text-blue-400">69% full</div>
+                                            <div className="text-xs text-gray-300">69% full</div>
                                         </div>
 
                                         <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-40 rounded-lg hover:bg-opacity-60 transition-all cursor-pointer">
                                             <div className="flex items-center">
-                                                <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center mr-3">
+                                                <div className="w-8 h-8 bg-gray-500 bg-opacity-50 rounded flex items-center justify-center mr-3 border border-gray-500">
                                                     <span className="text-white text-sm">🎨</span>
                                                 </div>
                                                 <div>
@@ -191,12 +191,12 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                                     <div className="text-xs text-gray-300">25.8 GB free of 100 GB</div>
                                                 </div>
                                             </div>
-                                            <div className="text-xs text-green-400">74% full</div>
+                                            <div className="text-xs text-gray-300">74% full</div>
                                         </div>
 
                                         <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-40 rounded-lg hover:bg-opacity-60 transition-all cursor-pointer">
                                             <div className="flex items-center">
-                                                <div className="w-8 h-8 bg-purple-500 rounded flex items-center justify-center mr-3">
+                                                <div className="w-8 h-8 bg-gray-500 bg-opacity-50 rounded flex items-center justify-center mr-3 border border-gray-500">
                                                     <span className="text-white text-sm">☁️</span>
                                                 </div>
                                                 <div>
@@ -204,7 +204,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                                     <div className="text-xs text-gray-300">Unlimited storage</div>
                                                 </div>
                                             </div>
-                                            <div className="text-xs text-purple-400">Synced</div>
+                                            <div className="text-xs text-gray-300">Synced</div>
                                         </div>
                                     </div>
                                 </div>
@@ -216,25 +216,25 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                         Developer Tools
                                     </h5>
                                     <div className="grid grid-cols-2 gap-3">
-                                        <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-3 rounded-lg text-white hover:scale-105 transition-transform cursor-pointer">
+                                        <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500">
                                             <div className="text-lg mb-1">⚛️</div>
                                             <div className="text-xs font-medium">React DevTools</div>
                                             <div className="text-xs opacity-80">v4.28.0</div>
                                         </div>
 
-                                        <div className="bg-gradient-to-br from-green-500 to-green-600 p-3 rounded-lg text-white hover:scale-105 transition-transform cursor-pointer">
+                                        <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500">
                                             <div className="text-lg mb-1">📦</div>
                                             <div className="text-xs font-medium">Node.js</div>
                                             <div className="text-xs opacity-80">v18.17.0</div>
                                         </div>
 
-                                        <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-3 rounded-lg text-white hover:scale-105 transition-transform cursor-pointer">
+                                        <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500">
                                             <div className="text-lg mb-1">🎨</div>
                                             <div className="text-xs font-medium">Figma</div>
                                             <div className="text-xs opacity-80">Design Tool</div>
                                         </div>
 
-                                        <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-3 rounded-lg text-white hover:scale-105 transition-transform cursor-pointer">
+                                        <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500">
                                             <div className="text-lg mb-1">💻</div>
                                             <div className="text-xs font-medium">VS Code</div>
                                             <div className="text-xs opacity-80">Editor</div>
@@ -252,35 +252,35 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                 <div className="space-y-3">
                                     <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-30 rounded-lg">
                                         <div className="flex items-center">
-                                            <div className="w-2 h-2 bg-green-400 rounded-full mr-3"></div>
+                                            <div className="w-2 h-2 bg-gray-400 rounded-full mr-3"></div>
                                             <div>
                                                 <div className="text-sm text-white">Portfolio website updated</div>
                                                 <div className="text-xs text-gray-400">2 hours ago</div>
                                             </div>
                                         </div>
-                                        <div className="text-xs text-green-400">✓ Deployed</div>
+                                        <div className="text-xs text-gray-300">✓ Deployed</div>
                                     </div>
 
                                     <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-30 rounded-lg">
                                         <div className="flex items-center">
-                                            <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
+                                            <div className="w-2 h-2 bg-gray-400 rounded-full mr-3"></div>
                                             <div>
                                                 <div className="text-sm text-white">New project: E-commerce App</div>
                                                 <div className="text-xs text-gray-400">1 day ago</div>
                                             </div>
                                         </div>
-                                        <div className="text-xs text-blue-400">In Progress</div>
+                                        <div className="text-xs text-gray-300">In Progress</div>
                                     </div>
 
                                     <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-30 rounded-lg">
                                         <div className="flex items-center">
-                                            <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                                            <div className="w-2 h-2 bg-gray-400 rounded-full mr-3"></div>
                                             <div>
                                                 <div className="text-sm text-white">Skills updated: TypeScript</div>
                                                 <div className="text-xs text-gray-400">3 days ago</div>
                                             </div>
                                         </div>
-                                        <div className="text-xs text-purple-400">Certified</div>
+                                        <div className="text-xs text-gray-300">Certified</div>
                                     </div>
                                 </div>
                             </div>
@@ -300,7 +300,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                 content: (
                     <div className="p-4 lg:p-6">
                         {/* Hero Section */}
-                        <div className="relative bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 rounded-xl p-6 lg:p-8 mb-6 overflow-hidden">
+                        <div className="relative bg-gray-700 bg-opacity-80 rounded-xl p-6 lg:p-8 mb-6 overflow-hidden border border-gray-600">
                             <div className="absolute inset-0 bg-black bg-opacity-20"></div>
                             <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-start gap-6">
                                 <div className="relative">
@@ -436,27 +436,27 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                 What I Do Best
                             </h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-4 rounded-lg text-white">
+                                <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg text-white border border-gray-500">
                                     <FaLaptopCode className="text-3xl mb-3" />
                                     <h4 className="font-semibold mb-2">Frontend Development</h4>
                                     <p className="text-sm opacity-90">Building responsive, performant web applications with modern frameworks</p>
                                 </div>
-                                <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-4 rounded-lg text-white">
+                                <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg text-white border border-gray-500">
                                     <FaPalette className="text-3xl mb-3" />
                                     <h4 className="font-semibold mb-2">UI/UX Design</h4>
                                     <p className="text-sm opacity-90">Creating intuitive and beautiful user interfaces that users love</p>
                                 </div>
-                                <div className="bg-gradient-to-br from-green-500 to-green-600 p-4 rounded-lg text-white">
+                                <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg text-white border border-gray-500">
                                     <FaMobile className="text-3xl mb-3" />
                                     <h4 className="font-semibold mb-2">Mobile-First Design</h4>
                                     <p className="text-sm opacity-90">Ensuring perfect experiences across all devices and screen sizes</p>
                                 </div>
-                                <div className="bg-gradient-to-br from-orange-500 to-orange-600 p-4 rounded-lg text-white">
+                                <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg text-white border border-gray-500">
                                     <FaBolt className="text-3xl mb-3" />
                                     <h4 className="font-semibold mb-2">Performance Optimization</h4>
                                     <p className="text-sm opacity-90">Making websites lightning-fast with advanced optimization techniques</p>
                                 </div>
-                                <div className="bg-gradient-to-br from-red-500 to-red-600 p-4 rounded-lg text-white">
+                                <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg text-white border border-gray-500">
                                     <FaTools className="text-3xl mb-3" />
                                     <h4 className="font-semibold mb-2">Technical Consulting</h4>
                                     <p className="text-sm opacity-90">Helping teams choose the right technologies and architectures</p>
@@ -473,7 +473,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-4">
                                     <div className="flex items-center">
-                                        <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                                        <div className="w-10 h-10 bg-gray-500 bg-opacity-50 rounded-full flex items-center justify-center mr-4 border border-gray-500">
                                             <MdEmail className="text-white text-lg" />
                                         </div>
                                         <div>
@@ -507,7 +507,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                             href="https://www.linkedin.com/in/thomas-chacko" 
                                             target="_blank" 
                                             rel="noopener noreferrer"
-                                            className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center"
+                                            className="bg-gray-600 cursor-pointer hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition-colors flex items-center border border-gray-500"
                                         >
                                             <FaLinkedin className="mr-2" /> LinkedIn
                                         </a>
@@ -515,7 +515,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                             href="https://github.com/thomas-chacko" 
                                             target="_blank" 
                                             rel="noopener noreferrer"
-                                            className="bg-gray-800 cursor-pointer hover:bg-gray-900 text-white px-4 py-2 rounded-lg transition-colors flex items-center"
+                                            className="bg-gray-800 cursor-pointer hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center border border-gray-600"
                                         >
                                             <FaGithub className="mr-2" /> GitHub
                                         </a>
@@ -523,7 +523,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                             href="https://www.facebook.com/thomas.chacko" 
                                             target="_blank" 
                                             rel="noopener noreferrer"
-                                            className="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center"
+                                            className="bg-gray-600 cursor-pointer hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition-colors flex items-center border border-gray-500"
                                         >
                                             <FaFacebook className="mr-2" /> Facebook
                                         </a>
@@ -531,7 +531,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                             href="https://www.instagram.com/thomas.chacko" 
                                             target="_blank" 
                                             rel="noopener noreferrer"
-                                            className="bg-gradient-to-r from-purple-500 to-pink-500 cursor-pointer hover:from-purple-600 hover:to-pink-600 text-white px-4 py-2 rounded-lg transition-colors flex items-center"
+                                            className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition-colors flex items-center cursor-pointer border border-gray-500"
                                         >
                                             <FaInstagram className="mr-2" /> Instagram
                                         </a>
@@ -567,7 +567,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                 content: (
                     <div className="p-4 lg:p-6">
                         {/* Header Section */}
-                        <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg p-6 mb-6 text-white">
+                        <div className="bg-gray-700 bg-opacity-80 border border-gray-600 rounded-lg p-6 mb-6 text-white">
                             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
                                 <div className="mb-4 lg:mb-0">
                                     <h1 className="text-2xl lg:text-3xl font-bold mb-2">Thomas Chacko</h1>
@@ -593,15 +593,15 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                         Download Resume
                                     </button>
                                     <div className="flex gap-2">
-                                        <a href="https://thomaschacko.com" className="bg-blue-500 hover:bg-blue-400 px-3 py-1 rounded text-sm transition-colors flex items-center">
+                                        <a href="https://thomaschacko.com" className="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
                                             <FaExternalLinkAlt className="mr-1" />
                                             Portfolio
                                         </a>
-                                        <a href="https://linkedin.com/in/thomas-chacko" className="bg-blue-500 hover:bg-blue-400 px-3 py-1 rounded text-sm transition-colors flex items-center">
+                                        <a href="https://linkedin.com/in/thomas-chacko" className="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
                                             <FaLinkedin className="mr-1" />
                                             LinkedIn
                                         </a>
-                                        <a href="https://github.com/thomas-chacko" className="bg-blue-500 hover:bg-blue-400 px-3 py-1 rounded text-sm transition-colors flex items-center">
+                                        <a href="https://github.com/thomas-chacko" className="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
                                             <FaGithub className="mr-1" />
                                             GitHub
                                         </a>
@@ -631,8 +631,8 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                 Professional Experience
                             </h3>
 
-                            <div className="border-l-4 border-blue-500 pl-6 relative">
-                                <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full"></div>
+                            <div className="border-l-4 border-gray-500 pl-6 relative">
+                                <div className="absolute -left-2 top-0 w-4 h-4 bg-gray-400 rounded-full"></div>
                                 <div className="mb-6">
                                     <h4 className="text-lg font-semibold text-white mb-2">Front End Developer</h4>
                                     <div className="flex flex-wrap items-center gap-4 mb-3">
@@ -790,12 +790,12 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                     </p>
                                 </div>
                                 <div className="hidden lg:flex items-center gap-3">
-                                    <div className="bg-blue-500 bg-opacity-20 px-4 py-2 rounded-lg border border-blue-400">
-                                        <span className="text-blue-300 text-sm font-medium">{projects.length} Projects</span>
+                                    <div className="bg-gray-600 bg-opacity-30 px-4 py-2 rounded-lg border border-gray-500">
+                                        <span className="text-gray-300 text-sm font-medium">{projects.length} Projects</span>
                                     </div>
                                 </div>
                             </div>
-                            <div className="h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"></div>
+                            <div className="h-1 bg-gray-600 rounded-full"></div>
                         </div>
 
                         {/* Projects Grid */}
@@ -831,7 +831,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                             {project.tags.map((tag, tagIndex) => (
                                                 <span
                                                     key={tagIndex}
-                                                    className="bg-gray-700 bg-opacity-60 text-gray-300 px-3 py-1 rounded-full text-xs font-medium border border-gray-600 hover:border-blue-400 hover:text-blue-300 transition-colors"
+                                                    className="bg-gray-700 bg-opacity-60 text-gray-300 px-3 py-1 rounded-full text-xs font-medium border border-gray-600 hover:border-gray-500 hover:text-gray-200 transition-colors"
                                                 >
                                                     {tag}
                                                 </span>
@@ -844,7 +844,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                                 href={project.liveUrl}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="flex-1 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:from-blue-600 hover:to-blue-700 transition-all flex items-center justify-center gap-2 text-sm"
+                                                className="flex-1 bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded-lg font-medium transition-all flex items-center justify-center gap-2 text-sm border border-gray-500"
                                                 onClick={(e) => e.stopPropagation()}
                                             >
                                                 <FaExternalLinkAlt className="text-xs" /> View Live
@@ -867,20 +867,20 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                         {/* Footer Stats */}
                         <div className="mt-12 pt-8 border-t border-gray-600">
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                <div className="bg-gradient-to-br from-blue-500 to-blue-600 bg-opacity-20 p-4 rounded-lg border border-blue-500 border-opacity-30 text-center">
-                                    <div className="text-3xl font-bold text-blue-400 mb-1">{projects.length}</div>
+                                <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg border border-gray-500 text-center">
+                                    <div className="text-3xl font-bold text-gray-200 mb-1">{projects.length}</div>
                                     <div className="text-sm text-gray-300">Total Projects</div>
                                 </div>
-                                <div className="bg-gradient-to-br from-green-500 to-green-600 bg-opacity-20 p-4 rounded-lg border border-green-500 border-opacity-30 text-center">
-                                    <div className="text-3xl font-bold text-green-400 mb-1">100%</div>
+                                <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg border border-gray-500 text-center">
+                                    <div className="text-3xl font-bold text-gray-200 mb-1">100%</div>
                                     <div className="text-sm text-gray-300">Responsive</div>
                                 </div>
-                                <div className="bg-gradient-to-br from-purple-500 to-purple-600 bg-opacity-20 p-4 rounded-lg border border-purple-500 border-opacity-30 text-center">
-                                    <div className="text-3xl font-bold text-purple-400 mb-1">10+</div>
+                                <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg border border-gray-500 text-center">
+                                    <div className="text-3xl font-bold text-gray-200 mb-1">10+</div>
                                     <div className="text-sm text-gray-300">Technologies</div>
                                 </div>
-                                <div className="bg-gradient-to-br from-pink-500 to-pink-600 bg-opacity-20 p-4 rounded-lg border border-pink-500 border-opacity-30 text-center">
-                                    <div className="text-3xl font-bold text-pink-400 mb-1">Live</div>
+                                <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg border border-gray-500 text-center">
+                                    <div className="text-3xl font-bold text-gray-200 mb-1">Live</div>
                                     <div className="text-sm text-gray-300">All Deployed</div>
                                 </div>
                             </div>
@@ -968,7 +968,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                             </div>
 
                             {/* Tips */}
-                            <div className="bg-blue-500 bg-opacity-10 border border-blue-500 border-opacity-30 rounded-lg p-4">
+                            <div className="bg-gray-700 bg-opacity-30 border border-gray-600 rounded-lg p-4">
                                 <div className="flex items-start">
                                     <div className="text-2xl mr-3">💡</div>
                                     <div>
