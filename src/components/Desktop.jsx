@@ -77,7 +77,11 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
 
                                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                                     <div className="text-center">
-                                        <div className="text-2xl lg:text-3xl mb-2 text-gray-400"><BsCpu /></div>
+                                        <div className="flex justify-center mb-2">
+                                            <div className="w-12 h-12 lg:w-14 lg:h-14 bg-blue-500 rounded-xl flex items-center justify-center">
+                                                <BsCpu className="text-white text-2xl lg:text-3xl" />
+                                            </div>
+                                        </div>
                                         <div className="text-xs lg:text-sm text-gray-300">CPU Usage</div>
                                         <div className="text-lg lg:text-xl font-bold text-gray-200">23%</div>
                                         <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
@@ -86,7 +90,11 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                     </div>
 
                                     <div className="text-center">
-                                        <div className="text-2xl lg:text-3xl mb-2 text-gray-400"><FaMemory /></div>
+                                        <div className="flex justify-center mb-2">
+                                            <div className="w-12 h-12 lg:w-14 lg:h-14 bg-green-500 rounded-xl flex items-center justify-center">
+                                                <FaMemory className="text-white text-2xl lg:text-3xl" />
+                                            </div>
+                                        </div>
                                         <div className="text-xs lg:text-sm text-gray-300">Memory</div>
                                         <div className="text-lg lg:text-xl font-bold text-gray-200">67%</div>
                                         <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
@@ -95,7 +103,11 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                     </div>
 
                                     <div className="text-center">
-                                        <div className="text-2xl lg:text-3xl mb-2 text-gray-400"><FaHdd /></div>
+                                        <div className="flex justify-center mb-2">
+                                            <div className="w-12 h-12 lg:w-14 lg:h-14 bg-purple-500 rounded-xl flex items-center justify-center">
+                                                <FaHdd className="text-white text-2xl lg:text-3xl" />
+                                            </div>
+                                        </div>
                                         <div className="text-xs lg:text-sm text-gray-300">Storage</div>
                                         <div className="text-lg lg:text-xl font-bold text-gray-200">45%</div>
                                         <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
@@ -104,7 +116,11 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                     </div>
 
                                     <div className="text-center">
-                                        <div className="text-2xl lg:text-3xl mb-2 text-gray-400"><FaNetworkWired /></div>
+                                        <div className="flex justify-center mb-2">
+                                            <div className="w-12 h-12 lg:w-14 lg:h-14 bg-orange-500 rounded-xl flex items-center justify-center">
+                                                <FaNetworkWired className="text-white text-2xl lg:text-3xl" />
+                                            </div>
+                                        </div>
                                         <div className="text-xs lg:text-sm text-gray-300">Network</div>
                                         <div className="text-lg lg:text-xl font-bold text-gray-200">89%</div>
                                         <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
@@ -224,28 +240,44 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                         Developer Tools
                                     </h5>
                                     <div className="grid grid-cols-2 gap-3">
-                                        <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500">
-                                            <FaReact className="text-lg mb-1" />
-                                            <div className="text-xs font-medium">React DevTools</div>
-                                            <div className="text-xs opacity-80">v4.28.0</div>
+                                        <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500 flex items-center gap-3">
+                                            <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <FaReact className="text-white text-lg" />
+                                            </div>
+                                            <div>
+                                                <div className="text-xs font-medium">React DevTools</div>
+                                                <div className="text-xs opacity-80">v4.28.0</div>
+                                            </div>
                                         </div>
 
-                                        <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500">
-                                            <FaNodeJs className="text-lg mb-1" />
-                                            <div className="text-xs font-medium">Node.js</div>
-                                            <div className="text-xs opacity-80">v18.17.0</div>
+                                        <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500 flex items-center gap-3">
+                                            <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <FaNodeJs className="text-white text-lg" />
+                                            </div>
+                                            <div>
+                                                <div className="text-xs font-medium">Node.js</div>
+                                                <div className="text-xs opacity-80">v18.17.0</div>
+                                            </div>
                                         </div>
 
-                                        <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500">
-                                            <MdDesignServices className="text-lg mb-1" />
-                                            <div className="text-xs font-medium">Figma</div>
-                                            <div className="text-xs opacity-80">Design Tool</div>
+                                        <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500 flex items-center gap-3">
+                                            <div className="w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <MdDesignServices className="text-white text-lg" />
+                                            </div>
+                                            <div>
+                                                <div className="text-xs font-medium">Figma</div>
+                                                <div className="text-xs opacity-80">Design Tool</div>
+                                            </div>
                                         </div>
 
-                                        <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500">
-                                            <FaCode className="text-lg mb-1" />
-                                            <div className="text-xs font-medium">VS Code</div>
-                                            <div className="text-xs opacity-80">Editor</div>
+                                        <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500 flex items-center gap-3">
+                                            <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <FaCode className="text-white text-lg" />
+                                            </div>
+                                            <div>
+                                                <div className="text-xs font-medium">VS Code</div>
+                                                <div className="text-xs opacity-80">Editor</div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -445,27 +477,37 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                             </h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                                 <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg text-white border border-gray-500">
-                                    <FaLaptopCode className="text-3xl mb-3" />
+                                    <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-3">
+                                        <FaLaptopCode className="text-white text-2xl" />
+                                    </div>
                                     <h4 className="font-semibold mb-2">Frontend Development</h4>
                                     <p className="text-sm opacity-90">Building responsive, performant web applications with modern frameworks</p>
                                 </div>
                                 <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg text-white border border-gray-500">
-                                    <FaPalette className="text-3xl mb-3" />
+                                    <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-3">
+                                        <FaPalette className="text-white text-2xl" />
+                                    </div>
                                     <h4 className="font-semibold mb-2">UI/UX Design</h4>
                                     <p className="text-sm opacity-90">Creating intuitive and beautiful user interfaces that users love</p>
                                 </div>
                                 <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg text-white border border-gray-500">
-                                    <FaMobile className="text-3xl mb-3" />
+                                    <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-3">
+                                        <FaMobile className="text-white text-2xl" />
+                                    </div>
                                     <h4 className="font-semibold mb-2">Mobile-First Design</h4>
                                     <p className="text-sm opacity-90">Ensuring perfect experiences across all devices and screen sizes</p>
                                 </div>
                                 <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg text-white border border-gray-500">
-                                    <FaBolt className="text-3xl mb-3" />
+                                    <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-3">
+                                        <FaBolt className="text-white text-2xl" />
+                                    </div>
                                     <h4 className="font-semibold mb-2">Performance Optimization</h4>
                                     <p className="text-sm opacity-90">Making websites lightning-fast with advanced optimization techniques</p>
                                 </div>
                                 <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg text-white border border-gray-500">
-                                    <FaTools className="text-3xl mb-3" />
+                                    <div className="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center mb-3">
+                                        <FaTools className="text-white text-2xl" />
+                                    </div>
                                     <h4 className="font-semibold mb-2">Technical Consulting</h4>
                                     <p className="text-sm opacity-90">Helping teams choose the right technologies and architectures</p>
                                 </div>

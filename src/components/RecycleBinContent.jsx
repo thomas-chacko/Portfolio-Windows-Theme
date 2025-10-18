@@ -2,13 +2,12 @@ import React, { useState } from 'react'
 import { 
     FaTrash, FaUndo, FaSkullCrossbones, FaGlobe, FaDollarSign,
     FaRulerCombined, FaCoffee, FaBone, FaMoon, FaFistRaised,
-    FaCarousel, FaBullseye, FaPaintBrush, FaPhp, FaInfinity,
+    FaBullseye, FaPaintBrush, FaPhp, FaInfinity,
     FaMask, FaQuestionCircle, FaRocket, FaGamepad, FaMusic,
     FaPizzaSlice, FaTrophy, FaDog, FaBolt, FaCode, FaLayerGroup,
-    FaFlask, FaBug, FaGem, FaLightbulb
+    FaFlask, FaBug, FaGem, FaLightbulb, FaAngular
 } from 'react-icons/fa'
-import { SiJquery, SiAngularjs, SiCoffeescript, SiBackbonedotjs } from 'react-icons/si'
-import { MdBugReport } from 'react-icons/md'
+import { SiJquery } from 'react-icons/si'
 
 const RecycleBinContent = () => {
     const [restoredItems, setRestoredItems] = useState([])
@@ -50,7 +49,7 @@ const RecycleBinContent = () => {
             id: 'angularjs',
             name: 'AngularJS',
             version: 'v1.x',
-            icon: <SiAngularjs />,
+            icon: <FaAngular />,
             deletedOn: 'Jan 01, 2022',
             epitaph: 'Two-way binding was cool until it wasn\'t. Long live Angular 2+.',
         },
@@ -66,7 +65,7 @@ const RecycleBinContent = () => {
             id: 'backbone',
             name: 'Backbone.js',
             version: 'v1.4',
-            icon: <SiBackbonedotjs />,
+            icon: <FaLayerGroup />,
             deletedOn: '~2016',
             epitaph: 'Gave structure to chaos, but React/Vue gave us components.',
         },
