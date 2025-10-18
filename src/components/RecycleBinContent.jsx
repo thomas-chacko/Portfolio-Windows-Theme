@@ -1,5 +1,14 @@
 import React, { useState } from 'react'
-import { FaTrash, FaUndo } from 'react-icons/fa'
+import { 
+    FaTrash, FaUndo, FaSkullCrossbones, FaGlobe, FaDollarSign,
+    FaRulerCombined, FaCoffee, FaBone, FaMoon, FaFistRaised,
+    FaCarousel, FaBullseye, FaPaintBrush, FaPhp, FaInfinity,
+    FaMask, FaQuestionCircle, FaRocket, FaGamepad, FaMusic,
+    FaPizzaSlice, FaTrophy, FaDog, FaBolt, FaCode, FaLayerGroup,
+    FaFlask, FaBug, FaGem, FaLightbulb
+} from 'react-icons/fa'
+import { SiJquery, SiAngularjs, SiCoffeescript, SiBackbonedotjs } from 'react-icons/si'
+import { MdBugReport } from 'react-icons/md'
 
 const RecycleBinContent = () => {
     const [restoredItems, setRestoredItems] = useState([])
@@ -17,73 +26,65 @@ const RecycleBinContent = () => {
             id: 'flash',
             name: 'Adobe Flash',
             version: 'v32.0',
-            icon: '⚡',
+            icon: <FaBolt />,
             deletedOn: 'Dec 31, 2020',
             epitaph: 'RIP Flash. You powered the internet\'s golden age of animations and annoying ads.',
-            color: 'from-red-500 to-red-600'
         },
         {
             id: 'ie',
             name: 'Internet Explorer',
             version: 'v11',
-            icon: '🌐',
+            icon: <FaGlobe />,
             deletedOn: 'Jun 15, 2022',
             epitaph: 'After 27 years of breaking websites, IE finally retired. We won\'t miss you.',
-            color: 'from-blue-400 to-blue-500'
         },
         {
             id: 'jquery',
             name: 'jQuery',
             version: 'v3.x',
-            icon: '💰',
+            icon: <SiJquery />,
             deletedOn: '~2020',
             epitaph: 'You made the DOM easier, but React came and said "I got this."',
-            color: 'from-sky-500 to-sky-600'
         },
         {
             id: 'angularjs',
             name: 'AngularJS',
             version: 'v1.x',
-            icon: '📐',
+            icon: <SiAngularjs />,
             deletedOn: 'Jan 01, 2022',
             epitaph: 'Two-way binding was cool until it wasn\'t. Long live Angular 2+.',
-            color: 'from-red-600 to-red-700'
         },
         {
             id: 'coffeescript',
             name: 'CoffeeScript',
             version: 'v1.12',
-            icon: '☕',
+            icon: <FaCoffee />,
             deletedOn: '~2018',
             epitaph: 'Made JavaScript beautiful, then ES6 came and did it better.',
-            color: 'from-amber-600 to-amber-700'
         },
         {
             id: 'backbone',
             name: 'Backbone.js',
             version: 'v1.4',
-            icon: '🦴',
+            icon: <SiBackbonedotjs />,
             deletedOn: '~2016',
             epitaph: 'Gave structure to chaos, but React/Vue gave us components.',
-            color: 'from-gray-500 to-gray-600'
         },
         {
             id: 'silverlight',
             name: 'Microsoft Silverlight',
             version: 'v5.1',
-            icon: '🌙',
+            icon: <FaMoon />,
             deletedOn: 'Oct 12, 2021',
             epitaph: 'Microsoft\'s answer to Flash. Nobody asked the question.',
-            color: 'from-slate-500 to-slate-600'
         },
         {
             id: 'dojo',
             name: 'Dojo Toolkit',
             version: 'v1.16',
-            icon: '🥋',
+            icon: <FaFistRaised />,
             deletedOn: '~2019',
             epitaph: 'Enterprise-grade framework that enterprises forgot about.',
-            color: 'from-orange-500 to-orange-600'
         }
     ]
 
@@ -92,34 +93,30 @@ const RecycleBinContent = () => {
         {
             id: 'exp1',
             name: 'CSS-Only Carousel',
-            icon: '🎠',
+            icon: <FaLayerGroup />,
             deletedOn: 'Last Week',
             reason: 'Looked great until someone tried to use it on mobile. JavaScript it is.',
-            severity: 'Medium'
         },
         {
             id: 'exp2',
             name: 'Custom State Management',
-            icon: '🎯',
+            icon: <FaBullseye />,
             deletedOn: '2 Months Ago',
             reason: 'Reinvented Redux, but worse. Just used Redux Toolkit.',
-            severity: 'High'
         },
         {
             id: 'exp3',
             name: 'Homemade UI Library',
-            icon: '🎨',
+            icon: <FaPaintBrush />,
             deletedOn: '6 Months Ago',
             reason: 'Built 50 components, then discovered Shadcn UI. Cried a little.',
-            severity: 'Critical'
         },
         {
             id: 'exp4',
             name: 'PHP Backend (2024)',
-            icon: '🐘',
+            icon: <FaCode />,
             deletedOn: '3 Months Ago',
             reason: 'Tried to bring back PHP. Node.js won. As it should.',
-            severity: 'Low'
         }
     ]
 
@@ -128,7 +125,7 @@ const RecycleBinContent = () => {
         {
             id: 'bug1',
             name: 'The Infinite Loop',
-            icon: '♾️',
+            icon: <FaInfinity />,
             fixedOn: 'Jan 15, 2024',
             description: 'useEffect with missing dependency. Browser froze. Lesson learned.',
             timeToFix: '3 hours'
@@ -136,7 +133,7 @@ const RecycleBinContent = () => {
         {
             id: 'bug2',
             name: 'CSS Z-Index Battle',
-            icon: '🎭',
+            icon: <FaMask />,
             fixedOn: 'Feb 20, 2024',
             description: 'z-index: 99999999 vs z-index: 999999999. Fixed by using proper stacking context.',
             timeToFix: '2 days'
@@ -144,7 +141,7 @@ const RecycleBinContent = () => {
         {
             id: 'bug3',
             name: 'undefined is not a function',
-            icon: '❓',
+            icon: <FaQuestionCircle />,
             fixedOn: 'Mar 10, 2024',
             description: 'Classic JavaScript. Forgot to check if function exists. Added optional chaining.',
             timeToFix: '30 minutes'
@@ -152,7 +149,7 @@ const RecycleBinContent = () => {
         {
             id: 'bug4',
             name: 'Async/Await Race Condition',
-            icon: '🏎️',
+            icon: <FaRocket />,
             fixedOn: 'Apr 05, 2024',
             description: 'Two API calls racing. Sometimes user data loaded before auth. Added proper sequencing.',
             timeToFix: '4 hours'
@@ -160,7 +157,7 @@ const RecycleBinContent = () => {
         {
             id: 'bug5',
             name: 'The Midnight Deploy',
-            icon: '🌙',
+            icon: <FaMoon />,
             fixedOn: 'May 12, 2024',
             description: 'Deployed at 11:59 PM. Broke production. Rolled back at 12:03 AM. Never again.',
             timeToFix: '4 minutes (+ 1 hour of panic)'
@@ -171,31 +168,31 @@ const RecycleBinContent = () => {
     const easterEggs = [
         {
             id: 'egg1',
-            icon: '🎮',
+            icon: <FaGamepad />,
             title: 'Hidden Konami Code',
             secret: 'Up, Up, Down, Down, Left, Right, Left, Right, B, A - Unlocks retro mode!'
         },
         {
             id: 'egg2',
-            icon: '🎵',
+            icon: <FaMusic />,
             title: 'Favorite Debug Song',
             secret: '"Eye of the Tiger" - My go-to when fixing critical bugs at 2 AM'
         },
         {
             id: 'egg3',
-            icon: '🍕',
+            icon: <FaPizzaSlice />,
             title: 'Pizza-Driven Development',
             secret: 'Best code written while waiting for pizza delivery: This entire portfolio'
         },
         {
             id: 'egg4',
-            icon: '🎯',
+            icon: <FaTrophy />,
             title: 'Code Achievement',
             secret: 'Once wrote a function that worked on the first try. Still suspicious about it.'
         },
         {
             id: 'egg5',
-            icon: '🦆',
+            icon: <FaDog />,
             title: 'Rubber Duck Debugging',
             secret: 'Have explained code to a rubber duck more times than to actual humans'
         }
@@ -210,7 +207,7 @@ const RecycleBinContent = () => {
                         <FaTrash className="mr-3 text-gray-400" />
                         The Developer's Archive
                     </h2>
-                    <div className="text-3xl">🗑️</div>
+                    <div className="text-3xl text-gray-400"><FaTrash /></div>
                 </div>
                 <p className="text-gray-400 text-sm">
                     A collection of deprecated technologies, failed experiments, squashed bugs, and hidden gems
@@ -220,7 +217,7 @@ const RecycleBinContent = () => {
             {/* Deprecated Technologies Section */}
             <div className="mb-8">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-                    <span className="text-xl mr-2">💀</span>
+                    <FaSkullCrossbones className="text-xl mr-2" />
                     Deprecated Technologies
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -264,7 +261,7 @@ const RecycleBinContent = () => {
             {/* Failed Experiments Section */}
             <div className="mb-8">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-                    <span className="text-xl mr-2">🧪</span>
+                    <FaFlask className="text-xl mr-2" />
                     Failed Experiments
                 </h3>
                 <div className="space-y-3">
@@ -291,7 +288,7 @@ const RecycleBinContent = () => {
             {/* Bug Cemetery Section */}
             <div className="mb-8">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-                    <span className="text-xl mr-2">🐛</span>
+                    <FaBug className="text-xl mr-2" />
                     Bug Cemetery
                 </h3>
                 <div className="space-y-3">
@@ -324,7 +321,7 @@ const RecycleBinContent = () => {
             {/* Easter Eggs Section */}
             <div className="mb-6">
                 <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-                    <span className="text-xl mr-2">💎</span>
+                    <FaGem className="text-xl mr-2" />
                     Easter Eggs & Fun Facts
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -346,7 +343,7 @@ const RecycleBinContent = () => {
             {/* Footer Tip */}
             <div className="mt-6 bg-gray-700 bg-opacity-30 border border-gray-600 rounded-lg p-4">
                 <div className="flex items-start">
-                    <div className="text-xl mr-3">💡</div>
+                    <FaLightbulb className="text-xl mr-3 text-gray-400" />
                     <div>
                         <h5 className="font-semibold text-white mb-1 text-sm">Developer's Wisdom</h5>
                         <p className="text-xs text-gray-400">

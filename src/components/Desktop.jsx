@@ -14,14 +14,20 @@ import {
     FaLinkedin, FaGithub, FaFacebook, FaInstagram, FaDownload, FaUser,
     FaLaptopCode, FaPalette, FaMobile, FaTools, FaCog, FaProjectDiagram,
     FaBriefcase, FaGraduationCap, FaCode, FaDatabase, FaReact, FaNodeJs,
-    FaGitAlt, FaCalendarAlt, FaMapPin, FaExternalLinkAlt
+    FaGitAlt, FaCalendarAlt, FaMapPin, FaExternalLinkAlt, FaDesktop,
+    FaMemory, FaMicrochip, FaHdd, FaNetworkWired, FaServer, FaCloud,
+    FaFire, FaChartLine, FaLightbulb, FaCertificate, FaCheckCircle,
+    FaBook, FaRegFileAlt, FaBoxOpen, FaCloudUploadAlt
 } from 'react-icons/fa'
 import {
     HiSparkles, HiLightningBolt
 } from 'react-icons/hi'
 import {
-    MdEmail, MdPhone, MdLocationOn, MdDesignServices
+    MdEmail, MdPhone, MdLocationOn, MdDesignServices, MdSettings,
+    MdStorage, MdComputer, MdDashboard
 } from 'react-icons/md'
+import { AiOutlineThunderbolt } from 'react-icons/ai'
+import { BsCpu, BsGlobe } from 'react-icons/bs'
 
 // Game components
 import GameCenter from './GameCenter'
@@ -45,7 +51,9 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                 content: (
                     <div className="p-4 lg:p-6">
                         <div className="flex flex-col sm:flex-row items-start sm:items-center mb-4 lg:mb-6">
-                            <div className="text-3xl lg:text-4xl mb-2 sm:mb-0 sm:mr-4">🖥️</div>
+                            <div className="text-3xl lg:text-4xl mb-2 sm:mb-0 sm:mr-4 text-gray-400">
+                                <MdComputer />
+                            </div>
                             <div>
                                 <h3 className="text-lg lg:text-xl font-semibold text-white">Portfolio System Overview</h3>
                                 <p className="text-gray-400 text-sm lg:text-base">Developer Workstation • Portfolio Edition 2025</p>
@@ -58,7 +66,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                             <div className="bg-gradient-to-r from-gray-700 to-gray-800 bg-opacity-50 p-4 lg:p-6 rounded-lg border border-gray-600">
                                 <div className="flex items-center justify-between mb-4">
                                     <h4 className="text-lg lg:text-xl font-bold text-white flex items-center">
-                                        <span className="text-2xl mr-3">⚡</span>
+                                        <AiOutlineThunderbolt className="text-2xl mr-3" />
                                         System Performance
                                     </h4>
                                     <div className="flex items-center text-gray-300">
@@ -69,7 +77,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
 
                                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                                     <div className="text-center">
-                                        <div className="text-2xl lg:text-3xl mb-2">🧠</div>
+                                        <div className="text-2xl lg:text-3xl mb-2 text-gray-400"><BsCpu /></div>
                                         <div className="text-xs lg:text-sm text-gray-300">CPU Usage</div>
                                         <div className="text-lg lg:text-xl font-bold text-gray-200">23%</div>
                                         <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
@@ -78,7 +86,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                     </div>
 
                                     <div className="text-center">
-                                        <div className="text-2xl lg:text-3xl mb-2">💾</div>
+                                        <div className="text-2xl lg:text-3xl mb-2 text-gray-400"><FaMemory /></div>
                                         <div className="text-xs lg:text-sm text-gray-300">Memory</div>
                                         <div className="text-lg lg:text-xl font-bold text-gray-200">67%</div>
                                         <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
@@ -87,7 +95,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                     </div>
 
                                     <div className="text-center">
-                                        <div className="text-2xl lg:text-3xl mb-2">💿</div>
+                                        <div className="text-2xl lg:text-3xl mb-2 text-gray-400"><FaHdd /></div>
                                         <div className="text-xs lg:text-sm text-gray-300">Storage</div>
                                         <div className="text-lg lg:text-xl font-bold text-gray-200">45%</div>
                                         <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
@@ -96,7 +104,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                     </div>
 
                                     <div className="text-center">
-                                        <div className="text-2xl lg:text-3xl mb-2">🌐</div>
+                                        <div className="text-2xl lg:text-3xl mb-2 text-gray-400"><FaNetworkWired /></div>
                                         <div className="text-xs lg:text-sm text-gray-300">Network</div>
                                         <div className="text-lg lg:text-xl font-bold text-gray-200">89%</div>
                                         <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
@@ -110,7 +118,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                 <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600">
                                     <h5 className="font-semibold text-white mb-3 flex items-center">
-                                        <span className="text-xl mr-2">🖥️</span>
+                                        <FaDesktop className="text-xl mr-2" />
                                         Hardware Specs
                                     </h5>
                                     <div className="space-y-3">
@@ -135,7 +143,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
 
                                 <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600">
                                     <h5 className="font-semibold text-white mb-3 flex items-center">
-                                        <span className="text-xl mr-2">⚙️</span>
+                                        <MdSettings className="text-xl mr-2" />
                                         System Info
                                     </h5>
                                     <div className="space-y-3">
@@ -164,14 +172,14 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                 {/* Portfolio Drives */}
                                 <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600">
                                     <h5 className="font-semibold text-white mb-4 flex items-center">
-                                        <span className="text-xl mr-2">💾</span>
+                                        <MdStorage className="text-xl mr-2" />
                                         Portfolio Drives
                                     </h5>
                                     <div className="space-y-3">
                                         <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-40 rounded-lg hover:bg-opacity-60 transition-all cursor-pointer">
                                             <div className="flex items-center">
                                                 <div className="w-8 h-8 bg-gray-500 bg-opacity-50 rounded flex items-center justify-center mr-3 border border-gray-500">
-                                                    <span className="text-white text-sm">💼</span>
+                                                    <FaBriefcase className="text-white text-sm" />
                                                 </div>
                                                 <div>
                                                     <div className="text-sm font-medium text-white">Projects (C:)</div>
@@ -184,7 +192,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                         <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-40 rounded-lg hover:bg-opacity-60 transition-all cursor-pointer">
                                             <div className="flex items-center">
                                                 <div className="w-8 h-8 bg-gray-500 bg-opacity-50 rounded flex items-center justify-center mr-3 border border-gray-500">
-                                                    <span className="text-white text-sm">🎨</span>
+                                                    <FaPalette className="text-white text-sm" />
                                                 </div>
                                                 <div>
                                                     <div className="text-sm font-medium text-white">Creative (D:)</div>
@@ -197,7 +205,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                         <div className="flex items-center justify-between p-3 bg-gray-600 bg-opacity-40 rounded-lg hover:bg-opacity-60 transition-all cursor-pointer">
                                             <div className="flex items-center">
                                                 <div className="w-8 h-8 bg-gray-500 bg-opacity-50 rounded flex items-center justify-center mr-3 border border-gray-500">
-                                                    <span className="text-white text-sm">☁️</span>
+                                                    <FaCloud className="text-white text-sm" />
                                                 </div>
                                                 <div>
                                                     <div className="text-sm font-medium text-white">Cloud Sync</div>
@@ -212,30 +220,30 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                 {/* Developer Tools */}
                                 <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600">
                                     <h5 className="font-semibold text-white mb-4 flex items-center">
-                                        <span className="text-xl mr-2">🛠️</span>
+                                        <FaTools className="text-xl mr-2" />
                                         Developer Tools
                                     </h5>
                                     <div className="grid grid-cols-2 gap-3">
                                         <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500">
-                                            <div className="text-lg mb-1">⚛️</div>
+                                            <FaReact className="text-lg mb-1" />
                                             <div className="text-xs font-medium">React DevTools</div>
                                             <div className="text-xs opacity-80">v4.28.0</div>
                                         </div>
 
                                         <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500">
-                                            <div className="text-lg mb-1">📦</div>
+                                            <FaNodeJs className="text-lg mb-1" />
                                             <div className="text-xs font-medium">Node.js</div>
                                             <div className="text-xs opacity-80">v18.17.0</div>
                                         </div>
 
                                         <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500">
-                                            <div className="text-lg mb-1">🎨</div>
+                                            <MdDesignServices className="text-lg mb-1" />
                                             <div className="text-xs font-medium">Figma</div>
                                             <div className="text-xs opacity-80">Design Tool</div>
                                         </div>
 
                                         <div className="bg-gray-600 bg-opacity-50 p-3 rounded-lg text-white hover:bg-opacity-70 transition-all cursor-pointer border border-gray-500">
-                                            <div className="text-lg mb-1">💻</div>
+                                            <FaCode className="text-lg mb-1" />
                                             <div className="text-xs font-medium">VS Code</div>
                                             <div className="text-xs opacity-80">Editor</div>
                                         </div>
@@ -246,7 +254,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                             {/* Recent Activity */}
                             <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600">
                                 <h5 className="font-semibold text-white mb-4 flex items-center">
-                                    <span className="text-xl mr-2">📈</span>
+                                    <FaChartLine className="text-xl mr-2" />
                                     Recent Portfolio Activity
                                 </h5>
                                 <div className="space-y-3">
@@ -948,7 +956,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                             {/* System Info */}
                             <div className="bg-gray-700 bg-opacity-50 p-3 lg:p-4 rounded-lg border border-gray-600">
                                 <div className="flex items-center mb-3">
-                                    <div className="text-xl lg:text-2xl mr-3">⚙️</div>
+                                    <MdSettings className="text-xl lg:text-2xl mr-3 text-gray-400" />
                                     <h4 className="font-semibold text-sm lg:text-base text-white">System Information</h4>
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -970,7 +978,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                             {/* Tips */}
                             <div className="bg-gray-700 bg-opacity-30 border border-gray-600 rounded-lg p-4">
                                 <div className="flex items-start">
-                                    <div className="text-2xl mr-3">💡</div>
+                                    <FaLightbulb className="text-xl mr-3 text-gray-400" />
                                     <div>
                                         <h5 className="font-semibold text-white mb-2">Personalization Tips</h5>
                                         <ul className="text-sm text-gray-300 space-y-1">
