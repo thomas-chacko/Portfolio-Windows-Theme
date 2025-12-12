@@ -16,7 +16,7 @@ const WorksContent = () => {
                     <div>
                         <h2 className="text-3xl lg:text-4xl font-bold text-white mb-2 flex items-center">
                             <FaBriefcase className="mr-3 text-blue-400" />
-                            My Portfolio
+                            My Works
                         </h2>
                         <p className="text-gray-300 text-sm lg:text-base">
                             A collection of my recent projects showcasing modern web development
@@ -35,11 +35,10 @@ const WorksContent = () => {
             <div className="flex justify-end gap-4 mb-6">
                 <button
                     onClick={() => setActiveTab('frontend')}
-                    className={`px-8 py-3 cursor-pointer rounded-lg font-semibold transition-all duration-300 ${
-                        activeTab === 'frontend'
-                            ? 'bg-blue-500 text-white shadow-lg scale-105'
-                            : 'bg-gray-700 bg-opacity-50 text-gray-300 hover:bg-gray-600 border border-gray-600'
-                    }`}
+                    className={`px-8 py-3 cursor-pointer rounded-lg font-semibold transition-all duration-300 ${activeTab === 'frontend'
+                        ? 'bg-blue-500 text-white shadow-lg scale-105'
+                        : 'bg-gray-700 bg-opacity-50 text-gray-300 hover:bg-gray-600 border border-gray-600'
+                        }`}
                 >
                     <div className="flex items-center gap-2">
                         <FaLaptopCode className="text-lg" />
@@ -49,11 +48,10 @@ const WorksContent = () => {
                 </button>
                 <button
                     onClick={() => setActiveTab('fullstack')}
-                    className={`px-8 py-3 cursor-pointer rounded-lg font-semibold transition-all duration-300${
-                        activeTab === 'fullstack'
-                            ? 'bg-purple-500 text-white shadow-lg scale-105'
-                            : 'bg-gray-700 bg-opacity-50 text-gray-300 hover:bg-gray-600 border border-gray-600'
-                    }`}
+                    className={`px-8 py-3 cursor-pointer rounded-lg font-semibold transition-all duration-300${activeTab === 'fullstack'
+                        ? 'bg-purple-500 text-white shadow-lg scale-105'
+                        : 'bg-gray-700 bg-opacity-50 text-gray-300 hover:bg-gray-600 border border-gray-600'
+                        }`}
                 >
                     <div className="flex items-center gap-2">
                         <FaDatabase className="text-lg" />
@@ -87,7 +85,7 @@ const WorksContent = () => {
                             <h3 className="text-xl lg:text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
                                 {project.title}
                             </h3>
-                            <p className="text-gray-300 text-sm lg:text-base mb-4 line-clamp-2">
+                            <p className="text-gray-300 text-sm lg:text-base mb-4">
                                 {project.description}
                             </p>
 

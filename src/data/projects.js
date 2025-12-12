@@ -4,19 +4,12 @@ import project3 from '../assets/images/project3.png';
 import project4 from '../assets/images/project4.png';
 import project5 from '../assets/images/project5.png';
 import project6 from '../assets/images/project6.png';
+import project7 from '../assets/images/project7.png';
+import project8 from '../assets/images/project8.png';
 
 // Project data organized by category
 export const frontendProjects = [
-  {
-    id: 1,
-    title: "Portfolio Windows Theme",
-    description: "A comprehensive personal portfolio website with Windows OS theme, showcasing projects, skills, and professional journey with modern design and smooth animations.",
-    liveUrl: "https://thomaschackodev.netlify.app/",
-    githubUrl: "https://github.com/thomas-chacko/Portfolio-Windows-Theme",
-    image: project1,
-    tags: ["React", "Vite", "Tailwind CSS", "Portfolio"],
-    color: "from-blue-500 to-cyan-500"
-  },
+
   {
     id: 2,
     title: "Spylt Web - GSAP Parallax",
@@ -26,6 +19,36 @@ export const frontendProjects = [
     image: project2,
     tags: ["React", "Vite", "Tailwind CSS", "GSAP"],
     color: "from-purple-500 to-pink-500"
+  },
+  {
+    id: 7,
+    title: "DropLink",
+    description: "Built Droplink, a platform that enables users to manage, organize, and share multiple social media links through a single customizable interface.",
+    liveUrl: "https://droplink-web.vercel.app/",
+    githubUrl: "https://github.com/thomas-chacko/Droplink",
+    image: project7,
+    tags: ["Next.js", "Tailwind CSS", "MongoDB", "Mongoose", "Axios", "Bycrypt", "JWT", "Cloundinary", "Zustand"],
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    id: 8,
+    title: "Ecocart",
+    description: "“EcoCart is an e-commerce platform for purchasing eco-friendly products, along with an admin panel to manage and maintain all products.",
+    liveUrl: "https://ecocart-web.vercel.app/",
+    githubUrl: "https://github.com/thomas-chacko/ecocart",
+    image: project8,
+    tags: ["Next.js", "Tailwind CSS", "MongoDB", "Mongoose", "JWT", "Cloundinary", "Framer Motion"],
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    id: 1,
+    title: "Portfolio Windows Theme",
+    description: "A comprehensive personal portfolio website with Windows OS theme, showcasing projects, skills, and professional journey with modern design and smooth animations.",
+    liveUrl: "https://thomaschackodev.netlify.app/",
+    githubUrl: "https://github.com/thomas-chacko/Portfolio-Windows-Theme",
+    image: project1,
+    tags: ["React", "Vite", "Tailwind CSS", "Portfolio"],
+    color: "from-blue-500 to-cyan-500"
   },
   {
     id: 3,
@@ -72,24 +95,24 @@ export const frontendProjects = [
 export const fullstackProjects = [
   {
     id: 7,
-    title: "E-Commerce Platform (Coming Soon)",
-    description: "A full-stack e-commerce application with user authentication, product management, shopping cart, and payment integration.",
-    liveUrl: "https://thomaschackodev.netlify.app/",
-    githubUrl: "https://github.com/thomas-chacko/Portfolio-Windows-Theme",
-    image: project1,
-    tags: ["React", "Node.js", "MongoDB", "Express"],
-    color: "from-indigo-500 to-purple-500"
+    title: "DropLink",
+    description: "Built Droplink, a platform that enables users to manage, organize, and share multiple social media links through a single customizable interface.",
+    liveUrl: "https://droplink-web.vercel.app/",
+    githubUrl: "https://github.com/thomas-chacko/Droplink",
+    image: project7,
+    tags: ["Next.js", "Tailwind CSS", "MongoDB", "Mongoose", "Axios", "Bycrypt", "JWT", "Cloundinary", "Zustand"],
+    color: "from-purple-500 to-pink-500"
   },
   {
     id: 8,
-    title: "Social Media Dashboard (Coming Soon)",
-    description: "A comprehensive social media dashboard with real-time updates, user interactions, and analytics built with MERN stack.",
-    liveUrl: "https://thomaschackodev.netlify.app/",
-    githubUrl: "https://github.com/thomas-chacko/Portfolio-Windows-Theme",
-    image: project2,
-    tags: ["React", "Node.js", "MySQL", "Socket.io"],
-    color: "from-pink-500 to-rose-500"
-  }
+    title: "Ecocart",
+    description: "“EcoCart is an e-commerce platform for purchasing eco-friendly products, along with an admin panel to manage and maintain all products.",
+    liveUrl: "https://ecocart-web.vercel.app/",
+    githubUrl: "https://github.com/thomas-chacko/ecocart",
+    image: project8,
+    tags: ["Next.js", "Tailwind CSS", "MongoDB", "Mongoose", "JWT", "Cloundinary", "Framer Motion"],
+    color: "from-purple-500 to-pink-500"
+  },
 ];
 
 // Combined projects array for backward compatibility
