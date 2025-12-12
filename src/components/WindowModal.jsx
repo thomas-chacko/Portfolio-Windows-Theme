@@ -268,7 +268,8 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
       {/* Window Content */}
       <div
         className={`
-          overflow-y-auto bg-gray-800 bg-opacity-90 flex-1 text-white modal-scrollbar
+          overflow-y-auto flex-1 text-white modal-scrollbar
+          ${windowData.type === 'terminal' ? 'bg-black' : 'bg-gray-800 bg-opacity-90'}
           ${isMobileOrTablet ? 'px-4 py-4' : ''}
         `}
         style={{

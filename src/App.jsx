@@ -2,9 +2,14 @@ import React, { useState, useEffect } from 'react'
 import Desktop from './components/Desktop'
 import Taskbar from './components/Taskbar'
 import WindowModal from './components/WindowModal'
+import BootScreen from './components/BootScreen'
 import { wallpapers, themeColors } from './data/wallpapers'
 
 const App = () => {
+  const [isBooting, setIsBooting] = useState(() => {
+    // Check if user has already seen boot screen in this session
+    return !sessionStorage.getItem('hasBooted')
+  })
   const [activeWindow, setActiveWindow] = useState(null)
   const [windows, setWindows] = useState([])
   const [selectedWallpaper, setSelectedWallpaper] = useState(() => {
@@ -85,20 +90,30 @@ const App = () => {
     setSelectedTheme(themeId)
   }
 
+  const handleBootComplete = () => {
+    setIsBooting(false)
+    sessionStorage.setItem('hasBooted', 'true')
+  }
+
   // Get current wallpaper
   const currentWallpaper = wallpapers.find(w => w.id === selectedWallpaper) || wallpapers[0]
   const currentTheme = themeColors.find(t => t.id === selectedTheme) || themeColors[0]
+
+  // Show boot screen if booting
+  if (isBooting) {
+    return <BootScreen onBootComplete={handleBootComplete} />
+  }
 
   return (
     <div className="h-screen w-screen overflow-hidden relative">
       {/* Wallpaper Background */}
       {currentWallpaper.type === 'image' ? (
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
           style={{ backgroundImage: `url(${currentWallpaper.image})` }}
         />
       ) : (
-        <div 
+        <div
           className="absolute inset-0 transition-all duration-700"
           style={{
             background: `linear-gradient(135deg, ${currentTheme.color}40, ${currentTheme.dark}90)`

@@ -7,6 +7,7 @@ import fileIcon from "../assets/images/file.png"
 import suitcaseIcon from "../assets/images/suitcase.png"
 import recycleBinIcon from "../assets/images/recycle-bin.png"
 import settingIcon from "../assets/images/setting.png"
+import terminalIcon from "../assets/images/terminal.png"
 import me from "../assets/images/thomas.jpg"
 import resumePdf from "../assets/resume.pdf"
 // React Icons imports
@@ -36,6 +37,8 @@ import GameCenter from './GameCenter'
 import RecycleBinContent from './RecycleBinContent'
 // Works Content component
 import WorksContent from './WorksContent'
+// Terminal component
+import Terminal from './Terminal'
 // Project data
 import { frontendProjects, fullstackProjects, projects } from '../data/projects'
 // Wallpaper data
@@ -941,6 +944,19 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                 icon: recycleBinIcon,
                 content: (
                     <RecycleBinContent />
+                )
+            }
+        },
+        {
+            id: 'terminal',
+            name: 'Terminal',
+            icon: terminalIcon,
+            content: {
+                title: 'Terminal',
+                type: 'terminal',
+                icon: terminalIcon,
+                content: (
+                    <Terminal />
                 )
             }
         },
