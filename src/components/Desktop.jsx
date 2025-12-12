@@ -8,6 +8,7 @@ import suitcaseIcon from "../assets/images/suitcase.png"
 import recycleBinIcon from "../assets/images/recycle-bin.png"
 import settingIcon from "../assets/images/setting.png"
 import me from "../assets/images/thomas.jpg"
+import resumePdf from "../assets/resume.pdf"
 // React Icons imports
 import {
     FaRocket, FaBolt, FaPhone, FaEnvelope, FaMobileAlt, FaMapMarkerAlt,
@@ -370,11 +371,11 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                         Passionate about turning complex problems into simple, beautiful solutions.
                                     </p>
                                     <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-                                        <a 
-                                            href="/resume.pdf" 
-                                            download="Thomas_Chacko_Resume.pdf"
+                                        <a
+                                            href={resumePdf}
+                                            download="Thomaschacko.pdf"
                                             className="cursor-pointer text-white px-6 py-2 rounded-full font-semibold hover:opacity-80 transition-all flex items-center"
-                                            style={{ 
+                                            style={{
                                                 backgroundColor: `${currentTheme.color}50`,
                                                 borderColor: currentTheme.color,
                                                 borderWidth: '2px'
@@ -555,33 +556,33 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                 <div>
                                     <div className="text-sm text-gray-400 mb-4">Follow me on social media</div>
                                     <div className="flex flex-wrap gap-3">
-                                        <a 
-                                            href="https://www.linkedin.com/in/thomas-chacko" 
-                                            target="_blank" 
+                                        <a
+                                            href="https://www.linkedin.com/in/thomas-chacko"
+                                            target="_blank"
                                             rel="noopener noreferrer"
                                             className="bg-gray-600 cursor-pointer hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition-colors flex items-center border border-gray-500"
                                         >
                                             <FaLinkedin className="mr-2" /> LinkedIn
                                         </a>
-                                        <a 
-                                            href="https://github.com/thomas-chacko" 
-                                            target="_blank" 
+                                        <a
+                                            href="https://github.com/thomas-chacko"
+                                            target="_blank"
                                             rel="noopener noreferrer"
                                             className="bg-gray-800 cursor-pointer hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center border border-gray-600"
                                         >
                                             <FaGithub className="mr-2" /> GitHub
                                         </a>
-                                        <a 
-                                            href="https://www.facebook.com/thomas.chacko" 
-                                            target="_blank" 
+                                        <a
+                                            href="https://www.facebook.com/thomas.chacko"
+                                            target="_blank"
                                             rel="noopener noreferrer"
                                             className="bg-gray-600 cursor-pointer hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition-colors flex items-center border border-gray-500"
                                         >
                                             <FaFacebook className="mr-2" /> Facebook
                                         </a>
-                                        <a 
-                                            href="https://www.instagram.com/thomas.chacko" 
-                                            target="_blank" 
+                                        <a
+                                            href="https://www.instagram.com/thomas.chacko"
+                                            target="_blank"
                                             rel="noopener noreferrer"
                                             className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition-colors flex items-center cursor-pointer border border-gray-500"
                                         >
@@ -640,10 +641,14 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                     </div>
                                 </div>
                                 <div className="flex flex-col gap-2">
-                                    <button className="bg-white text-blue-600 px-4 py-2 rounded font-medium hover:bg-blue-50 transition-colors flex items-center justify-center">
+                                    <a
+                                        href={resumePdf}
+                                        download="Thomaschacko.pdf"
+                                        className="bg-white text-blue-600 px-4 py-2 rounded font-medium hover:bg-blue-50 transition-colors flex items-center justify-center cursor-pointer"
+                                    >
                                         <FaDownload className="mr-2" />
                                         Download Resume
-                                    </button>
+                                    </a>
                                     <div className="flex gap-2">
                                         <a href="https://thomaschacko.com" className="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
                                             <FaExternalLinkAlt className="mr-1" />
@@ -853,11 +858,10 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                         <div
                                             key={wallpaper.id}
                                             onClick={() => onChangeWallpaper(wallpaper.id)}
-                                            className={`cursor-pointer rounded-lg overflow-hidden border-2 transition-all ${
-                                                localStorage.getItem('selectedWallpaper') === wallpaper.id || (!localStorage.getItem('selectedWallpaper') && wallpaper.id === 'default')
-                                                    ? `border-${currentTheme.id}-500 ring-2 ring-${currentTheme.id}-400 scale-105`
-                                                    : 'border-gray-500 hover:border-gray-400'
-                                            }`}
+                                            className={`cursor-pointer rounded-lg overflow-hidden border-2 transition-all ${localStorage.getItem('selectedWallpaper') === wallpaper.id || (!localStorage.getItem('selectedWallpaper') && wallpaper.id === 'default')
+                                                ? `border-${currentTheme.id}-500 ring-2 ring-${currentTheme.id}-400 scale-105`
+                                                : 'border-gray-500 hover:border-gray-400'
+                                                }`}
                                             style={{
                                                 borderColor: localStorage.getItem('selectedWallpaper') === wallpaper.id || (!localStorage.getItem('selectedWallpaper') && wallpaper.id === 'default') ? currentTheme.color : undefined
                                             }}
