@@ -2,24 +2,68 @@
 <html lang="en">
 
 <head>
+  <!-- ================= BASIC ================= -->
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thomas Chacko</title>
 
-  <!-- Google tag (gtag.js) -->
+  <title>Thomas Chacko | Frontend Developer</title>
+
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+  <!-- ================= PRIMARY SEO ================= -->
+  <meta name="description"
+    content="Thomas Chacko is a Frontend Developer specializing in React, Next.js, GSAP animations, and modern web development. View projects, skills, and experience." />
+  <meta name="keywords"
+    content="Thomas Chacko, Frontend Developer, React Developer, Next.js, GSAP, JavaScript, Web Developer Portfolio" />
+  <meta name="author" content="Thomas Chacko" />
+
+  <!-- ================= CANONICAL ================= -->
+  <link rel="canonical" href="https://thomaschacko.vercel.app/" />
+
+  <!-- ================= OPEN GRAPH (SOCIAL SHARE) ================= -->
+  <meta property="og:title" content="Thomas Chacko | Frontend Developer" />
+  <meta property="og:description"
+    content="Frontend Developer portfolio built with React, modern UI, animations, and performance-focused design." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thomaschacko.vercel.app/" />
+  <meta property="og:image" content="https://thomaschacko.vercel.app/preview.png" />
+
+  <!-- ================= TWITTER CARD ================= -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Thomas Chacko | Frontend Developer" />
+  <meta name="twitter:description"
+    content="Frontend Developer focused on React, animations, performance, and clean UI." />
+  <meta name="twitter:image" content="https://thomaschacko.vercel.app/preview.png" />
+
+  <!-- ================= STRUCTURED DATA (GOOGLE) ================= -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Thomas Chacko",
+      "jobTitle": "Frontend Developer",
+      "url": "https://thomaschacko.vercel.app/",
+      "sameAs": [
+        "https://github.com/thomas-chacko",
+        "https://www.linkedin.com/in/thomas-chacko-7003a9283"
+      ]
+    }
+  </script>
+
+  <!-- ================= GOOGLE ANALYTICS ================= -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-1608D17LPW"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-1608D17LPW');
   </script>
 </head>
 
 <body>
   <div id="root"></div>
+
+  <!-- ================= VITE ENTRY ================= -->
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
