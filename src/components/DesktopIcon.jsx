@@ -20,7 +20,7 @@ const DesktopIcon = ({ icon, onDoubleClick, style }) => {
   const handleClick = () => {
     setIsSelected(true)
     setTimeout(() => setIsSelected(false), 200)
-    
+
     // On mobile/tablet, single click opens the app
     if (isMobileOrTablet) {
       onDoubleClick()
@@ -47,7 +47,7 @@ const DesktopIcon = ({ icon, onDoubleClick, style }) => {
     >
       <div className="w-10 h-10 mb-1 filter drop-shadow-sm flex items-center justify-center">
         {typeof icon.icon === 'string' ? (
-          <img src={icon.icon} alt={icon.name} className="w-full h-full object-contain" />
+          <img src={icon.icon} alt={icon.name} className="w-full h-full object-contain" loading='lazy' />
         ) : (
           <div className="text-3xl">{icon.icon}</div>
         )}

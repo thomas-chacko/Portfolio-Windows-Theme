@@ -355,6 +355,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                             src={me}
                                             alt="Thomas Chacko"
                                             className="w-full h-full object-cover"
+                                            loading='lazy'
                                         />
                                     </div>
                                     {/* <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white flex items-center justify-center">
@@ -867,6 +868,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                                         src={wallpaper.image}
                                                         alt={wallpaper.name}
                                                         className="w-full h-full object-cover"
+                                                        loading='lazy'
                                                     />
                                                 ) : (
                                                     <div className={`w-full h-full ${wallpaper.gradient}`}></div>

@@ -99,6 +99,7 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
                                             src={window.icon}
                                             alt={window.title}
                                             className="w-4 sm:w-5 h-4 sm:h-5 object-contain"
+                                            loading='lazy'
                                         />
                                     ) : (
                                         <div className="w-4 sm:w-5 h-4 sm:h-5 bg-gray-400 rounded"></div>
