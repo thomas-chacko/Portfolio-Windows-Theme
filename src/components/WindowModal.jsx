@@ -158,7 +158,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
         left: '0px',
         top: '0px',
         width: '100vw',
-        height: '100vh',
+        height: 'calc(100vh - 48px)', // Account for taskbar height (48px)
       }
     }
 
