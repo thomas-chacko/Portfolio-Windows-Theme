@@ -32,30 +32,30 @@ const WorksContent = () => {
             </div>
 
             {/* Tab Navigation */}
-            <div className="flex justify-end gap-4 mb-6">
+            <div className="grid grid-cols-2 sm:flex sm:justify-end gap-3 sm:gap-4 mb-6">
                 <button
                     onClick={() => setActiveTab('frontend')}
-                    className={`px-8 py-3 cursor-pointer rounded-lg font-semibold transition-all duration-300 ${activeTab === 'frontend'
+                    className={`px-4 py-2 sm:px-8 sm:py-3 cursor-pointer rounded-lg font-semibold transition-all duration-300 w-full sm:w-auto flex justify-center ${activeTab === 'frontend'
                         ? 'bg-blue-500 text-white shadow-lg scale-105'
                         : 'bg-gray-700 bg-opacity-50 text-gray-300 hover:bg-gray-600 border border-gray-600'
                         }`}
                 >
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-center gap-2">
                         <FaLaptopCode className="text-lg" />
-                        <span>Frontend</span>
+                        <span className="truncate">Frontend</span>
                         <span className="text-xs bg-black text-white px-2 py-1 rounded-full font-bold">{frontendProjects.length}</span>
                     </div>
                 </button>
                 <button
                     onClick={() => setActiveTab('fullstack')}
-                    className={`px-8 py-3 cursor-pointer rounded-lg font-semibold transition-all duration-300${activeTab === 'fullstack'
+                    className={`px-4 py-2 sm:px-8 sm:py-3 cursor-pointer rounded-lg font-semibold transition-all duration-300 w-full sm:w-auto flex justify-center ${activeTab === 'fullstack'
                         ? 'bg-purple-500 text-white shadow-lg scale-105'
                         : 'bg-gray-700 bg-opacity-50 text-gray-300 hover:bg-gray-600 border border-gray-600'
                         }`}
                 >
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-center gap-2">
                         <FaDatabase className="text-lg" />
-                        <span>Full Stack</span>
+                        <span className="truncate">Full Stack</span>
                         <span className="text-xs bg-black text-white px-2 py-1 rounded-full font-bold">{fullstackProjects.length}</span>
                     </div>
                 </button>
@@ -132,7 +132,7 @@ const WorksContent = () => {
             <div className="mt-12 pt-8 border-t border-gray-600">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg border border-gray-500 text-center">
-                        <div className="text-3xl font-bold text-gray-200 mb-1">{projects.length}</div>
+                        <div className="text-3xl font-bold text-gray-200 mb-1">{projects.length}+</div>
                         <div className="text-sm text-gray-300">Total Projects</div>
                     </div>
                     <div className="bg-gray-600 bg-opacity-50 p-4 rounded-lg border border-gray-500 text-center">
