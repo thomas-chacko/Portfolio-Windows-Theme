@@ -560,7 +560,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                     <div className="text-sm text-gray-400 mb-4">Follow me on social media</div>
                                     <div className="flex flex-wrap gap-3">
                                         <a
-                                            href="https://www.linkedin.com/in/thomas-chacko"
+                                            href="https://www.linkedin.com/in/thomas-chacko-7003a9283"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="bg-gray-600 cursor-pointer hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition-colors flex items-center border border-gray-500"
@@ -571,20 +571,12 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                             href="https://github.com/thomas-chacko"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="bg-gray-800 cursor-pointer hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center border border-gray-600"
+                                            className="bg-gray-600 cursor-pointer hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors flex items-center border border-gray-600"
                                         >
                                             <FaGithub className="mr-2" /> GitHub
                                         </a>
                                         <a
-                                            href="https://www.facebook.com/thomas.chacko"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="bg-gray-600 cursor-pointer hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition-colors flex items-center border border-gray-500"
-                                        >
-                                            <FaFacebook className="mr-2" /> Facebook
-                                        </a>
-                                        <a
-                                            href="https://www.instagram.com/thomas.chacko"
+                                            href="https://www.instagram.com/thomaschacko.in"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded-lg transition-colors flex items-center cursor-pointer border border-gray-500"
@@ -653,11 +645,11 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                         Download Resume
                                     </a>
                                     <div className="flex gap-2">
-                                        <a href="https://thomaschacko.com" className="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
+                                        <a href="https://thomaschacko.vercel.app" className="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
                                             <FaExternalLinkAlt className="mr-1" />
                                             Portfolio
                                         </a>
-                                        <a href="https://linkedin.com/in/thomas-chacko" className="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
+                                        <a href="https://www.linkedin.com/in/thomas-chacko-7003a9283" className="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
                                             <FaLinkedin className="mr-1" />
                                             LinkedIn
                                         </a>
