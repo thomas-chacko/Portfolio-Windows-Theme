@@ -645,16 +645,12 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                         <FaDownload className="mr-2" />
                                         Download Resume
                                     </a>
-                                    <div className="flex gap-2 flex-wrap mt-1">
-                                        <a href="https://thomaschacko.vercel.app" className="bg-gray-600 hover:bg-gray-500 px-2 md:px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
-                                            <FaExternalLinkAlt className="mr-1" />
-                                            Portfolio
-                                        </a>
-                                        <a href="https://www.linkedin.com/in/thomas-chacko-7003a9283" className="bg-gray-600 hover:bg-gray-500 px-2 md:px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
+                                    <div className="flex gap-2 mt-1">
+                                        <a href="https://www.linkedin.com/in/thomas-chacko-7003a9283" className="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
                                             <FaLinkedin className="mr-1" />
                                             LinkedIn
                                         </a>
-                                        <a href="https://github.com/thomas-chacko" className="bg-gray-600 hover:bg-gray-500 px-2 md:px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
+                                        <a href="https://github.com/thomas-chacko" className="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
                                             <FaGithub className="mr-1" />
                                             GitHub
                                         </a>
