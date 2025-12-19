@@ -128,14 +128,16 @@ const StartMenu = ({ isOpen, onClose }) => {
                                 </div>
 
                                 {/* UI/UX Skills */}
-                                {expandedFolders['UI/UX'] && (
-                                    <div className="ml-6">
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaFigma className="text-purple-500 text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">Figma</span>
+                                <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['UI/UX'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                    <div className="overflow-hidden">
+                                        <div className="ml-6">
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <FaFigma className="text-purple-500 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">Figma</span>
+                                            </div>
                                         </div>
                                     </div>
-                                )}
+                                </div>
 
                                 {/* 2) Frontend Development Folder */}
                                 <div
@@ -152,38 +154,40 @@ const StartMenu = ({ isOpen, onClose }) => {
                                 </div>
 
                                 {/* Frontend Development Skills */}
-                                {expandedFolders['Frontend Development'] && (
-                                    <div className="ml-6">
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaHtml5 className="text-orange-500 text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">HTML</span>
-                                        </div>
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaCss3Alt className="text-blue-500 text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">CSS</span>
-                                        </div>
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaJs className="text-yellow-500 text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">JavaScript</span>
-                                        </div>
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <SiTypescript className="text-blue-600 text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">TypeScript</span>
-                                        </div>
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaReact className="text-cyan-500 text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">React.js</span>
-                                        </div>
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <SiNextdotjs className="text-white text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">Next.js</span>
-                                        </div>
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <SiRedux className="text-purple-600 text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">Redux</span>
+                                <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['Frontend Development'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                    <div className="overflow-hidden">
+                                        <div className="ml-6">
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <FaHtml5 className="text-orange-500 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">HTML</span>
+                                            </div>
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <FaCss3Alt className="text-blue-500 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">CSS</span>
+                                            </div>
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <FaJs className="text-yellow-500 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">JavaScript</span>
+                                            </div>
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <SiTypescript className="text-blue-600 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">TypeScript</span>
+                                            </div>
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <FaReact className="text-cyan-500 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">React.js</span>
+                                            </div>
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <SiNextdotjs className="text-white text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">Next.js</span>
+                                            </div>
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <SiRedux className="text-purple-600 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">Redux</span>
+                                            </div>
                                         </div>
                                     </div>
-                                )}
+                                </div>
 
                                 {/* 3) Backend Development Folder */}
                                 <div
@@ -200,18 +204,20 @@ const StartMenu = ({ isOpen, onClose }) => {
                                 </div>
 
                                 {/* Backend Development Skills */}
-                                {expandedFolders['Backend Development'] && (
-                                    <div className="ml-6">
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaNodeJs className="text-green-600 text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">Node.js</span>
-                                        </div>
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <SiExpress className="text-gray-300 text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">Express.js</span>
+                                <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['Backend Development'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                    <div className="overflow-hidden">
+                                        <div className="ml-6">
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <FaNodeJs className="text-green-600 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">Node.js</span>
+                                            </div>
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <SiExpress className="text-gray-300 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">Express.js</span>
+                                            </div>
                                         </div>
                                     </div>
-                                )}
+                                </div>
 
                                 {/* 4) Databases Folder */}
                                 <div
@@ -228,18 +234,20 @@ const StartMenu = ({ isOpen, onClose }) => {
                                 </div>
 
                                 {/* Database Skills */}
-                                {expandedFolders['Databases'] && (
-                                    <div className="ml-6">
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <SiMongodb className="text-green-500 text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">MongoDB</span>
-                                        </div>
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <SiMysql className="text-blue-600 text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">MySQL</span>
+                                <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['Databases'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                    <div className="overflow-hidden">
+                                        <div className="ml-6">
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <SiMongodb className="text-green-500 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">MongoDB</span>
+                                            </div>
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <SiMysql className="text-blue-600 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">MySQL</span>
+                                            </div>
                                         </div>
                                     </div>
-                                )}
+                                </div>
 
                                 {/* 5) Version Control & Collaboration Folder */}
                                 <div
@@ -256,25 +264,26 @@ const StartMenu = ({ isOpen, onClose }) => {
                                 </div>
 
                                 {/* Version Control Skills */}
-                                {expandedFolders['Version Control & Collaboration'] && (
-                                    <div className="ml-6">
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaGitAlt className="text-[#F1502F] text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">Git</span>
-                                        </div>
+                                <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['Version Control & Collaboration'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                    <div className="overflow-hidden">
+                                        <div className="ml-6">
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <FaGitAlt className="text-[#F1502F] text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">Git</span>
+                                            </div>
 
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaGithub className="text-white text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">GitHub</span>
-                                        </div>
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <FaGithub className="text-white text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">GitHub</span>
+                                            </div>
 
-                                        <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                            <FaGitlab className="text-[#FC6D26] text-base mr-3" size={22} />
-                                            <span className="text-white text-sm">GitLab</span>
+                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                                <FaGitlab className="text-[#FC6D26] text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">GitLab</span>
+                                            </div>
                                         </div>
                                     </div>
-
-                                )}
+                                </div>
                             </div>
 
                         </div>
@@ -352,14 +361,16 @@ const StartMenu = ({ isOpen, onClose }) => {
                             </div>
 
                             {/* UI/UX Skills */}
-                            {expandedFolders['UI/UX'] && (
-                                <div className="ml-8">
-                                    <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                        <FaFigma className="text-purple-500 text-lg mr-4" />
-                                        <span className="text-white text-base">Figma</span>
+                            <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['UI/UX'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                <div className="overflow-hidden">
+                                    <div className="ml-8">
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <FaFigma className="text-purple-500 text-lg mr-4" />
+                                            <span className="text-white text-base">Figma</span>
+                                        </div>
                                     </div>
                                 </div>
-                            )}
+                            </div>
 
                             {/* 2) Frontend Development Folder */}
                             <div
@@ -376,38 +387,40 @@ const StartMenu = ({ isOpen, onClose }) => {
                             </div>
 
                             {/* Frontend Development Skills */}
-                            {expandedFolders['Frontend Development'] && (
-                                <div className="ml-8">
-                                    <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                        <FaHtml5 className="text-orange-500 text-lg mr-4" />
-                                        <span className="text-white text-base">HTML</span>
-                                    </div>
-                                    <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                        <FaCss3Alt className="text-blue-500 text-lg mr-4" />
-                                        <span className="text-white text-base">CSS</span>
-                                    </div>
-                                    <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                        <FaJs className="text-yellow-500 text-lg mr-4" />
-                                        <span className="text-white text-base">JavaScript</span>
-                                    </div>
-                                    <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                        <SiTypescript className="text-blue-600 text-lg mr-4" />
-                                        <span className="text-white text-base">TypeScript</span>
-                                    </div>
-                                    <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                        <FaReact className="text-cyan-500 text-lg mr-4" />
-                                        <span className="text-white text-base">React.js</span>
-                                    </div>
-                                    <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                        <SiNextdotjs className="text-white text-lg mr-4" />
-                                        <span className="text-white text-base">Next.js</span>
-                                    </div>
-                                    <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                        <SiRedux className="text-purple-600 text-lg mr-4" />
-                                        <span className="text-white text-base">Redux</span>
+                            <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['Frontend Development'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                <div className="overflow-hidden">
+                                    <div className="ml-8">
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <FaHtml5 className="text-orange-500 text-lg mr-4" />
+                                            <span className="text-white text-base">HTML</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <FaCss3Alt className="text-blue-500 text-lg mr-4" />
+                                            <span className="text-white text-base">CSS</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <FaJs className="text-yellow-500 text-lg mr-4" />
+                                            <span className="text-white text-base">JavaScript</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <SiTypescript className="text-blue-600 text-lg mr-4" />
+                                            <span className="text-white text-base">TypeScript</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <FaReact className="text-cyan-500 text-lg mr-4" />
+                                            <span className="text-white text-base">React.js</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <SiNextdotjs className="text-white text-lg mr-4" />
+                                            <span className="text-white text-base">Next.js</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <SiRedux className="text-purple-600 text-lg mr-4" />
+                                            <span className="text-white text-base">Redux</span>
+                                        </div>
                                     </div>
                                 </div>
-                            )}
+                            </div>
 
                             {/* 3) Backend Development Folder */}
                             <div
@@ -424,18 +437,20 @@ const StartMenu = ({ isOpen, onClose }) => {
                             </div>
 
                             {/* Backend Development Skills */}
-                            {expandedFolders['Backend Development'] && (
-                                <div className="ml-8">
-                                    <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                        <FaNodeJs className="text-green-600 text-lg mr-4" />
-                                        <span className="text-white text-base">Node.js</span>
-                                    </div>
-                                    <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                        <SiExpress className="text-gray-300 text-lg mr-4" />
-                                        <span className="text-white text-base">Express.js</span>
+                            <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['Backend Development'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                <div className="overflow-hidden">
+                                    <div className="ml-8">
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <FaNodeJs className="text-green-600 text-lg mr-4" />
+                                            <span className="text-white text-base">Node.js</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <SiExpress className="text-gray-300 text-lg mr-4" />
+                                            <span className="text-white text-base">Express.js</span>
+                                        </div>
                                     </div>
                                 </div>
-                            )}
+                            </div>
 
                             {/* 4) Databases Folder */}
                             <div
@@ -452,18 +467,20 @@ const StartMenu = ({ isOpen, onClose }) => {
                             </div>
 
                             {/* Database Skills */}
-                            {expandedFolders['Databases'] && (
-                                <div className="ml-8">
-                                    <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                        <SiMongodb className="text-green-500 text-lg mr-4" />
-                                        <span className="text-white text-base">MongoDB</span>
-                                    </div>
-                                    <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                        <SiMysql className="text-blue-600 text-lg mr-4" />
-                                        <span className="text-white text-base">MySQL</span>
+                            <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['Databases'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                <div className="overflow-hidden">
+                                    <div className="ml-8">
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <SiMongodb className="text-green-500 text-lg mr-4" />
+                                            <span className="text-white text-base">MongoDB</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <SiMysql className="text-blue-600 text-lg mr-4" />
+                                            <span className="text-white text-base">MySQL</span>
+                                        </div>
                                     </div>
                                 </div>
-                            )}
+                            </div>
 
                             {/* 5) Version Control & Collaboration Folder */}
                             <div
@@ -480,18 +497,20 @@ const StartMenu = ({ isOpen, onClose }) => {
                             </div>
 
                             {/* Version Control Skills */}
-                            {expandedFolders['Version Control & Collaboration'] && (
-                                <div className="ml-8">
-                                    <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                        <FaGitAlt className="text-orange-600 text-lg mr-4" />
-                                        <span className="text-white text-base">Git</span>
-                                    </div>
-                                    <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                        <FaGithub className="text-white text-lg mr-4" />
-                                        <span className="text-white text-base">GitHub</span>
+                            <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['Version Control & Collaboration'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                <div className="overflow-hidden">
+                                    <div className="ml-8">
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <FaGitAlt className="text-orange-600 text-lg mr-4" />
+                                            <span className="text-white text-base">Git</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <FaGithub className="text-white text-lg mr-4" />
+                                            <span className="text-white text-base">GitHub</span>
+                                        </div>
                                     </div>
                                 </div>
-                            )}
+                            </div>
                         </div>
                     </div>
                 )}
