@@ -396,7 +396,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                         {/* Stats & Quick Info */}
                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                             <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600 text-center">
-                                <div className="text-2xl lg:text-3xl font-bold text-blue-400 mb-1">1.6+</div>
+                                <div className="text-2xl lg:text-3xl font-bold text-blue-400 mb-1">1.9+</div>
                                 <div className="text-xs lg:text-sm text-gray-300">Years Experience</div>
                             </div>
                             <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600 text-center">
@@ -408,7 +408,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                 <div className="text-xs lg:text-sm text-gray-300">Happy Clients</div>
                             </div>
                             <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600 text-center">
-                                <div className="text-2xl lg:text-3xl font-bold text-yellow-400 mb-1">10+</div>
+                                <div className="text-2xl lg:text-3xl font-bold text-yellow-400 mb-1">20+</div>
                                 <div className="text-xs lg:text-sm text-gray-300">Technologies</div>
                             </div>
                         </div>
@@ -645,16 +645,16 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                                         <FaDownload className="mr-2" />
                                         Download Resume
                                     </a>
-                                    <div className="flex gap-2">
-                                        <a href="https://thomaschacko.vercel.app" className="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
+                                    <div className="flex gap-2 flex-wrap mt-1">
+                                        <a href="https://thomaschacko.vercel.app" className="bg-gray-600 hover:bg-gray-500 px-2 md:px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
                                             <FaExternalLinkAlt className="mr-1" />
                                             Portfolio
                                         </a>
-                                        <a href="https://www.linkedin.com/in/thomas-chacko-7003a9283" className="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
+                                        <a href="https://www.linkedin.com/in/thomas-chacko-7003a9283" className="bg-gray-600 hover:bg-gray-500 px-2 md:px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
                                             <FaLinkedin className="mr-1" />
                                             LinkedIn
                                         </a>
-                                        <a href="https://github.com/thomas-chacko" className="bg-gray-600 hover:bg-gray-500 px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
+                                        <a href="https://github.com/thomas-chacko" className="bg-gray-600 hover:bg-gray-500 px-2 md:px-3 py-1 rounded text-sm transition-colors flex items-center border border-gray-500">
                                             <FaGithub className="mr-1" />
                                             GitHub
                                         </a>
