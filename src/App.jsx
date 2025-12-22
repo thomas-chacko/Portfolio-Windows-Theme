@@ -108,9 +108,11 @@ const App = () => {
     <div className="h-screen w-screen overflow-hidden relative">
       {/* Wallpaper Background */}
       {currentWallpaper.type === 'image' ? (
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
-          style={{ backgroundImage: `url(${currentWallpaper.image})` }}
+        <img
+          src={currentWallpaper.image}
+          alt="Wallpaper"
+          className="absolute inset-0 w-full h-full object-cover transition-all duration-700 select-none pointer-events-none"
+          fetchPriority="high"
         />
       ) : (
         <div
