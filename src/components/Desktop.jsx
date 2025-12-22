@@ -1,4 +1,4 @@
-import React, { useState, lazy, Suspense } from 'react'
+import React, { useState } from 'react'
 import DesktopIcon from './DesktopIcon'
 import desktopIcon from '../assets/images/desktop.png'
 import boyIcon from '../assets/images/boy.png'
@@ -32,13 +32,13 @@ import { AiOutlineThunderbolt } from 'react-icons/ai'
 import { BsCpu, BsGlobe } from 'react-icons/bs'
 
 // Game components
-const GameCenter = lazy(() => import('./GameCenter'))
+import GameCenter from './GameCenter'
 // Recycle Bin component
-const RecycleBinContent = lazy(() => import('./RecycleBinContent'))
+import RecycleBinContent from './RecycleBinContent'
 // Works Content component
-const WorksContent = lazy(() => import('./WorksContent'))
+import WorksContent from './WorksContent'
 // Terminal component
-const Terminal = lazy(() => import('./Terminal'))
+import Terminal from './Terminal'
 // Project data
 import { frontendProjects, fullstackProjects, projects } from '../data/projects'
 // Wallpaper data
@@ -601,9 +601,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                 type: 'games',
                 icon: gamesIcon,
                 content: (
-                    <Suspense fallback={<div className="flex items-center justify-center p-10 text-white">Loading...</div>}>
-                        <GameCenter />
-                    </Suspense>
+                    <GameCenter />
                 )
             }
         },
@@ -826,11 +824,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                 title: 'My Works',
                 type: 'portfolio',
                 icon: suitcaseIcon,
-                content: (
-                    <Suspense fallback={<div className="flex items-center justify-center p-10 text-white">Loading...</div>}>
-                        <WorksContent />
-                    </Suspense>
-                )
+                content: <WorksContent />
             }
         },
         {
@@ -939,9 +933,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                 type: 'recycle-bin',
                 icon: recycleBinIcon,
                 content: (
-                    <Suspense fallback={<div className="flex items-center justify-center p-10 text-white">Loading...</div>}>
-                        <RecycleBinContent />
-                    </Suspense>
+                    <RecycleBinContent />
                 )
             }
         },
@@ -954,9 +946,7 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                 type: 'terminal',
                 icon: terminalIcon,
                 content: (
-                    <Suspense fallback={<div className="flex items-center justify-center p-10 text-white">Loading...</div>}>
-                        <Terminal />
-                    </Suspense>
+                    <Terminal />
                 )
             }
         },
