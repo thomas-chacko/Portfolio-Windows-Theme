@@ -954,15 +954,20 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
     ]
 
     return (
-        <div className="absolute inset-0 py-4 px-3">
-            <div className="grid grid-cols-1 gap-6 w-fit">
+        <div className="absolute inset-0 z-10 w-full h-full overflow-hidden">
+            {/* Desktop Icons Container */}
+            <div
+                className="flex flex-col flex-wrap content-start items-start gap-x-2 gap-y-2 p-2 pt-4"
+                style={{ height: 'calc(100vh - 50px)' }}
+            >
                 {desktopIcons.map((icon, index) => (
-                    <DesktopIcon
-                        key={icon.id}
-                        icon={icon}
-                        onDoubleClick={() => onOpenWindow(icon.content)}
-                        style={{ animationDelay: `${index * 100}ms` }}
-                    />
+                    <div key={icon.id} className="w-[90px] h-[100px]">
+                        <DesktopIcon
+                            icon={icon}
+                            onDoubleClick={() => onOpenWindow(icon.content)}
+                            style={{ animationDelay: `${index * 100}ms` }}
+                        />
+                    </div>
                 ))}
             </div>
         </div>
