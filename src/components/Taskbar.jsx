@@ -5,8 +5,11 @@ import {
     FaWindows,
     FaWifi,
     FaVolumeUp,
-    FaChevronUp
+    FaChevronUp,
+    FaGlobe,
+    FaExternalLinkAlt
 } from 'react-icons/fa'
+import { BsGlobe2 } from 'react-icons/bs'
 import StartMenu from './StartMenu'
 
 const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
@@ -15,6 +18,7 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
     const [showWifiTooltip, setShowWifiTooltip] = useState(false)
     const [showVolumeTooltip, setShowVolumeTooltip] = useState(false)
     const [isStartMenuOpen, setIsStartMenuOpen] = useState(false)
+    const [showNotifications, setShowNotifications] = useState(true)
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -59,6 +63,44 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
                 isOpen={isStartMenuOpen}
                 onClose={() => setIsStartMenuOpen(false)}
             />
+            
+            {/* Notification Panel */}
+            {showNotifications && (
+                <>
+                    {/* Notification Panel */}
+                    <div className="fixed bottom-14 right-2 w-80 sm:w-96 bg-black/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 z-50 overflow-hidden">
+                        {/* Personal Site Widget */}
+                        <div className="p-5">
+                            {/* Header */}
+                            <div className="flex items-center gap-3 mb-4">
+                                <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20">
+                                    <BsGlobe2 className="text-white text-2xl" />
+                                </div>
+                                <div>
+                                    <h3 className="text-white font-bold text-sm">
+                                        Personal Site
+                                    </h3>
+                                    <p className="text-white/60 text-sm">Live Portfolio</p>
+                                </div>
+                            </div>
+
+                            {/* Visit Button */}
+                            <button
+                                onClick={() => window.open('https://iamthomas.vercel.app/', '_blank', 'noopener,noreferrer')}
+                                className="w-full bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white font-semibold py-3 rounded-xl transition-all flex items-center justify-center gap-2 border border-white/20 cursor-pointer"
+                            >
+                                <FaGlobe className="text-lg" />
+                                Visit My Site
+                                <FaExternalLinkAlt className="text-sm" />
+                            </button>
+                        </div>
+                        
+                        {/* Bottom Arrow Pointer */}
+                        <div className="absolute -bottom-2 right-8 w-4 h-4 bg-black/40 backdrop-blur-xl border-r border-b border-white/10 transform rotate-45"></div>
+                    </div>
+                </>
+            )}
+            
             <div className="fixed bottom-0 left-0 right-0 h-12 bg-gray-900 bg-opacity-95 backdrop-blur-sm flex items-center justify-between px-1 z-50 border-t border-gray-800">
                 {/* Left Side - Start Button and Search */}
                 <div className="flex items-center space-x-1 flex-1 min-w-0">
@@ -112,8 +154,13 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
 
                 {/* Right Side - System Tray */}
                 <div className="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
-                    {/* Notification Area - Hide on small screens */}
-                    <button className="hidden sm:flex w-6 sm:w-8 h-6 sm:h-8 cursor-pointer bg-transparent hover:bg-gray-700 hover:bg-opacity-50 items-center justify-center transition-colors">
+                    {/* Notification Area - Now visible on all screens */}
+                    <button 
+                        onClick={() => setShowNotifications(!showNotifications)}
+                        className={`flex w-6 sm:w-8 h-6 sm:h-8 cursor-pointer items-center justify-center transition-colors ${
+                            showNotifications ? 'bg-gray-700 bg-opacity-70' : 'bg-transparent hover:bg-gray-700 hover:bg-opacity-50'
+                        }`}
+                    >
                         <FaChevronUp className="w-2 sm:w-3 h-2 sm:h-3 text-white" />
                     </button>
 
