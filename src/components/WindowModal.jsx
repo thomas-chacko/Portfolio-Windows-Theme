@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
+import Lenis from 'lenis'
 
 const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaximize, onFocus }) => {
   // Calculate initial center position for desktop
@@ -19,6 +20,8 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false)
   const [hasEverBeenDragged, setHasEverBeenDragged] = useState(false)
   const windowRef = useRef(null)
+  const scrollRef = useRef(null)
+  const lenisRef = useRef(null)
 
   useEffect(() => {
     // Check if device is mobile or tablet
@@ -126,6 +129,34 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
       }
     }
   }, [isDragging, handleMouseMove, handleMouseUp])
+
+  // Initialize Lenis for smooth scrolling
+  useEffect(() => {
+    if (!scrollRef.current || windowData.isMinimized) return
+
+    const lenis = new Lenis({
+      wrapper: scrollRef.current,
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+      infinite: false,
+    })
+
+    lenisRef.current = lenis
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    return () => {
+      lenis.destroy()
+    }
+  }, [windowData.isMinimized, windowData.id])
 
   if (windowData.isMinimized) return null
 
@@ -262,6 +293,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
 
       {/* Window Content - Glass Background */}
       <div
+        ref={scrollRef}
         className={`
           overflow-y-auto overflow-x-hidden flex-1 text-white
           ${windowData.type === 'terminal' ? 'bg-black/95' : 'bg-black/20'}

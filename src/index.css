@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import 'lenis/dist/lenis.css';
 
 /* Modern Windows 11 Animations */
 @keyframes fadeInUp {

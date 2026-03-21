@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import Lenis from 'lenis'
 import {
     FaFigma,
     FaHtml5,
@@ -44,6 +45,7 @@ const StartMenu = ({ isOpen, onClose }) => {
         'IDE & Tools': true
     })
     const [isMobile, setIsMobile] = useState(false)
+    const skillsScrollRef = useRef(null)
 
     useEffect(() => {
         const checkDevice = () => {
@@ -54,6 +56,31 @@ const StartMenu = ({ isOpen, onClose }) => {
         window.addEventListener('resize', checkDevice)
         return () => window.removeEventListener('resize', checkDevice)
     }, [])
+
+    // Lenis smooth scroll for skills section
+    useEffect(() => {
+        if (!skillsScrollRef.current || !isOpen) return
+
+        const lenis = new Lenis({
+            wrapper: skillsScrollRef.current,
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smoothWheel: true,
+            wheelMultiplier: 1,
+            touchMultiplier: 2,
+        })
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+
+        return () => {
+            lenis.destroy()
+        }
+    }, [isOpen])
 
     const toggleFolder = (folderName) => {
         setExpandedFolders(prev => ({
@@ -117,7 +144,7 @@ const StartMenu = ({ isOpen, onClose }) => {
                             </div>
 
                             {/* Skills List */}
-                            <div className="flex-1 overflow-y-auto start-menu-scroll p-2">
+                            <div ref={skillsScrollRef} className="flex-1 overflow-y-auto start-menu-scroll p-2">
                                 {/* 1) UI/UX Folder */}
                                 <div
                                     className="flex items-center px-4 py-2.5 hover:bg-white/10 cursor-pointer rounded-xl transition-all duration-200 mx-1"
