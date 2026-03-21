@@ -112,11 +112,9 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
 
   useEffect(() => {
     if (isDragging) {
-      // Use passive listeners for better performance
       document.addEventListener('mousemove', handleMouseMove, { passive: true })
       document.addEventListener('mouseup', handleMouseUp, { passive: true })
 
-      // Disable text selection during drag
       document.body.style.userSelect = 'none'
       document.body.style.pointerEvents = 'none'
 
@@ -128,8 +126,6 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
       }
     }
   }, [isDragging, handleMouseMove, handleMouseUp])
-
-
 
   if (windowData.isMinimized) return null
 
@@ -185,7 +181,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
   return (
     <div
       ref={windowRef}
-      className={getWindowClasses()}
+      className={`${getWindowClasses()} flex flex-col`}
       style={{
         ...getWindowStyle(),
         // Hardware acceleration for smooth dragging
@@ -267,27 +263,13 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
       {/* Window Content - Glass Background */}
       <div
         className={`
-          overflow-y-auto flex-1 text-white
+          overflow-y-auto overflow-x-hidden flex-1 text-white
           ${windowData.type === 'terminal' ? 'bg-black/95' : 'bg-black/20'}
           ${isMobileOrTablet ? 'px-4 py-4' : ''}
           ${isMaximized || isMobileOrTablet ? '' : 'rounded-b-2xl'}
         `}
-        style={{
-          height: isMobileOrTablet
-            ? 'calc(100vh - 56px)'
-            : isMaximized
-              ? 'calc(100vh - 96px)'
-              : 'calc(70vh + 100px - 50px)',
-          maxHeight: isMobileOrTablet
-            ? 'calc(100vh - 56px)'
-            : isMaximized
-              ? 'calc(100vh - 96px)'
-              : 'calc(70vh + 100px - 50px)'
-        }}
       >
-        <div className={isMobileOrTablet ? 'space-y-4' : ''}>
-          {windowData.content}
-        </div>
+        {windowData.content}
       </div>
     </div>
   )

@@ -18,7 +18,7 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
     const [showWifiTooltip, setShowWifiTooltip] = useState(false)
     const [showVolumeTooltip, setShowVolumeTooltip] = useState(false)
     const [isStartMenuOpen, setIsStartMenuOpen] = useState(false)
-    const [showNotifications, setShowNotifications] = useState(true)
+    const [showNotifications, setShowNotifications] = useState(false)
 
     useEffect(() => {
         const timer = setInterval(() => {

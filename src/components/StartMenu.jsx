@@ -8,7 +8,6 @@ import {
     FaNodeJs,
     FaGitAlt,
     FaGithub,
-    FaDatabase,
     FaFolder,
     FaChevronDown,
     FaChevronRight,
@@ -19,7 +18,8 @@ import {
     FaImages,
     FaCog,
     FaPowerOff,
-    FaGitlab
+    FaGitlab,
+    FaCode
 } from 'react-icons/fa'
 import {
     SiTypescript,
@@ -27,8 +27,12 @@ import {
     SiRedux,
     SiExpress,
     SiMongodb,
-    SiMysql
+    SiMysql,
+    SiOpenai
 } from 'react-icons/si'
+import { VscCode } from 'react-icons/vsc'
+import { TbBrandVscode, TbSparkles } from 'react-icons/tb'
+import { RiRobot2Fill } from 'react-icons/ri'
 
 const StartMenu = ({ isOpen, onClose }) => {
     const [expandedFolders, setExpandedFolders] = useState({
@@ -36,7 +40,8 @@ const StartMenu = ({ isOpen, onClose }) => {
         'Frontend Development': true,
         'Backend Development': true,
         'Databases': true,
-        'Version Control & Collaboration': true
+        'Version Control & Collaboration': true,
+        'IDE & Tools': true
     })
     const [isMobile, setIsMobile] = useState(false)
 
@@ -71,7 +76,7 @@ const StartMenu = ({ isOpen, onClose }) => {
             <div
                 className={`fixed bottom-12 left-0 glass shadow-2xl z-50 animate-slideInUp flex overflow-hidden ${isMobile
                     ? 'w-full h-full inset-0 bottom-0 rounded-none'
-                    : 'w-[640px] rounded-2xl'
+                    : 'w-[640px] rounded-tr-2xl'
                     }`}
                 style={!isMobile ? { height: '85vh' } : {}}
             >
@@ -280,6 +285,62 @@ const StartMenu = ({ isOpen, onClose }) => {
                                             <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
                                                 <FaGitlab className="text-orange-600 text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">GitLab</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* 6) IDE & Tools Folder */}
+                                <div
+                                    className="flex items-center px-4 py-2.5 hover:bg-white/10 cursor-pointer rounded-xl transition-all duration-200 mx-1"
+                                    onClick={() => toggleFolder('IDE & Tools')}
+                                >
+                                    <FaFolder className="text-yellow-400 text-base mr-3" size={23} />
+                                    <span className="text-white text-sm flex-1 font-medium">IDE & Tools</span>
+                                    {expandedFolders['IDE & Tools'] ? (
+                                        <FaChevronDown className="text-white/60 text-xs" />
+                                    ) : (
+                                        <FaChevronRight className="text-white/60 text-xs" />
+                                    )}
+                                </div>
+
+                                {/* IDE & Tools Skills */}
+                                <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['IDE & Tools'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                    <div className="overflow-hidden">
+                                        <div className="ml-6 space-y-1">
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <VscCode className="text-blue-500 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">VS Code</span>
+                                            </div>
+
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <TbBrandVscode className="text-cyan-400 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">Cursor</span>
+                                            </div>
+
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <FaCode className="text-purple-400 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">Kiro</span>
+                                            </div>
+
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <TbSparkles className="text-pink-400 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">Antigravity</span>
+                                            </div>
+
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <TbSparkles className="text-blue-400 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">Gemini</span>
+                                            </div>
+
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <SiOpenai className="text-green-400 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">ChatGPT</span>
+                                            </div>
+
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <RiRobot2Fill className="text-orange-400 text-base mr-3" size={22} />
+                                                <span className="text-white text-sm">Claude</span>
                                             </div>
                                         </div>
                                     </div>
@@ -507,6 +568,60 @@ const StartMenu = ({ isOpen, onClose }) => {
                                         <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
                                             <FaGithub className="text-white text-lg mr-4" />
                                             <span className="text-white text-base">GitHub</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <FaGitlab className="text-orange-600 text-lg mr-4" />
+                                            <span className="text-white text-base">GitLab</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 6) IDE & Tools Folder */}
+                            <div
+                                className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded"
+                                onClick={() => toggleFolder('IDE & Tools')}
+                            >
+                                <FaFolder className="text-yellow-500 text-lg mr-4" />
+                                <span className="text-white text-base flex-1">IDE & Tools</span>
+                                {expandedFolders['IDE & Tools'] ? (
+                                    <FaChevronDown className="text-gray-400 text-sm" />
+                                ) : (
+                                    <FaChevronRight className="text-gray-400 text-sm" />
+                                )}
+                            </div>
+
+                            {/* IDE & Tools Skills */}
+                            <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['IDE & Tools'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                <div className="overflow-hidden">
+                                    <div className="ml-8">
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <VscCode className="text-blue-500 text-lg mr-4" />
+                                            <span className="text-white text-base">VS Code</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <TbBrandVscode className="text-cyan-400 text-lg mr-4" />
+                                            <span className="text-white text-base">Cursor</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <FaCode className="text-purple-400 text-lg mr-4" />
+                                            <span className="text-white text-base">Kiro</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <TbSparkles className="text-pink-400 text-lg mr-4" />
+                                            <span className="text-white text-base">Antigravity</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <TbSparkles className="text-blue-400 text-lg mr-4" />
+                                            <span className="text-white text-base">Gemini</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <SiOpenai className="text-green-400 text-lg mr-4" />
+                                            <span className="text-white text-base">ChatGPT</span>
+                                        </div>
+                                        <div className="flex items-center px-4 py-3 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
+                                            <RiRobot2Fill className="text-orange-400 text-lg mr-4" />
+                                            <span className="text-white text-base">Claude</span>
                                         </div>
                                     </div>
                                 </div>

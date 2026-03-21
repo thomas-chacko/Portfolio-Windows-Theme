@@ -93,6 +93,19 @@ button:focus-visible {
   background: radial-gradient(circle at center, var(--tw-gradient-stops));
 }
 
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced smooth scroll for all scrollable elements */
+.overflow-y-auto,
+.overflow-auto {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
 /* Glassmorphism utility classes */
 .glass {
   background: rgba(255, 255, 255, 0.05);
