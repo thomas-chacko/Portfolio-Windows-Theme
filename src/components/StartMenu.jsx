@@ -67,63 +67,63 @@ const StartMenu = ({ isOpen, onClose }) => {
                 onClick={onClose}
             />
 
-            {/* Start Menu - Responsive Design */}
+            {/* Start Menu - Modern Glass Design */}
             <div
-                className={`fixed bottom-12 left-0 bg-black bg-opacity-90 backdrop-blur-sm shadow-2xl z-50 animate-slideInUp flex ${isMobile
-                    ? 'w-full h-full inset-0 bottom-0'
-                    : 'w-[600px]'
+                className={`fixed bottom-12 left-0 glass shadow-2xl z-50 animate-slideInUp flex overflow-hidden ${isMobile
+                    ? 'w-full h-full inset-0 bottom-0 rounded-none'
+                    : 'w-[640px] rounded-2xl'
                     }`}
-                style={!isMobile ? { height: '83vh' } : {}}
+                style={!isMobile ? { height: '85vh' } : {}}
             >
 
                 {/* Desktop Layout */}
                 {!isMobile && (
                     <>
                         {/* Far Left - System Icons */}
-                        <div className="w-12 bg-gray-900 bg-opacity-90 flex flex-col items-center py-4 space-y-4">
-                            <div className="flex items-center justify-center w-10 h-10 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                <FaUser className="text-white text-lg" />
+                        <div className="w-16 bg-black/20 backdrop-blur-sm flex flex-col items-center py-6 space-y-4 border-r border-white/10">
+                            <div className="flex items-center justify-center w-12 h-12 hover:bg-white/10 cursor-pointer rounded-xl transition-all duration-200 hover-glow">
+                                <FaUser className="text-white text-xl" />
                             </div>
-                            <div className="flex items-center justify-center w-10 h-10 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                <FaFileAlt className="text-white text-lg" />
+                            <div className="flex items-center justify-center w-12 h-12 hover:bg-white/10 cursor-pointer rounded-xl transition-all duration-200 hover-glow">
+                                <FaFileAlt className="text-white text-xl" />
                             </div>
-                            <div className="flex items-center justify-center w-10 h-10 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                <FaImages className="text-white text-lg" />
+                            <div className="flex items-center justify-center w-12 h-12 hover:bg-white/10 cursor-pointer rounded-xl transition-all duration-200 hover-glow">
+                                <FaImages className="text-white text-xl" />
                             </div>
-                            <div className="flex items-center justify-center w-10 h-10 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                <FaCog className="text-white text-lg" />
+                            <div className="flex items-center justify-center w-12 h-12 hover:bg-white/10 cursor-pointer rounded-xl transition-all duration-200 hover-glow">
+                                <FaCog className="text-white text-xl" />
                             </div>
                             <div className="flex-1"></div>
-                            <div className="flex items-center justify-center w-10 h-10 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer rounded">
-                                <FaPowerOff className="text-white text-lg" />
+                            <div className="flex items-center justify-center w-12 h-12 hover:bg-red-500/20 cursor-pointer rounded-xl transition-all duration-200 hover-glow">
+                                <FaPowerOff className="text-white text-xl" />
                             </div>
                         </div>
 
                         {/* Middle - Skills List */}
-                        <div className="w-80 bg-gray-800 bg-opacity-90 flex flex-col">
+                        <div className="w-80 bg-black/10 backdrop-blur-sm flex flex-col border-r border-white/10">
                             {/* Header */}
-                            <div className="px-4 py-3 flex items-center">
+                            <div className="px-5 py-4 flex items-center border-b border-white/10">
                                 <div className="flex flex-col space-y-1 mr-3">
-                                    <div className="w-4 h-0.5 bg-white"></div>
-                                    <div className="w-4 h-0.5 bg-white"></div>
-                                    <div className="w-4 h-0.5 bg-white"></div>
+                                    <div className="w-4 h-0.5 bg-white rounded-full"></div>
+                                    <div className="w-4 h-0.5 bg-white rounded-full"></div>
+                                    <div className="w-4 h-0.5 bg-white rounded-full"></div>
                                 </div>
-                                <span className="text-white text-sm font-normal">My Skills</span>
+                                <span className="text-white text-sm font-medium">My Skills</span>
                             </div>
 
                             {/* Skills List */}
-                            <div className="flex-1 overflow-y-auto start-menu-scroll">
+                            <div className="flex-1 overflow-y-auto start-menu-scroll p-2">
                                 {/* 1) UI/UX Folder */}
                                 <div
-                                    className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer"
+                                    className="flex items-center px-4 py-2.5 hover:bg-white/10 cursor-pointer rounded-xl transition-all duration-200 mx-1"
                                     onClick={() => toggleFolder('UI/UX')}
                                 >
-                                    <FaFolder className="text-yellow-500 text-base mr-3" size={23} />
-                                    <span className="text-white text-sm flex-1">UI/UX</span>
+                                    <FaFolder className="text-yellow-400 text-base mr-3" size={23} />
+                                    <span className="text-white text-sm flex-1 font-medium">UI/UX</span>
                                     {expandedFolders['UI/UX'] ? (
-                                        <FaChevronDown className="text-gray-400 text-xs" />
+                                        <FaChevronDown className="text-white/60 text-xs" />
                                     ) : (
-                                        <FaChevronRight className="text-gray-400 text-xs" />
+                                        <FaChevronRight className="text-white/60 text-xs" />
                                     )}
                                 </div>
 
@@ -131,8 +131,8 @@ const StartMenu = ({ isOpen, onClose }) => {
                                 <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['UI/UX'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                                     <div className="overflow-hidden">
                                         <div className="ml-6">
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                                <FaFigma className="text-purple-500 text-base mr-3" size={22} />
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <FaFigma className="text-purple-400 text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">Figma</span>
                                             </div>
                                         </div>
@@ -141,48 +141,48 @@ const StartMenu = ({ isOpen, onClose }) => {
 
                                 {/* 2) Frontend Development Folder */}
                                 <div
-                                    className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer"
+                                    className="flex items-center px-4 py-2.5 hover:bg-white/10 cursor-pointer rounded-xl transition-all duration-200 mx-1"
                                     onClick={() => toggleFolder('Frontend Development')}
                                 >
-                                    <FaFolder className="text-yellow-500 text-base mr-3" size={23} />
-                                    <span className="text-white text-sm flex-1">Frontend Development</span>
+                                    <FaFolder className="text-yellow-400 text-base mr-3" size={23} />
+                                    <span className="text-white text-sm flex-1 font-medium">Frontend Development</span>
                                     {expandedFolders['Frontend Development'] ? (
-                                        <FaChevronDown className="text-gray-400 text-xs" />
+                                        <FaChevronDown className="text-white/60 text-xs" />
                                     ) : (
-                                        <FaChevronRight className="text-gray-400 text-xs" />
+                                        <FaChevronRight className="text-white/60 text-xs" />
                                     )}
                                 </div>
 
                                 {/* Frontend Development Skills */}
                                 <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['Frontend Development'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                                     <div className="overflow-hidden">
-                                        <div className="ml-6">
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                                <FaHtml5 className="text-orange-500 text-base mr-3" size={22} />
+                                        <div className="ml-6 space-y-1">
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <FaHtml5 className="text-orange-400 text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">HTML</span>
                                             </div>
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                                <FaCss3Alt className="text-blue-500 text-base mr-3" size={22} />
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <FaCss3Alt className="text-blue-400 text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">CSS</span>
                                             </div>
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                                <FaJs className="text-yellow-500 text-base mr-3" size={22} />
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <FaJs className="text-yellow-400 text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">JavaScript</span>
                                             </div>
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                                <SiTypescript className="text-blue-600 text-base mr-3" size={22} />
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <SiTypescript className="text-blue-500 text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">TypeScript</span>
                                             </div>
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                                <FaReact className="text-cyan-500 text-base mr-3" size={22} />
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <FaReact className="text-cyan-400 text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">React.js</span>
                                             </div>
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
                                                 <SiNextdotjs className="text-white text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">Next.js</span>
                                             </div>
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                                <SiRedux className="text-purple-600 text-base mr-3" size={22} />
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <SiRedux className="text-purple-400 text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">Redux</span>
                                             </div>
                                         </div>
@@ -191,28 +191,28 @@ const StartMenu = ({ isOpen, onClose }) => {
 
                                 {/* 3) Backend Development Folder */}
                                 <div
-                                    className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer"
+                                    className="flex items-center px-4 py-2.5 hover:bg-white/10 cursor-pointer rounded-xl transition-all duration-200 mx-1"
                                     onClick={() => toggleFolder('Backend Development')}
                                 >
-                                    <FaFolder className="text-yellow-500 text-base mr-3" size={23} />
-                                    <span className="text-white text-sm flex-1">Backend Development</span>
+                                    <FaFolder className="text-yellow-400 text-base mr-3" size={23} />
+                                    <span className="text-white text-sm flex-1 font-medium">Backend Development</span>
                                     {expandedFolders['Backend Development'] ? (
-                                        <FaChevronDown className="text-gray-400 text-xs" />
+                                        <FaChevronDown className="text-white/60 text-xs" />
                                     ) : (
-                                        <FaChevronRight className="text-gray-400 text-xs" />
+                                        <FaChevronRight className="text-white/60 text-xs" />
                                     )}
                                 </div>
 
                                 {/* Backend Development Skills */}
                                 <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['Backend Development'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                                     <div className="overflow-hidden">
-                                        <div className="ml-6">
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                                <FaNodeJs className="text-green-600 text-base mr-3" size={22} />
+                                        <div className="ml-6 space-y-1">
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <FaNodeJs className="text-green-500 text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">Node.js</span>
                                             </div>
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                                <SiExpress className="text-gray-300 text-base mr-3" size={22} />
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <SiExpress className="text-white/80 text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">Express.js</span>
                                             </div>
                                         </div>
@@ -221,28 +221,28 @@ const StartMenu = ({ isOpen, onClose }) => {
 
                                 {/* 4) Databases Folder */}
                                 <div
-                                    className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer"
+                                    className="flex items-center px-4 py-2.5 hover:bg-white/10 cursor-pointer rounded-xl transition-all duration-200 mx-1"
                                     onClick={() => toggleFolder('Databases')}
                                 >
-                                    <FaFolder className="text-yellow-500 text-base mr-3" size={23} />
-                                    <span className="text-white text-sm flex-1">Databases</span>
+                                    <FaFolder className="text-yellow-400 text-base mr-3" size={23} />
+                                    <span className="text-white text-sm flex-1 font-medium">Databases</span>
                                     {expandedFolders['Databases'] ? (
-                                        <FaChevronDown className="text-gray-400 text-xs" />
+                                        <FaChevronDown className="text-white/60 text-xs" />
                                     ) : (
-                                        <FaChevronRight className="text-gray-400 text-xs" />
+                                        <FaChevronRight className="text-white/60 text-xs" />
                                     )}
                                 </div>
 
                                 {/* Database Skills */}
                                 <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['Databases'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                                     <div className="overflow-hidden">
-                                        <div className="ml-6">
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                                <SiMongodb className="text-green-500 text-base mr-3" size={22} />
+                                        <div className="ml-6 space-y-1">
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <SiMongodb className="text-green-400 text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">MongoDB</span>
                                             </div>
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                                <SiMysql className="text-blue-600 text-base mr-3" size={22} />
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <SiMysql className="text-blue-500 text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">MySQL</span>
                                             </div>
                                         </div>
@@ -251,34 +251,34 @@ const StartMenu = ({ isOpen, onClose }) => {
 
                                 {/* 5) Version Control & Collaboration Folder */}
                                 <div
-                                    className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer"
+                                    className="flex items-center px-4 py-2.5 hover:bg-white/10 cursor-pointer rounded-xl transition-all duration-200 mx-1"
                                     onClick={() => toggleFolder('Version Control & Collaboration')}
                                 >
-                                    <FaFolder className="text-yellow-500 text-base mr-3" size={23} />
-                                    <span className="text-white text-sm flex-1">Version Control & Collaboration</span>
+                                    <FaFolder className="text-yellow-400 text-base mr-3" size={23} />
+                                    <span className="text-white text-sm flex-1 font-medium">Version Control & Collaboration</span>
                                     {expandedFolders['Version Control & Collaboration'] ? (
-                                        <FaChevronDown className="text-gray-400 text-xs" />
+                                        <FaChevronDown className="text-white/60 text-xs" />
                                     ) : (
-                                        <FaChevronRight className="text-gray-400 text-xs" />
+                                        <FaChevronRight className="text-white/60 text-xs" />
                                     )}
                                 </div>
 
                                 {/* Version Control Skills */}
                                 <div className={`grid transition-all duration-300 ease-in-out ${expandedFolders['Version Control & Collaboration'] ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
                                     <div className="overflow-hidden">
-                                        <div className="ml-6">
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                                <FaGitAlt className="text-[#F1502F] text-base mr-3" size={22} />
+                                        <div className="ml-6 space-y-1">
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <FaGitAlt className="text-orange-500 text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">Git</span>
                                             </div>
 
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
                                                 <FaGithub className="text-white text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">GitHub</span>
                                             </div>
 
-                                            <div className="flex items-center px-4 py-2 hover:bg-gray-700 hover:bg-opacity-50 cursor-pointer">
-                                                <FaGitlab className="text-[#FC6D26] text-base mr-3" size={22} />
+                                            <div className="flex items-center px-4 py-2 hover:bg-white/10 cursor-pointer rounded-lg transition-all duration-200">
+                                                <FaGitlab className="text-orange-600 text-base mr-3" size={22} />
                                                 <span className="text-white text-sm">GitLab</span>
                                             </div>
                                         </div>
@@ -289,42 +289,42 @@ const StartMenu = ({ isOpen, onClose }) => {
                         </div>
 
                         {/* Right Side - Tiles */}
-                        <div className="flex-1 bg-gray-700 bg-opacity-60 p-6">
+                        <div className="flex-1 bg-black/5 backdrop-blur-sm p-6">
                             <div className="grid grid-cols-2 gap-4">
                                 {/* Row 1 */}
-                                <div className="bg-gray-600 bg-opacity-50 hover:bg-opacity-70 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-4 rounded h-20">
-                                    <FaRecycle className="text-2xl text-gray-300 mb-1" />
-                                    <span className="text-white text-xs text-center">Recycle</span>
+                                <div className="glass-panel hover:bg-white/15 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-5 rounded-2xl h-24 hover-glow">
+                                    <FaRecycle className="text-2xl text-white/80 mb-2" />
+                                    <span className="text-white text-xs text-center font-medium">Recycle</span>
                                 </div>
-                                <div className="bg-gray-600 bg-opacity-50 hover:bg-opacity-70 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-4 rounded h-20">
-                                    <FaBriefcase className="text-2xl text-orange-400 mb-1" />
-                                    <span className="text-white text-xs text-center">Works</span>
+                                <div className="glass-panel hover:bg-white/15 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-5 rounded-2xl h-24 hover-glow">
+                                    <FaBriefcase className="text-2xl text-orange-400 mb-2" />
+                                    <span className="text-white text-xs text-center font-medium">Works</span>
                                 </div>
 
                                 {/* Row 2 */}
-                                <div className="bg-gray-600 bg-opacity-50 hover:bg-opacity-70 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-4 rounded h-20">
-                                    <FaFileAlt className="text-2xl text-amber-600 mb-1" />
-                                    <span className="text-white text-xs text-center">Careers</span>
+                                <div className="glass-panel hover:bg-white/15 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-5 rounded-2xl h-24 hover-glow">
+                                    <FaFileAlt className="text-2xl text-amber-400 mb-2" />
+                                    <span className="text-white text-xs text-center font-medium">Careers</span>
                                 </div>
-                                <div className="bg-gray-600 bg-opacity-50 hover:bg-opacity-70 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-4 rounded h-20">
-                                    <FaCog className="text-2xl text-cyan-400 mb-1" />
-                                    <span className="text-white text-xs text-center">Vision</span>
+                                <div className="glass-panel hover:bg-white/15 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-5 rounded-2xl h-24 hover-glow">
+                                    <FaCog className="text-2xl text-cyan-400 mb-2" />
+                                    <span className="text-white text-xs text-center font-medium">Vision</span>
                                 </div>
 
                                 {/* Row 3 */}
-                                <div className="bg-gray-600 bg-opacity-50 hover:bg-opacity-70 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-4 rounded h-20">
-                                    <FaFileAlt className="text-2xl text-purple-400 mb-1" />
-                                    <span className="text-white text-xs text-center">Resume</span>
+                                <div className="glass-panel hover:bg-white/15 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-5 rounded-2xl h-24 hover-glow">
+                                    <FaFileAlt className="text-2xl text-purple-400 mb-2" />
+                                    <span className="text-white text-xs text-center font-medium">Resume</span>
                                 </div>
-                                <div className="bg-gray-600 bg-opacity-50 hover:bg-opacity-70 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-4 rounded h-20">
-                                    <FaUser className="text-2xl text-red-400 mb-1" />
-                                    <span className="text-white text-xs text-center">Profile</span>
+                                <div className="glass-panel hover:bg-white/15 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-5 rounded-2xl h-24 hover-glow">
+                                    <FaUser className="text-2xl text-red-400 mb-2" />
+                                    <span className="text-white text-xs text-center font-medium">Profile</span>
                                 </div>
 
-                                {/* Row 4 - Single tile centered */}
-                                <div className="col-span-1 bg-gray-600 bg-opacity-50 hover:bg-opacity-70 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-4 rounded h-20">
-                                    <FaImages className="text-2xl text-blue-500 mb-1" />
-                                    <span className="text-white text-xs text-center">Gallery</span>
+                                {/* Row 4 */}
+                                <div className="col-span-1 glass-panel hover:bg-white/15 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-5 rounded-2xl h-24 hover-glow">
+                                    <FaImages className="text-2xl text-blue-400 mb-2" />
+                                    <span className="text-white text-xs text-center font-medium">Gallery</span>
                                 </div>
                             </div>
                         </div>

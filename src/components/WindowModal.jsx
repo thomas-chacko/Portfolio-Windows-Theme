@@ -133,22 +133,23 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
 
   if (windowData.isMinimized) return null
 
-  // Responsive window styling
+  // Responsive window styling with glassmorphism
   const getWindowClasses = () => {
     if (isMobileOrTablet) {
       return `
-        fixed inset-0 bg-white
+        fixed inset-0 glass-dark
         ${isActive ? 'z-50' : 'z-40'}
         flex flex-col
       `
     }
 
     return `
-      fixed bg-gray-800 bg-opacity-90 shadow-2xl border border-gray-600
-      ${isActive ? 'z-50' : 'z-40'}
+      fixed glass-dark
+      ${isActive ? 'z-50 shadow-[0_8px_32px_rgba(0,0,0,0.6)]' : 'z-40 shadow-[0_8px_32px_rgba(0,0,0,0.4)]'}
       ${isDragging ? 'cursor-grabbing' : 'cursor-default'}
-      ${isMaximized ? 'rounded-none' : 'rounded-lg'}
-      ${!hasEverBeenDragged ? 'animate-slideInUp' : ''}
+      ${isMaximized ? 'rounded-none' : 'rounded-2xl'}
+      ${!hasEverBeenDragged ? 'animate-scaleIn' : ''}
+      transition-shadow duration-300
     `
   }
 
@@ -193,20 +194,20 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
       }}
       onClick={onFocus}
     >
-      {/* Window Title Bar */}
+      {/* Window Title Bar - Modern Glass */}
       <div
         className={`
           flex items-center justify-between select-none flex-shrink-0
-          ${isMobileOrTablet ? 'pl-4 pr-0 h-14' : 'pl-4 pr-0 h-10'}
+          ${isMobileOrTablet ? 'pl-4 pr-0 h-14' : 'pl-5 pr-0 h-12'}
           ${isDragging ? 'cursor-grabbing' : !isMobileOrTablet ? 'cursor-grab' : ''}
-          ${isMaximized && !isMobileOrTablet ? 'rounded-none' : !isMobileOrTablet ? 'rounded-t-lg' : ''}
-          ${isActive ? 'bg-gray-700' : 'bg-gray-600'}
-          ${!isDragging ? 'transition-colors duration-200' : ''}
+          ${isMaximized && !isMobileOrTablet ? 'rounded-none' : !isMobileOrTablet ? 'rounded-t-2xl' : ''}
+          ${isActive ? 'bg-white/10' : 'bg-white/5'}
+          backdrop-blur-xl border-b border-white/10
+          ${!isDragging ? 'transition-all duration-300' : ''}
         `}
         onMouseDown={handleMouseDown}
         onDoubleClick={handleDoubleClickTitleBar}
         style={{
-          // Prevent text selection and improve drag performance
           WebkitUserSelect: 'none',
           MozUserSelect: 'none',
           msUserSelect: 'none',
@@ -214,7 +215,7 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
         }}
       >
         <div className="flex items-center">
-          <span className={`${isMobileOrTablet ? 'text-base' : 'text-sm'} font-medium ${isActive ? 'text-white' : 'text-gray-200'}`}>
+          <span className={`${isMobileOrTablet ? 'text-base' : 'text-sm'} font-medium ${isActive ? 'text-white' : 'text-white/70'}`}>
             {windowData.title}
           </span>
         </div>
@@ -224,10 +225,10 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
           {!isMobileOrTablet && (
             <button
               onClick={onMinimize}
-              className="w-11 h-10 cursor-pointer hover:bg-gray-600 hover:bg-opacity-80 flex items-center justify-center transition-colors"
+              className="w-12 h-12 cursor-pointer flex items-center justify-center transition-all duration-200 hover:bg-white/10 group"
               title="Minimize"
             >
-              <div className={`w-3 h-0.5 ${isActive ? 'bg-white' : 'bg-gray-200'}`}></div>
+              <div className="w-3 h-0.5 bg-white/90 group-hover:bg-white"></div>
             </button>
           )}
 
@@ -235,18 +236,16 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
           {!isMobileOrTablet && (
             <button
               onClick={handleMaximize}
-              className="w-11 h-10 cursor-pointer hover:bg-gray-600 hover:bg-opacity-80 flex items-center justify-center transition-colors"
+              className="w-12 h-12 cursor-pointer flex items-center justify-center transition-all duration-200 hover:bg-white/10 group"
               title={isMaximized ? "Restore Down" : "Maximize"}
             >
               {isMaximized ? (
-                // Restore icon (two overlapping squares)
                 <div className="relative">
-                  <div className={`w-2.5 h-2.5 border ${isActive ? 'border-white' : 'border-gray-200'} absolute -top-0.5 -left-0.5`}></div>
-                  <div className={`w-2.5 h-2.5 border ${isActive ? 'border-white' : 'border-gray-200'} bg-transparent`}></div>
+                  <div className="w-2.5 h-2.5 border border-white/90 group-hover:border-white absolute -top-0.5 -left-0.5"></div>
+                  <div className="w-2.5 h-2.5 border border-white/90 group-hover:border-white bg-transparent"></div>
                 </div>
               ) : (
-                // Maximize icon (single square)
-                <div className={`w-3 h-3 border ${isActive ? 'border-white' : 'border-gray-200'}`}></div>
+                <div className="w-3 h-3 border border-white/90 group-hover:border-white"></div>
               )}
             </button>
           )}
@@ -254,30 +253,31 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
           {/* Close Button */}
           <button
             onClick={onClose}
-            className={`${isMobileOrTablet ? 'w-12 h-14' : 'w-11 h-10'} cursor-pointer hover:bg-red-500 flex items-center justify-center transition-colors group ${isMaximized || isMobileOrTablet ? '' : 'rounded-tr-lg'}`}
+            className={`${isMobileOrTablet ? 'w-12 h-14' : 'w-12 h-12'} cursor-pointer hover:bg-red-500/90 flex items-center justify-center transition-all duration-200 group ${isMaximized || isMobileOrTablet ? '' : 'rounded-tr-2xl'}`}
             title="Close"
           >
-            <div className={`relative ${isMobileOrTablet ? 'w-4 h-4' : 'w-3 h-3'}`}>
-              <div className={`absolute ${isMobileOrTablet ? 'w-4 h-0.5' : 'w-3 h-0.5'} ${isActive ? 'bg-white' : 'bg-gray-200'} group-hover:bg-white transform rotate-45 ${isMobileOrTablet ? 'top-2' : 'top-1.5'}`}></div>
-              <div className={`absolute ${isMobileOrTablet ? 'w-4 h-0.5' : 'w-3 h-0.5'} ${isActive ? 'bg-white' : 'bg-gray-200'} group-hover:bg-white transform -rotate-45 ${isMobileOrTablet ? 'top-2' : 'top-1.5'}`}></div>
+            <div className={`relative ${isMobileOrTablet ? 'w-4 h-4' : 'w-3.5 h-3.5'}`}>
+              <div className={`absolute ${isMobileOrTablet ? 'w-4 h-0.5' : 'w-3.5 h-0.5'} bg-white/90 group-hover:bg-white transform rotate-45 ${isMobileOrTablet ? 'top-2' : 'top-1.5'}`}></div>
+              <div className={`absolute ${isMobileOrTablet ? 'w-4 h-0.5' : 'w-3.5 h-0.5'} bg-white/90 group-hover:bg-white transform -rotate-45 ${isMobileOrTablet ? 'top-2' : 'top-1.5'}`}></div>
             </div>
           </button>
         </div>
       </div>
 
-      {/* Window Content */}
+      {/* Window Content - Glass Background */}
       <div
         className={`
-          overflow-y-auto flex-1 text-white modal-scrollbar
-          ${windowData.type === 'terminal' ? 'bg-black' : 'bg-gray-800 bg-opacity-90'}
+          overflow-y-auto flex-1 text-white
+          ${windowData.type === 'terminal' ? 'bg-black/95' : 'bg-black/20'}
           ${isMobileOrTablet ? 'px-4 py-4' : ''}
+          ${isMaximized || isMobileOrTablet ? '' : 'rounded-b-2xl'}
         `}
         style={{
           height: isMobileOrTablet
-            ? 'calc(100vh - 56px)' // Full height minus title bar on mobile
+            ? 'calc(100vh - 56px)'
             : isMaximized
               ? 'calc(100vh - 96px)'
-              : 'calc(70vh + 100px - 50px)', // Content area: 70% viewport height + 100px minus title bar
+              : 'calc(70vh + 100px - 50px)',
           maxHeight: isMobileOrTablet
             ? 'calc(100vh - 56px)'
             : isMaximized
@@ -285,7 +285,6 @@ const WindowModal = ({ window: windowData, isActive, onClose, onMinimize, onMaxi
               : 'calc(70vh + 100px - 50px)'
         }}
       >
-        {/* Mobile-optimized content wrapper */}
         <div className={isMobileOrTablet ? 'space-y-4' : ''}>
           {windowData.content}
         </div>

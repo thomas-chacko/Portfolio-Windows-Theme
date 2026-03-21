@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Custom animations for Windows 10 style */
+/* Modern Windows 11 Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -15,7 +15,7 @@
 @keyframes slideInUp {
   from {
     opacity: 0;
-    transform: translateY(30px) scale(0.95);
+    transform: translateY(40px) scale(0.96);
   }
   to {
     opacity: 1;
@@ -23,65 +23,55 @@
   }
 }
 
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 .animate-slideInUp {
-  animation: slideInUp 0.3s ease-out forwards;
+  animation: slideInUp 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Custom scrollbar for Windows 10 style */
+.animate-scaleIn {
+  animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* REMOVE ALL SCROLLBARS - Windows 11 Style */
 ::-webkit-scrollbar {
-  width: 8px;
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 4px;
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
-}
-
-/* Dark theme scrollbar for modal windows */
 .modal-scrollbar::-webkit-scrollbar {
-  width: 12px;
+  display: none;
 }
 
-.modal-scrollbar::-webkit-scrollbar-track {
-  background: #374151;
-  border-radius: 6px;
-}
-
-.modal-scrollbar::-webkit-scrollbar-thumb {
-  background: #6b7280;
-  border-radius: 6px;
-  border: 2px solid #374151;
-}
-
-.modal-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #9ca3af;
-}
-
-.modal-scrollbar::-webkit-scrollbar-thumb:active {
-  background: #d1d5db;
-}
-
-/* Hide scrollbar for start menu like Windows 10 */
 .start-menu-scroll {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .start-menu-scroll::-webkit-scrollbar {
-  display: none; /* WebKit */
+  display: none;
 }
 
 /* Prevent text selection on UI elements */
@@ -92,13 +82,52 @@
   user-select: none;
 }
 
-/* Windows 10 style focus outline */
+/* Modern focus outline */
 button:focus-visible {
-  outline: 2px solid #0078d4;
+  outline: 2px solid rgba(255, 255, 255, 0.3);
   outline-offset: 2px;
 }
 
 /* Custom radial gradient */
 .bg-gradient-radial {
   background: radial-gradient(circle at center, var(--tw-gradient-stops));
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover glow effect */
+.hover-glow {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }

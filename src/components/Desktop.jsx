@@ -69,68 +69,68 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
                         {/* Creative System Overview */}
                         <div className="mt-4 lg:mt-6 space-y-4">
                             {/* System Status Dashboard */}
-                            <div className="bg-gradient-to-r from-gray-700 to-gray-800 bg-opacity-50 p-4 lg:p-6 rounded-lg border border-gray-600">
-                                <div className="flex items-center justify-between mb-4">
+                            <div className="glass-panel p-5 lg:p-6 rounded-2xl">
+                                <div className="flex items-center justify-between mb-5">
                                     <h4 className="text-lg lg:text-xl font-bold text-white flex items-center">
                                         <AiOutlineThunderbolt className="text-2xl mr-3" />
                                         System Performance
                                     </h4>
-                                    <div className="flex items-center text-gray-300">
-                                        <div className="w-2 h-2 bg-gray-400 rounded-full mr-2 animate-pulse"></div>
+                                    <div className="flex items-center text-white/80">
+                                        <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
                                         <span className="text-xs lg:text-sm">Online</span>
                                     </div>
                                 </div>
 
                                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
                                     <div className="text-center">
-                                        <div className="flex justify-center mb-2">
-                                            <div className="w-12 h-12 lg:w-14 lg:h-14 bg-blue-500 rounded-xl flex items-center justify-center">
+                                        <div className="flex justify-center mb-3">
+                                            <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg">
                                                 <BsCpu className="text-white text-2xl lg:text-3xl" />
                                             </div>
                                         </div>
-                                        <div className="text-xs lg:text-sm text-gray-300">CPU Usage</div>
-                                        <div className="text-lg lg:text-xl font-bold text-gray-200">23%</div>
-                                        <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
-                                            <div className="bg-gray-400 h-2 rounded-full" style={{ width: '23%' }}></div>
+                                        <div className="text-xs lg:text-sm text-white/70 mb-1">CPU Usage</div>
+                                        <div className="text-xl lg:text-2xl font-bold text-white">23%</div>
+                                        <div className="w-full bg-white/10 rounded-full h-2 mt-2">
+                                            <div className="bg-gradient-to-r from-blue-400 to-blue-500 h-2 rounded-full" style={{ width: '23%' }}></div>
                                         </div>
                                     </div>
 
                                     <div className="text-center">
-                                        <div className="flex justify-center mb-2">
-                                            <div className="w-12 h-12 lg:w-14 lg:h-14 bg-green-500 rounded-xl flex items-center justify-center">
+                                        <div className="flex justify-center mb-3">
+                                            <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center shadow-lg">
                                                 <FaMemory className="text-white text-2xl lg:text-3xl" />
                                             </div>
                                         </div>
-                                        <div className="text-xs lg:text-sm text-gray-300">Memory</div>
-                                        <div className="text-lg lg:text-xl font-bold text-gray-200">67%</div>
-                                        <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
-                                            <div className="bg-gray-400 h-2 rounded-full" style={{ width: '67%' }}></div>
+                                        <div className="text-xs lg:text-sm text-white/70 mb-1">Memory</div>
+                                        <div className="text-xl lg:text-2xl font-bold text-white">67%</div>
+                                        <div className="w-full bg-white/10 rounded-full h-2 mt-2">
+                                            <div className="bg-gradient-to-r from-green-400 to-green-500 h-2 rounded-full" style={{ width: '67%' }}></div>
                                         </div>
                                     </div>
 
                                     <div className="text-center">
-                                        <div className="flex justify-center mb-2">
-                                            <div className="w-12 h-12 lg:w-14 lg:h-14 bg-purple-500 rounded-xl flex items-center justify-center">
+                                        <div className="flex justify-center mb-3">
+                                            <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
                                                 <FaHdd className="text-white text-2xl lg:text-3xl" />
                                             </div>
                                         </div>
-                                        <div className="text-xs lg:text-sm text-gray-300">Storage</div>
-                                        <div className="text-lg lg:text-xl font-bold text-gray-200">45%</div>
-                                        <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
-                                            <div className="bg-gray-400 h-2 rounded-full" style={{ width: '45%' }}></div>
+                                        <div className="text-xs lg:text-sm text-white/70 mb-1">Storage</div>
+                                        <div className="text-xl lg:text-2xl font-bold text-white">45%</div>
+                                        <div className="w-full bg-white/10 rounded-full h-2 mt-2">
+                                            <div className="bg-gradient-to-r from-purple-400 to-purple-500 h-2 rounded-full" style={{ width: '45%' }}></div>
                                         </div>
                                     </div>
 
                                     <div className="text-center">
-                                        <div className="flex justify-center mb-2">
-                                            <div className="w-12 h-12 lg:w-14 lg:h-14 bg-orange-500 rounded-xl flex items-center justify-center">
+                                        <div className="flex justify-center mb-3">
+                                            <div className="w-14 h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
                                                 <FaNetworkWired className="text-white text-2xl lg:text-3xl" />
                                             </div>
                                         </div>
-                                        <div className="text-xs lg:text-sm text-gray-300">Network</div>
-                                        <div className="text-lg lg:text-xl font-bold text-gray-200">89%</div>
-                                        <div className="w-full bg-gray-600 rounded-full h-2 mt-2">
-                                            <div className="bg-gray-400 h-2 rounded-full" style={{ width: '89%' }}></div>
+                                        <div className="text-xs lg:text-sm text-white/70 mb-1">Network</div>
+                                        <div className="text-xl lg:text-2xl font-bold text-white">89%</div>
+                                        <div className="w-full bg-white/10 rounded-full h-2 mt-2">
+                                            <div className="bg-gradient-to-r from-orange-400 to-orange-500 h-2 rounded-full" style={{ width: '89%' }}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -138,51 +138,51 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
 
                             {/* System Specifications */}
                             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                                <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600">
-                                    <h5 className="font-semibold text-white mb-3 flex items-center">
+                                <div className="glass-panel p-5 rounded-2xl">
+                                    <h5 className="font-semibold text-white mb-4 flex items-center">
                                         <FaDesktop className="text-xl mr-2" />
                                         Hardware Specs
                                     </h5>
                                     <div className="space-y-3">
                                         <div className="flex justify-between items-center">
-                                            <span className="text-xs lg:text-sm text-gray-300">Processor</span>
+                                            <span className="text-xs lg:text-sm text-white/70">Processor</span>
                                             <span className="text-xs lg:text-sm text-white font-medium">React.js Engine v18.2</span>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <span className="text-xs lg:text-sm text-gray-300">Memory</span>
+                                            <span className="text-xs lg:text-sm text-white/70">Memory</span>
                                             <span className="text-xs lg:text-sm text-white font-medium">Unlimited Creativity</span>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <span className="text-xs lg:text-sm text-gray-300">Graphics</span>
+                                            <span className="text-xs lg:text-sm text-white/70">Graphics</span>
                                             <span className="text-xs lg:text-sm text-white font-medium">Tailwind CSS Powered</span>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <span className="text-xs lg:text-sm text-gray-300">Storage</span>
+                                            <span className="text-xs lg:text-sm text-white/70">Storage</span>
                                             <span className="text-xs lg:text-sm text-white font-medium">Cloud Portfolio</span>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="bg-gray-700 bg-opacity-50 p-4 rounded-lg border border-gray-600">
-                                    <h5 className="font-semibold text-white mb-3 flex items-center">
+                                <div className="glass-panel p-5 rounded-2xl">
+                                    <h5 className="font-semibold text-white mb-4 flex items-center">
                                         <MdSettings className="text-xl mr-2" />
                                         System Info
                                     </h5>
                                     <div className="space-y-3">
                                         <div className="flex justify-between items-center">
-                                            <span className="text-xs lg:text-sm text-gray-300">OS Version</span>
+                                            <span className="text-xs lg:text-sm text-white/70">OS Version</span>
                                             <span className="text-xs lg:text-sm text-white font-medium">Portfolio OS 2024</span>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <span className="text-xs lg:text-sm text-gray-300">Build</span>
+                                            <span className="text-xs lg:text-sm text-white/70">Build</span>
                                             <span className="text-xs lg:text-sm text-white font-medium">22H2.1001</span>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <span className="text-xs lg:text-sm text-gray-300">Architecture</span>
+                                            <span className="text-xs lg:text-sm text-white/70">Architecture</span>
                                             <span className="text-xs lg:text-sm text-white font-medium">x64-based PC</span>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <span className="text-xs lg:text-sm text-gray-300">Last Updated</span>
+                                            <span className="text-xs lg:text-sm text-white/70">Last Updated</span>
                                             <span className="text-xs lg:text-sm text-white font-medium">Today</span>
                                         </div>
                                     </div>
@@ -955,17 +955,17 @@ const Desktop = ({ onOpenWindow, onChangeWallpaper, onChangeTheme, currentTheme 
 
     return (
         <div className="absolute inset-0 z-10 w-full h-full overflow-hidden">
-            {/* Desktop Icons Container */}
+            {/* Desktop Icons Container - Vertical Column Layout */}
             <div
-                className="flex flex-col flex-wrap content-start items-start gap-x-2 gap-y-2 p-2 pt-4"
-                style={{ height: 'calc(100vh - 50px)' }}
+                className="grid grid-rows-[repeat(auto-fill,95px)] grid-flow-col auto-cols-[90px] gap-x-4 gap-y-2 p-3 pt-4 content-start"
+                style={{ height: 'calc(100vh - 48px)' }}
             >
                 {desktopIcons.map((icon, index) => (
-                    <div key={icon.id} className="w-[90px] h-[100px]">
+                    <div key={icon.id} className="w-[90px] h-[95px]">
                         <DesktopIcon
                             icon={icon}
                             onDoubleClick={() => onOpenWindow(icon.content)}
-                            style={{ animationDelay: `${index * 100}ms` }}
+                            style={{ animationDelay: `${index * 50}ms` }}
                         />
                     </div>
                 ))}

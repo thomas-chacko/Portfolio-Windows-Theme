@@ -64,20 +64,19 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
                 onClose={() => setIsStartMenuOpen(false)}
             />
             
-            {/* Notification Panel */}
+            {/* Notification Panel - Modern Glass */}
             {showNotifications && (
                 <>
-                    {/* Notification Panel */}
-                    <div className="fixed bottom-14 right-2 w-80 sm:w-96 bg-black/40 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 z-50 overflow-hidden">
+                    <div className="fixed bottom-14 right-2 w-80 sm:w-96 glass rounded-2xl shadow-2xl z-50 overflow-hidden">
                         {/* Personal Site Widget */}
-                        <div className="p-5">
+                        <div className="p-6">
                             {/* Header */}
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20">
+                            <div className="flex items-center gap-4 mb-5">
+                                <div className="w-14 h-14 glass-panel rounded-2xl flex items-center justify-center">
                                     <BsGlobe2 className="text-white text-2xl" />
                                 </div>
                                 <div>
-                                    <h3 className="text-white font-bold text-sm">
+                                    <h3 className="text-white font-bold text-base">
                                         Personal Site
                                     </h3>
                                     <p className="text-white/60 text-sm">Live Portfolio</p>
@@ -87,7 +86,7 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
                             {/* Visit Button */}
                             <button
                                 onClick={() => window.open('https://iamthomas.vercel.app/', '_blank', 'noopener,noreferrer')}
-                                className="w-full bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white font-semibold py-3 rounded-xl transition-all flex items-center justify-center gap-2 border border-white/20 cursor-pointer"
+                                className="w-full glass-panel hover:bg-white/15 text-white font-semibold py-3.5 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer hover-glow"
                             >
                                 <FaGlobe className="text-lg" />
                                 Visit My Site
@@ -96,26 +95,26 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
                         </div>
                         
                         {/* Bottom Arrow Pointer */}
-                        <div className="absolute -bottom-2 right-8 w-4 h-4 bg-black/40 backdrop-blur-xl border-r border-b border-white/10 transform rotate-45"></div>
+                        <div className="absolute -bottom-2 right-10 w-4 h-4 glass border-r border-b border-white/10 transform rotate-45"></div>
                     </div>
                 </>
             )}
             
-            <div className="fixed bottom-0 left-0 right-0 h-12 bg-gray-900 bg-opacity-95 backdrop-blur-sm flex items-center justify-between px-1 z-50 border-t border-gray-800">
+            <div className="fixed bottom-0 left-0 right-0 h-12 glass-dark flex items-center justify-between px-2 z-50 border-t border-white/10">
                 {/* Left Side - Start Button and Search */}
                 <div className="flex items-center space-x-1 flex-1 min-w-0">
                     {/* Windows Start Button */}
                     <button
                         onClick={() => setIsStartMenuOpen(!isStartMenuOpen)}
-                        className={`w-8 sm:w-12 h-8 cursor-pointer flex items-center justify-center transition-colors group flex-shrink-0 ${isStartMenuOpen ? 'bg-gray-700 bg-opacity-70' : 'bg-transparent hover:bg-gray-700 hover:bg-opacity-50'
+                        className={`w-10 sm:w-12 h-10 rounded-lg cursor-pointer flex items-center justify-center transition-all duration-200 group flex-shrink-0 ${isStartMenuOpen ? 'bg-white/15' : 'hover:bg-white/10'
                             }`}
                     >
-                        <FaWindows className="w-4 sm:w-6 h-4 sm:h-6 text-white" />
+                        <FaWindows className="w-4 sm:w-5 h-4 sm:h-5 text-white" />
                     </button>
 
                     {/* Search Icon */}
-                    <button className="w-8 sm:w-10 cursor-pointer h-8 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors flex-shrink-0">
-                        <GoSearch className="w-4 sm:w-6 h-4 sm:h-6 rotate-90 text-white" />
+                    <button className="w-10 sm:w-12 h-10 rounded-lg cursor-pointer hover:bg-white/10 flex items-center justify-center transition-all duration-200 flex-shrink-0">
+                        <GoSearch className="w-4 sm:w-5 h-4 sm:h-5 rotate-90 text-white" />
                     </button>
 
                     {/* Open Windows */}
@@ -125,16 +124,15 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
                                 key={window.id}
                                 onClick={() => onRestoreWindow(window.id)}
                                 className={`
-                w-10 sm:w-12 h-8 transition-colors border-b-2 flex items-center justify-center flex-shrink-0
+                w-12 sm:w-14 h-10 transition-all duration-200 rounded-lg flex items-center justify-center flex-shrink-0
                 ${activeWindow === window.id && !window.isMinimized
-                                        ? 'bg-gray-700 bg-opacity-50 border-blue-400'
-                                        : 'hover:bg-gray-700 hover:bg-opacity-30 border-transparent'
+                                        ? 'bg-white/15 border border-white/20'
+                                        : 'hover:bg-white/10 border border-transparent'
                                     }
-                ${window.isMinimized ? 'bg-gray-800 bg-opacity-30' : ''}
+                ${window.isMinimized ? 'bg-white/5' : ''}
               `}
                                 title={window.title}
                             >
-                                {/* Always show icon like Windows */}
                                 <div className="w-5 sm:w-6 h-5 sm:h-6 flex items-center justify-center">
                                     {window.icon ? (
                                         <img
@@ -144,7 +142,7 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
                                             loading='lazy'
                                         />
                                     ) : (
-                                        <div className="w-4 sm:w-5 h-4 sm:h-5 bg-gray-400 rounded"></div>
+                                        <div className="w-4 sm:w-5 h-4 sm:h-5 bg-white/20 rounded"></div>
                                     )}
                                 </div>
                             </button>
@@ -154,41 +152,41 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
 
                 {/* Right Side - System Tray */}
                 <div className="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
-                    {/* Notification Area - Now visible on all screens */}
+                    {/* Notification Area */}
                     <button 
                         onClick={() => setShowNotifications(!showNotifications)}
-                        className={`flex w-6 sm:w-8 h-6 sm:h-8 cursor-pointer items-center justify-center transition-colors ${
-                            showNotifications ? 'bg-gray-700 bg-opacity-70' : 'bg-transparent hover:bg-gray-700 hover:bg-opacity-50'
+                        className={`flex w-8 sm:w-10 h-8 sm:h-10 rounded-lg cursor-pointer items-center justify-center transition-all duration-200 ${
+                            showNotifications ? 'bg-white/15' : 'hover:bg-white/10'
                         }`}
                     >
-                        <FaChevronUp className="w-2 sm:w-3 h-2 sm:h-3 text-white" />
+                        <FaChevronUp className="w-2.5 sm:w-3 h-2.5 sm:h-3 text-white" />
                     </button>
 
                     {/* Language - Hide on very small screens */}
-                    <button className="hidden md:flex bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex-col items-center justify-center transition-colors px-1 sm:px-2 py-1">
+                    <button className="hidden md:flex hover:bg-white/10 rounded-lg flex-col items-center justify-center transition-all duration-200 px-2 sm:px-3 py-1">
                         <span className="text-white text-xs font-medium leading-tight">ENG</span>
                         <span className="text-white text-xs font-medium leading-tight">IN</span>
                     </button>
 
                     {/* System Icons */}
-                    <div className="flex items-center space-x-0 sm:space-x-1">
+                    <div className="flex items-center space-x-1">
                         {/* WiFi Icon */}
                         <div className="relative">
                             <button
-                                className="w-5 sm:w-7 h-5 sm:h-7 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors"
+                                className="w-7 sm:w-9 h-7 sm:h-9 rounded-lg hover:bg-white/10 flex items-center justify-center transition-all duration-200"
                                 onMouseEnter={() => setShowWifiTooltip(true)}
                                 onMouseLeave={() => setShowWifiTooltip(false)}
                             >
-                                <FaWifi className="w-3 sm:w-4 h-3 sm:h-4 text-white" />
+                                <FaWifi className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-white" />
                             </button>
 
                             {/* WiFi Tooltip */}
                             {showWifiTooltip && (
-                                <div className="absolute bottom-12 right-0 bg-gray-800 bg-opacity-95 backdrop-blur-sm text-white p-2 rounded-lg shadow-lg border border-gray-700 min-w-[120px] hidden sm:block">
-                                    <div className="text-xs text-gray-300 mb-1">
+                                <div className="absolute bottom-14 right-0 glass-panel text-white p-3 rounded-xl shadow-lg min-w-[140px] hidden sm:block">
+                                    <div className="text-xs font-medium mb-1">
                                         BSNL
                                     </div>
-                                    <div className="text-xs text-gray-400">
+                                    <div className="text-xs text-white/60">
                                         Internet access
                                     </div>
                                 </div>
@@ -198,23 +196,23 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
                         {/* Volume Icon */}
                         <div className="relative">
                             <button
-                                className="w-5 sm:w-7 h-5 sm:h-7 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors"
+                                className="w-7 sm:w-9 h-7 sm:h-9 rounded-lg hover:bg-white/10 flex items-center justify-center transition-all duration-200"
                                 onMouseEnter={() => setShowVolumeTooltip(true)}
                                 onMouseLeave={() => setShowVolumeTooltip(false)}
                             >
-                                <FaVolumeUp className="w-3 sm:w-4 h-3 sm:h-4 text-white" />
+                                <FaVolumeUp className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-white" />
                             </button>
 
                             {/* Volume Tooltip */}
                             {showVolumeTooltip && (
-                                <div className="absolute bottom-12 right-0 bg-gray-800 bg-opacity-95 backdrop-blur-sm text-white p-3 rounded-lg shadow-lg border border-gray-700 min-w-[180px] hidden sm:block">
-                                    <div className="text-xs mb-2">
+                                <div className="absolute bottom-14 right-0 glass-panel text-white p-4 rounded-xl shadow-lg min-w-[200px] hidden sm:block">
+                                    <div className="text-xs mb-2 font-medium">
                                         Speakers: 75%
                                     </div>
-                                    <div className="w-full bg-gray-600 rounded-full h-2">
+                                    <div className="w-full bg-white/20 rounded-full h-2">
                                         <div className="bg-white h-2 rounded-full" style={{ width: '75%' }}></div>
                                     </div>
-                                    <div className="text-xs text-gray-400 mt-2">
+                                    <div className="text-xs text-white/60 mt-2">
                                         Realtek Audio
                                     </div>
                                 </div>
@@ -224,20 +222,20 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
                         {/* Battery Icon */}
                         <div className="relative">
                             <button
-                                className="w-5 sm:w-7 h-5 sm:h-7 bg-transparent hover:bg-gray-700 hover:bg-opacity-50 flex items-center justify-center transition-colors"
+                                className="w-7 sm:w-9 h-7 sm:h-9 rounded-lg hover:bg-white/10 flex items-center justify-center transition-all duration-200"
                                 onMouseEnter={() => setShowBatteryTooltip(true)}
                                 onMouseLeave={() => setShowBatteryTooltip(false)}
                             >
-                                <FaBatteryHalf className="w-3 sm:w-4 h-3 sm:h-4 text-white" />
+                                <FaBatteryHalf className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-white" />
                             </button>
 
                             {/* Battery Tooltip */}
                             {showBatteryTooltip && (
-                                <div className="absolute bottom-12 right-0 bg-gray-800 bg-opacity-95 backdrop-blur-sm text-white p-3 rounded-lg shadow-lg border border-gray-700 min-w-[220px] hidden sm:block">
-                                    <div className="text-sm mb-1">
+                                <div className="absolute bottom-14 right-0 glass-panel text-white p-4 rounded-xl shadow-lg min-w-[240px] hidden sm:block">
+                                    <div className="text-sm mb-1 font-medium">
                                         Battery status: 81% remaining
                                     </div>
-                                    <div className="text-sm text-gray-300">
+                                    <div className="text-sm text-white/70">
                                         2h 16min
                                     </div>
                                 </div>
@@ -246,10 +244,9 @@ const Taskbar = ({ windows, activeWindow, onRestoreWindow }) => {
                     </div>
 
                     {/* Date and Time - Responsive */}
-                    <button className="text-white text-right hover:bg-gray-700 hover:bg-opacity-50 px-1 sm:px-2 py-1 transition-colors min-w-0 flex-shrink-0">
+                    <button className="text-white text-right hover:bg-white/10 rounded-lg px-2 sm:px-3 py-1.5 transition-all duration-200 min-w-0 flex-shrink-0">
                         <div className="text-xs font-medium leading-tight whitespace-nowrap">{formatTime(currentTime)}</div>
-                        {/* Show short date on very small screens, full date on larger screens */}
-                        <div className="text-xs opacity-80 leading-tight whitespace-nowrap">
+                        <div className="text-xs opacity-70 leading-tight whitespace-nowrap">
                             <span className="xs:hidden">{formatMobileDate(currentTime)}</span>
                             <span className="hidden xs:inline">{formatDate(currentTime)}</span>
                         </div>

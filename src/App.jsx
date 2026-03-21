@@ -106,20 +106,28 @@ const App = () => {
 
   return (
     <div className="h-screen w-screen overflow-hidden relative">
-      {/* Wallpaper Background */}
+      {/* Modern Gradient Background */}
       {currentWallpaper.type === 'image' ? (
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
           style={{ backgroundImage: `url(${currentWallpaper.image})` }}
-        />
+        >
+          {/* Overlay for depth */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/40"></div>
+        </div>
       ) : (
         <div
           className="absolute inset-0 transition-all duration-700"
           style={{
-            background: `linear-gradient(135deg, ${currentTheme.color}40, ${currentTheme.dark}90)`
+            background: `linear-gradient(135deg, #000000 0%, #1a1a2e 50%, #0f0f1e 100%)`
           }}
         >
-          <div className="absolute inset-0 bg-gradient-radial from-white/10 to-transparent"></div>
+          {/* Radial glow effect */}
+          <div className="absolute inset-0 bg-gradient-radial from-blue-500/10 via-transparent to-transparent"></div>
+          {/* Mesh gradient overlay */}
+          <div className="absolute inset-0 opacity-30" style={{
+            backgroundImage: `radial-gradient(circle at 20% 50%, ${currentTheme.color}20 0%, transparent 50%), radial-gradient(circle at 80% 80%, ${currentTheme.dark}30 0%, transparent 50%)`
+          }}></div>
         </div>
       )}
 
