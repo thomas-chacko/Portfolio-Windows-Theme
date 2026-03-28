@@ -101,7 +101,7 @@ const StartMenu = ({ isOpen, onClose }) => {
 
             {/* Start Menu - Modern Glass Design */}
             <div
-                className={`fixed bottom-12 left-0 glass shadow-2xl z-50 animate-slideInUp flex overflow-hidden ${isMobile
+                className={`fixed bottom-12 left-0 glass-dark shadow-2xl z-50 animate-slideInUp flex overflow-hidden ${isMobile
                     ? 'w-full h-full inset-0 bottom-0 rounded-none'
                     : 'w-[640px] rounded-tr-2xl'
                     }`}
@@ -112,7 +112,7 @@ const StartMenu = ({ isOpen, onClose }) => {
                 {!isMobile && (
                     <>
                         {/* Far Left - System Icons */}
-                        <div className="w-16 bg-black/20 backdrop-blur-sm flex flex-col items-center py-6 space-y-4 border-r border-white/10">
+                        <div className="w-16 bg-black/30 backdrop-blur-sm flex flex-col items-center py-6 space-y-4 border-r border-white/10">
                             <div className="flex items-center justify-center w-12 h-12 hover:bg-white/10 cursor-pointer rounded-xl transition-all duration-200 hover-glow">
                                 <FaUser className="text-white text-xl" />
                             </div>
@@ -132,7 +132,7 @@ const StartMenu = ({ isOpen, onClose }) => {
                         </div>
 
                         {/* Middle - Skills List */}
-                        <div className="w-80 bg-black/10 backdrop-blur-sm flex flex-col border-r border-white/10">
+                        <div className="w-80 bg-black/20 backdrop-blur-sm flex flex-col border-r border-white/10">
                             {/* Header */}
                             <div className="px-5 py-4 flex items-center border-b border-white/10">
                                 <div className="flex flex-col space-y-1 mr-3">
@@ -377,7 +377,7 @@ const StartMenu = ({ isOpen, onClose }) => {
                         </div>
 
                         {/* Right Side - Tiles */}
-                        <div className="flex-1 bg-black/5 backdrop-blur-sm p-6">
+                        <div className="flex-1 bg-black/10 backdrop-blur-sm p-6">
                             <div className="grid grid-cols-2 gap-4">
                                 {/* Row 1 */}
                                 <div className="glass-panel hover:bg-white/15 cursor-pointer transition-all duration-200 flex flex-col items-center justify-center p-5 rounded-2xl h-24 hover-glow">
